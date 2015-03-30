@@ -29,6 +29,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *hospitalTextField;
 @property NSString* userHospital;
 
+///Receives user height
+@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+@property NSString* userHeight;
+
 ///Select user diabets type
 @property (weak, nonatomic) IBOutlet UISegmentedControl *diabetsTypeSegmentedControl;
 ///Diabets type register - YES for 1, NO for 2
@@ -63,6 +67,7 @@
     self.ageTextField.clearsOnBeginEditing = YES;
     self.doctorTextField.clearsOnBeginEditing = YES;
     self.hospitalTextField.clearsOnBeginEditing = YES;
+    self.heightTextField.clearsOnBeginEditing = YES;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
@@ -79,6 +84,7 @@
     self.ageTextField.text = self.userAge;
     self.doctorTextField.text = self.userDoctor;
     self.hospitalTextField.text = self.userHospital;
+    self.heightTextField.text = self.userHeight;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +93,9 @@
 }
 
 #pragma mark - TextField event handlers
-
+/**
+ Saves na
+ **/
 - (IBAction)nameTextFieldHandler:(id)sender {
     self.userName = self.nameTextField.text;
     [self textFieldShouldReturn:self.nameTextField];
@@ -106,6 +114,11 @@
 - (IBAction)hospitalTextFieldHandler:(id)sender {
     self.userHospital = self.hospitalTextField.text;
     [self textFieldShouldReturn:self.hospitalTextField];
+}
+
+- (IBAction)heightTextFieldHandler:(id)sender {
+    self.userHeight = self.heightTextField.text;
+    [self textFieldShouldReturn:self.heightTextField];
 }
 
 #pragma mark  - Button handler
