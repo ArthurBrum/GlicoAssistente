@@ -31,6 +31,8 @@
 
 ///Select user diabets type
 @property (weak, nonatomic) IBOutlet UISegmentedControl *diabetsTypeSegmentedControl;
+///Diabets type register - YES for 1, NO for 2
+@property BOOL dtype;
 
 ///User medicine list
 @property (weak, nonatomic) IBOutlet UITableView *medicenTableView;
@@ -53,6 +55,7 @@
     _userAge = @"Idade";
     _userDoctor = @"Medico";
     _userHospital = @"Hospital de Referencia";
+    _dtype = YES;
     
     [self refreshTextFields];
     
@@ -65,6 +68,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
+    textField.clearsOnBeginEditing = NO;
     return YES;
 }
 
@@ -86,6 +90,37 @@
 
 - (IBAction)nameTextFieldHandler:(id)sender {
     self.userName = self.nameTextField.text;
+    [self textFieldShouldReturn:self.nameTextField];
+}
+
+- (IBAction)ageTextFieldHandler:(id)sender {
+    self.userAge = self.ageTextField.text;
+    [self textFieldShouldReturn:self.ageTextField];
+}
+
+- (IBAction)doctorTextFieldHandler:(id)sender {
+    self.userDoctor = self.doctorTextField.text;
+    [self textFieldShouldReturn:self.doctorTextField];
+}
+
+- (IBAction)hospitalTextFieldHandler:(id)sender {
+    self.userHospital = self.hospitalTextField.text;
+    [self textFieldShouldReturn:self.hospitalTextField];
+}
+
+#pragma mark  - Button handler
+
+- (IBAction)doneButtonHanlder:(id)sender {
+    //IMPLEMENTAR aqui: salvar dados
+    
+}
+
+
+- (IBAction)segmentedControlHandler:(id)sender {
+    if(self.diabetsTypeSegmentedControl.selectedSegmentIndex == 0)
+    {
+        self.dtype = YES;
+    } else self.dtype = NO;
 }
 
 
@@ -99,16 +134,18 @@
 }
 */
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    
-    //Verifique se o seu textField está com o teclado aberto e se o toque foi fora dele.
-    if ([self.nameTextField isFirstResponder] && [touch view] != self.nameTextField) {
-        [self.nameTextField resignFirstResponder];
-        self.userName = self.nameTextField.text;
-    }
-    [super touchesBegan:touches withEvent:event];
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    UITouch *touch = [[event allTouches] anyObject];
+//    
+//    //Verifique se o seu textField está com o teclado aberto e se o toque foi fora dele.
+//    if ([self.nameTextField isFirstResponder] && [touch view] != self.nameTextField) {
+//        [self.nameTextField resignFirstResponder];
+//        self.userName = self.nameTextField.text;
+//        
+//        self.nameTextField.clearsOnBeginEditing = NO;
+//    }
+//    [super touchesBegan:touches withEvent:event];
+//}
 
 @end

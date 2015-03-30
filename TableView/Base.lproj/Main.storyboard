@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAs-Pa-ZmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523.5" y="-445.5"/>
+            <point key="canvasLocation" x="1593.5" y="-1153.5"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="FI4-Wd-dd1">
@@ -42,22 +42,35 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="nameTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="e89-EZ-GJh"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="T63-a9-2bw"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Idade" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-2q-zHT">
                                 <rect key="frame" x="16" y="141" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ageTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mC6-n7-GRv"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="WFx-yW-pSA"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Medico" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-6c-3kI">
                                 <rect key="frame" x="16" y="191" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="doctorTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="yyJ-JV-obq"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="HBi-WU-ZpW"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hospital de referencia" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9K-5d-mJw">
                                 <rect key="frame" x="16" y="249" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hospitalTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="W7K-W6-SzB"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="QdT-qs-f0E"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-PG-R4K">
                                 <rect key="frame" x="298" y="28" width="61" height="39"/>
@@ -65,6 +78,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
                                     <action selector="doneRecord:" destination="D3P-5v-Md4" eventType="touchUpInside" id="QdV-bC-JNc"/>
                                 </connections>
                             </button>
@@ -74,6 +88,9 @@
                                     <segment title="Diabetes tipo um"/>
                                     <segment title="Diabetes tipo dois"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlHandler:" destination="D3P-5v-Md4" eventType="valueChanged" id="T1f-ke-b7V"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eMH-D9-nqu">
                                 <rect key="frame" x="5" y="427" width="364" height="183"/>
@@ -82,8 +99,30 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uWf-A2-D4h">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uWf-A2-D4h" id="aka-Mi-W0p">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uWf-A2-D4h" id="aka-Mi-W0p" userLabel="Lista de medicamentos">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lista de medicamentos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwO-ZR-Yxm">
+                                                    <rect key="frame" x="93" y="11" width="179" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZYZ-I3-WLk">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZYZ-I3-WLk" id="e7W-0N-zp4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9g6-zJ-wSb">
+                                                    <rect key="frame" x="8" y="7" width="348" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -105,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDZ-K5-RSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523.5" y="-1195.5"/>
+            <point key="canvasLocation" x="1593.5" y="-353.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SmF-WZ-H01">
@@ -341,7 +380,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nZ-0T-5z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703.5" y="1034.5"/>
+            <point key="canvasLocation" x="703.5" y="1012.5"/>
         </scene>
         <!--Lembrete-->
         <scene sceneID="luF-27-4oo">
@@ -361,7 +400,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRe-ub-dOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216.5" y="1034.5"/>
+            <point key="canvasLocation" x="1306.5" y="996.5"/>
         </scene>
         <!--Add Symptoms-->
         <scene sceneID="j3X-B6-vDT">
@@ -425,6 +464,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Btl-3L-RKM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diário" image="Book.png" id="TWA-jj-lHj"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="8DN-mo-5gs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="spL-PE-JMb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -437,7 +477,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWZ-Y8-3hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703.5" y="142.5"/>
+            <point key="canvasLocation" x="703.5" y="182.5"/>
         </scene>
     </scenes>
     <resources>
