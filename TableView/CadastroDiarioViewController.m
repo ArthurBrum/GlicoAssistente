@@ -51,7 +51,7 @@
     if(section == 0)
         self.cell = 1;
     else
-        self.cell+=3;
+        self.cell+=2;
     
     return self.cell;
 }
