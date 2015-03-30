@@ -7,6 +7,7 @@
 //
 
 #import "UserRegistreViewController.h"
+#import "ViewController.h"
 
 @interface UserRegistreViewController ()
 
@@ -29,32 +30,64 @@
 @property (weak, nonatomic) IBOutlet UITextField *hospitalTextField;
 @property NSString* userHospital;
 
+///Receives user height
+@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+@property NSString* userHeight;
+
 ///Select user diabets type
 @property (weak, nonatomic) IBOutlet UISegmentedControl *diabetsTypeSegmentedControl;
 ///Diabets type register - YES for 1, NO for 2
 @property BOOL dtype;
 
 ///User medicine list
-@property (weak, nonatomic) IBOutlet UITableView *medicenTableView;
+@property NSMutableArray* medicineList;
+
+@property (weak, nonatomic) IBOutlet UITextField *medicineTextField;
 
 @end
 
 @implementation UserRegistreViewController
 
-/**
- Saves user info and returns to root page
- **/
-- (IBAction)doneRecord:(id)sender {
-    //IMPLEMENTAR
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return self.medicineList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIndenfier = @"Indentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
+    
+//    if (cell == nil) {
+//        
+//        cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIndenfier]];
+//        
+//    }
+
+    
+//    UILabel *nameLabel = (UILabel*) [cell viewWithTag:200];
+//    UILabel *billLabel = (UILabel*) [cell viewWithTag:200];
+//    Person *personrow = [leaves objectatindex:[indexpath row]];
+//    nameLabel.text = personatrow.personname;
+//    NSString *bill = [NSString stringWithFormat:csdc
+//                      ];
+//    billlabel.text = bill;
+//    return cell;
+    return nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _medicineList = [[NSMutableArray alloc] init];
+    
     _userName = @"Nome";
     _userAge = @"Idade";
     _userDoctor = @"Medico";
     _userHospital = @"Hospital de Referencia";
+    _userHeight = @"Altura";
     _dtype = YES;
     
     [self refreshTextFields];
@@ -63,6 +96,8 @@
     self.ageTextField.clearsOnBeginEditing = YES;
     self.doctorTextField.clearsOnBeginEditing = YES;
     self.hospitalTextField.clearsOnBeginEditing = YES;
+    self.heightTextField.clearsOnBeginEditing = YES;
+    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
@@ -79,6 +114,7 @@
     self.ageTextField.text = self.userAge;
     self.doctorTextField.text = self.userDoctor;
     self.hospitalTextField.text = self.userHospital;
+    self.heightTextField.text = self.userHeight;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,8 +122,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - TextField event handlers
+-(void)editableTextFields
+{
+    self.nameTextField.enabled = YES;
+    self.ageTextField.enabled = YES;
+    self.doctorTextField.enabled = YES;
+    self.hospitalTextField.enabled = YES;
+    self.heightTextField.enabled = YES;
+}
 
+-(void)nonEditableTextFields
+{
+    self.nameTextField.enabled = NO;
+    self.ageTextField.enabled = NO;
+    self.doctorTextField.enabled = NO;
+    self.hospitalTextField.enabled = NO;
+    self.heightTextField.enabled = NO;
+}
+
+#pragma mark - TextField event handlers
+/**
+ Saves na
+ **/
 - (IBAction)nameTextFieldHandler:(id)sender {
     self.userName = self.nameTextField.text;
     [self textFieldShouldReturn:self.nameTextField];
@@ -108,13 +164,31 @@
     [self textFieldShouldReturn:self.hospitalTextField];
 }
 
+- (IBAction)heightTextFieldHandler:(id)sender {
+    self.userHeight = self.heightTextField.text;
+    [self textFieldShouldReturn:self.heightTextField];
+}
+
 #pragma mark  - Button handler
 
 - (IBAction)doneButtonHanlder:(id)sender {
-    //IMPLEMENTAR aqui: salvar dados
+    
+    if ([self.DoneButton.titleLabel.text isEqual:@"Salvar"]) {
+        [self.DoneButton setTitle:@"Editar" forState:normal];
+        [self nonEditableTextFields];
+        //IMPLEMENTAR aqui: salvar dados
+        
+    } else if ([self.DoneButton.titleLabel.text isEqual:@"Editar"]) {
+        [self.DoneButton setTitle:@"Salvar" forState:normal];
+        [self editableTextFields];
+    }
     
 }
 
+- (IBAction)addButtonHandler:(id)sender {
+    [self.medicineList addObject:self.medicineTextField.text];
+    self.medicineTextField.text = @"";
+}
 
 - (IBAction)segmentedControlHandler:(id)sender {
     if(self.diabetsTypeSegmentedControl.selectedSegmentIndex == 0)
@@ -134,18 +208,5 @@
 }
 */
 
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    
-//    UITouch *touch = [[event allTouches] anyObject];
-//    
-//    //Verifique se o seu textField está com o teclado aberto e se o toque foi fora dele.
-//    if ([self.nameTextField isFirstResponder] && [touch view] != self.nameTextField) {
-//        [self.nameTextField resignFirstResponder];
-//        self.userName = self.nameTextField.text;
-//        
-//        self.nameTextField.clearsOnBeginEditing = NO;
-//    }
-//    [super touchesBegan:touches withEvent:event];
-//}
 
 @end
