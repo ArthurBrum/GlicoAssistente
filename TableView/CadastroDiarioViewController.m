@@ -56,29 +56,14 @@
     return self.cell;
 }
 
-//- (IBAction)moreSymptom:(id)sender {
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.cell inSection:1];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
-
-
-//// Override to support conditional editing of the table view.
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
 
 - (IBAction)glucoReview:(id)sender {
-    
-    if ([self.GlucoData.text intValue] >= 200) {
+    NSString *GlucoDataController = self.GlucoData.text;
+    if ([GlucoDataController intValue] >= 200) {
         self.GlucoData.textColor =[UIColor redColor];
     }else{
-        if ([self.GlucoData.text intValue] <=75) {
-            self.GlucoData.textColor =[UIColor yellowColor];
+        if ([GlucoDataController intValue] <=75) {
+            self.GlucoData.textColor =[UIColor orangeColor];
         }else{
            
                 self.GlucoData.textColor =[UIColor greenColor];

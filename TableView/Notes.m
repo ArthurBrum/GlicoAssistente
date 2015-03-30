@@ -13,6 +13,7 @@
 
 @property NSMutableArray *objects;
 
+
 @end
 
 
@@ -46,12 +47,14 @@
 
 /*add object in the table*/
 - (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    //if(self.noteWrite.text){
+        if (!self.objects) {
+            self.objects = [[NSMutableArray alloc] init];
+        }
+        [self.objects insertObject:[NSDate date] atIndex:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  //  }
 }
 
 #pragma mark - Segues
@@ -77,9 +80,9 @@
 
 /*copy the cell*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *addNote = [tableView dequeueReusableCellWithIdentifier:@"addNote" forIndexPath:indexPath];
+    UITableViewCell *addNotes = [tableView dequeueReusableCellWithIdentifier:@"addNotes" forIndexPath:indexPath];
     
-    return addNote;
+    return addNotes;
 }
 
 /*row can edit*/

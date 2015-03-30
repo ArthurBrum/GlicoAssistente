@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddMedicine : UITableViewController
+@interface AddMedicine : UIViewController <UITableViewDelegate,UITableViewDataSource> 
 
 @end

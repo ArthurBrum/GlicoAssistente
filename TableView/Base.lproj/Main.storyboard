@@ -223,19 +223,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="OCl-N8-c0D" id="U7y-W7-1kZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-cm-FuX">
-                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="309" y="7" width="83" height="30"/>
-                                                    </variation>
-                                                    <connections>
-                                                        <action selector="GlicoReview:" destination="SCL-Xl-TAI" eventType="valueChanged" id="stI-VN-TCu"/>
-                                                        <action selector="glucoReview:" destination="SCL-Xl-TAI" eventType="editingDidEnd" id="WYV-ob-Zgx"/>
-                                                        <outlet property="delegate" destination="SCL-Xl-TAI" id="4Zt-rs-Rde"/>
-                                                    </connections>
-                                                </textField>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Glicose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ryf-An-ofI">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -245,21 +232,16 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udi-t2-7Vz" userLabel="glucoData">
+                                                    <rect key="frame" x="287" y="7" width="73" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="glucoReview:" destination="SCL-Xl-TAI" eventType="editingChanged" id="0iv-mC-8y7"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="1hB-cm-FuX"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="1hB-cm-FuX"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="accessoryView" destination="1hB-cm-FuX" id="XZ6-HR-05c"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="medicament" textLabel="snP-25-P5U" style="IBUITableViewCellStyleDefault" id="yJM-vk-NWT">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -278,7 +260,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zr5-eG-LHo" kind="push" id="AZp-ls-Lls"/>
+                                            <segue destination="eVi-eF-iwE" kind="push" id="WY8-5u-Wwf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note" textLabel="jk6-44-eU7" style="IBUITableViewCellStyleDefault" id="ayF-Bf-mYe">
@@ -310,7 +292,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="GlucoData" destination="1hB-cm-FuX" id="jI7-JG-Tcp"/>
+                        <outlet property="GlucoData" destination="Udi-t2-7Vz" id="Jlu-Ac-Ms0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nZ-0T-5z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNote" id="Wc3-9Q-6PP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc3-9Q-6PP" id="SPb-iB-BV1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -335,6 +317,9 @@
                                             <rect key="frame" x="15" y="5" width="346" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="BDL-jA-rCe" id="Mxg-GK-7AY"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -353,35 +338,122 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRe-ub-dOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1306.5" y="996.5"/>
+            <point key="canvasLocation" x="1461.75" y="996.375"/>
         </scene>
-        <!--Add Medicine-->
-        <scene sceneID="Q31-NR-fzV">
+        <!--Medicine-->
+        <scene sceneID="Nje-66-oAs">
             <objects>
-                <tableViewController id="Zr5-eG-LHo" customClass="AddMedicine" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zyS-pV-wLd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="eVi-eF-iwE" userLabel="Medicine" customClass="AddMedicine" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GNi-fP-nwa"/>
+                        <viewControllerLayoutGuide type="bottom" id="dBs-Oz-028"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q4c-OM-zx2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="editMedicine" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remédios + hora" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-TL-h2h">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="159" width="289" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxW-zI-CpX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="321" y="158" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addMed:" destination="eVi-eF-iwE" eventType="touchUpInside" id="oeh-7u-hCV"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="v3S-cV-plB" customClass="cellMedicine">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3S-cV-plB" id="Rt4-HN-5bn">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="29" y="11" width="0.0" height="0.0"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="N6v-6A-U79"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="N6v-6A-U79"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accessoryView" destination="N6v-6A-U79" id="l2s-Iy-vAh"/>
+                                            <outlet property="cellMed" destination="Rt4-HN-5bn" id="URp-L4-nR7"/>
+                                            <outlet property="medicine" destination="N6v-6A-U79" id="XNR-ej-uH5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="219" width="375" height="404"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="eVi-eF-iwE" id="IJd-DO-4dY"/>
+                                    <outlet property="delegate" destination="eVi-eF-iwE" id="Aux-HP-dpf"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos  medicamentos diários pode registrar  qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="tintColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.34832702020202022" green="0.34832702020202022" blue="0.34832702020202022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-130" y="58" width="634" height="115"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kJr-tv-8q9">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJr-tv-8q9" id="pbr-VH-F7n">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Zr5-eG-LHo" id="6H9-5l-JxQ"/>
-                            <outlet property="delegate" destination="Zr5-eG-LHo" id="y7G-CR-73M"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="IyA-ps-5AP"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BDf-sg-axf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vQ7-TL-h2h"/>
+                                <exclude reference="GxW-zI-CpX"/>
+                                <exclude reference="70k-QQ-zTL"/>
+                                <exclude reference="zrc-hS-Ptb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="vQ7-TL-h2h"/>
+                                <include reference="GxW-zI-CpX"/>
+                                <include reference="70k-QQ-zTL"/>
+                                <include reference="zrc-hS-Ptb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medicamentos" id="OcX-XZ-4Li"/>
+                    <connections>
+                        <outlet property="editMed" destination="vQ7-TL-h2h" id="vng-Dh-6tf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCj-r3-daJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1227.5" y="1785.5"/>
+            <point key="canvasLocation" x="1181.25" y="1636.875"/>
         </scene>
         <!--Diário-->
         <scene sceneID="XFW-8B-eIl">
