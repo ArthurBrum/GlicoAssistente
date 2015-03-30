@@ -75,7 +75,7 @@
 //                      ];
 //    billlabel.text = bill;
 //    return cell;
-//    return nil;
+    return nil;
 }
 
 - (void)viewDidLoad {
