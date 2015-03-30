@@ -173,34 +173,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT4-ty-bBX">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="+">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="375" y="7" width="17" height="30"/>
-                                                    </variation>
-                                                    <connections>
-                                                        <segue destination="SCL-Xl-TAI" kind="custom" id="KHT-uB-w3D"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="dT4-ty-bBX"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="dT4-ty-bBX"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="accessoryView" destination="dT4-ty-bBX" id="ATh-e4-LLM"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicament" textLabel="snP-25-P5U" style="IBUITableViewCellStyleDefault" id="yJM-vk-NWT">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -216,31 +190,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-sB-COz">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="+">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="355" y="7" width="37" height="30"/>
-                                                    </variation>
-                                                </button>
                                             </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="5Bt-sB-COz"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="5Bt-sB-COz"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="accessoryView" destination="5Bt-sB-COz" id="8lR-cY-A2M"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note" textLabel="jk6-44-eU7" style="IBUITableViewCellStyleDefault" id="ayF-Bf-mYe">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -324,7 +275,4 @@
         <image name="Edit.png" width="32" height="32"/>
         <image name="Fine Print.png" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="iDf-gO-non"/>
-    </inferredMetricsTieBreakers>
 </document>
