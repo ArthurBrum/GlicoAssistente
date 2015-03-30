@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5505F6091AC5D7DA003D81B9 /* AddMedicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6081AC5D7DA003D81B9 /* AddMedicine.m */; };
-		5505F60C1AC5D86B003D81B9 /* AddSymptoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F60B1AC5D86B003D81B9 /* AddSymptoms.m */; };
 		5505F60F1AC5D882003D81B9 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F60E1AC5D882003D81B9 /* Notes.m */; };
 		5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */; };
 		5505F6151AC5DC64003D81B9 /* UserHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6141AC5DC64003D81B9 /* UserHistory.m */; };
@@ -38,8 +37,6 @@
 /* Begin PBXFileReference section */
 		5505F6071AC5D7DA003D81B9 /* AddMedicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicine.h; sourceTree = "<group>"; };
 		5505F6081AC5D7DA003D81B9 /* AddMedicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicine.m; sourceTree = "<group>"; };
-		5505F60A1AC5D86B003D81B9 /* AddSymptoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSymptoms.h; sourceTree = "<group>"; };
-		5505F60B1AC5D86B003D81B9 /* AddSymptoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSymptoms.m; sourceTree = "<group>"; };
 		5505F60D1AC5D882003D81B9 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		5505F60E1AC5D882003D81B9 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		5505F6101AC5DC11003D81B9 /* UserRegistreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistreViewController.h; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 				5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */,
 				5505F60D1AC5D882003D81B9 /* Notes.h */,
 				5505F60E1AC5D882003D81B9 /* Notes.m */,
-				5505F60A1AC5D86B003D81B9 /* AddSymptoms.h */,
-				5505F60B1AC5D86B003D81B9 /* AddSymptoms.m */,
 				5505F6071AC5D7DA003D81B9 /* AddMedicine.h */,
 				5505F6081AC5D7DA003D81B9 /* AddMedicine.m */,
 				C2F60D481AC3494200B5CF5D /* Images.xcassets */,
@@ -271,7 +266,6 @@
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,
 				5505F60F1AC5D882003D81B9 /* Notes.m in Sources */,
-				5505F60C1AC5D86B003D81B9 /* AddSymptoms.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
