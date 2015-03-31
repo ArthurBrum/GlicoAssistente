@@ -86,15 +86,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return self.medicineList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIndenfier = @"Indentifier";
+    NSString *cellIndenfier = @"MedicineCell";
     
     cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
-    cell.medicine.text = self.medicineList[indexPath.row];
+    
+    if (cell == nil) {
+        cell = [[cellMedicine alloc] init];
+    }
+    
+    cell.medicine.text = [NSString stringWithFormat:@"%@", [self.medicineList objectAtIndex:indexPath.row]];
+    
+    
     
     return cell;
 }
@@ -181,10 +189,13 @@
 }
 
 - (IBAction)addButtonHandler:(id)sender {
-    [self.medicineList addObject:self.medicineTextField.text];
-    [self textFieldShouldReturn:self.medicineTextField];
-    [self.medicineTableView reloadData];
-    self.medicineTextField.text = @"";
+    
+    if (![self.medicineTextField.text isEqualToString:@""]) {
+        [self.medicineList insertObject:self.medicineTextField.text atIndex:0];
+        [self textFieldShouldReturn:self.medicineTextField];
+        [self.medicineTableView reloadData];
+        self.medicineTextField.text = @"";
+    }
     
 }
 
