@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XqH-D4-5Mq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XqH-D4-5Mq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Histórico-->
@@ -139,6 +140,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="leading" secondItem="Yjh-pJ-t0o" secondAttribute="leadingMargin" id="3IG-kS-bUr"/>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="top" secondItem="Yjh-pJ-t0o" secondAttribute="topMargin" constant="8" id="8DT-gh-vBJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yRe-XC-jT6" secondAttribute="bottom" constant="10.5" id="OUe-0N-cNk"/>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="trailing" secondItem="Yjh-pJ-t0o" secondAttribute="trailingMargin" id="anX-WL-1eH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="3IG-kS-bUr"/>
+                                                    <exclude reference="8DT-gh-vBJ"/>
+                                                    <exclude reference="OUe-0N-cNk"/>
+                                                    <exclude reference="anX-WL-1eH"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="3IG-kS-bUr"/>
+                                                    <include reference="8DT-gh-vBJ"/>
+                                                    <include reference="OUe-0N-cNk"/>
+                                                    <include reference="anX-WL-1eH"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="medicine" destination="yRe-XC-jT6" id="ELg-9G-oEe"/>
@@ -423,22 +446,26 @@
                                     <action selector="addMed:" destination="eVi-eF-iwE" eventType="touchUpInside" id="oeh-7u-hCV"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="50" id="v3S-cV-plB" customClass="cellMedicine">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="56" id="v3S-cV-plB" customClass="cellMedicine">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3S-cV-plB" id="Rt4-HN-5bn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="242" verticalHuggingPriority="251" text="teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" none="YES" keyboardKey="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="20" y="0.0" width="330" height="40"/>
+                                                        <rect key="frame" x="8" y="16" width="327" height="31"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -454,20 +481,19 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="accessoryView" destination="N6v-6A-U79" id="l2s-Iy-vAh"/>
                                             <outlet property="medicine" destination="N6v-6A-U79" id="XNR-ej-uH5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="219" width="375" height="404"/>
+                                    <rect key="frame" x="8" y="219" width="358" height="404"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="eVi-eF-iwE" id="IJd-DO-4dY"/>
                                     <outlet property="delegate" destination="eVi-eF-iwE" id="Aux-HP-dpf"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos  medicamentos diários pode registrar  qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos   medicamentos diários pode registrar   qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="tintColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -504,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCj-r3-daJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244.5" y="1757.5"/>
+            <point key="canvasLocation" x="1244.25" y="1756.875"/>
         </scene>
         <!--Diário-->
         <scene sceneID="XFW-8B-eIl">

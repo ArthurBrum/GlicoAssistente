@@ -32,14 +32,9 @@
     /*item more +*/
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-
     
-    //the first text field cell
-    AddNotesCell *noteWrite;
-    noteWrite = (AddNotesCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    
-    //verificate if the first text field cell has been written
-    if(![noteWrite.writeNote.text isEqualToString: @""]){
+    //
+    if([self.dailyEntry.reminders count] == 0){
         [self.dailyEntry.reminders insertObject:@"" atIndex:0];
         [self.tableView reloadData];
     }
@@ -49,6 +44,7 @@
 //recall all the cell
 - (void)viewWillDisappear:(BOOL)animated
 {
+
     for (int i = 0; i < [self.dailyEntry.reminders count]; i++) {
         AddNotesCell *cell = (AddNotesCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         self.dailyEntry.reminders[i] = cell.writeNote.text;

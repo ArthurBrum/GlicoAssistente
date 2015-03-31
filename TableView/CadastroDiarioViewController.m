@@ -85,6 +85,7 @@
     //self.GlucoData.text = @"";
     self.dailyEntry.glucose = [self.GlucoData.text integerValue];
     self.dailyEntry.entryDate = self.datePicker.date;
+    NSLog(@"%@", self.dailyEntry.entryDate);
 }
 
 
