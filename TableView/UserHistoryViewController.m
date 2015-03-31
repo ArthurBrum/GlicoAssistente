@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Jessica Oliveira. All rights reserved.
 //
 
-#import "UserHistory.h"
+#import "UserHistoryViewController.h"
 
-@interface UserHistory ()
+@interface UserHistoryViewController ()
 
 @end
 
-@implementation UserHistory
+@implementation UserHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

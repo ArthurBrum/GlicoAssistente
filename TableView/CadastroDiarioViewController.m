@@ -8,11 +8,16 @@
 
 #import "CadastroDiarioViewController.h"
 #import "ViewController.h"
+#import "DailyEntry.h"
+#import "AddMedicine.h"
+#import "Notes.h"
 
 @interface CadastroDiarioViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *GlucoData;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property NSMutableArray *objects;
 @property NSInteger cell;
+@property (nonatomic, strong) DailyEntry *dailyEntry;
 @end
 
 @implementation CadastroDiarioViewController
@@ -28,6 +33,9 @@
 //    
 //     Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.dailyEntry = [[DailyEntry alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +80,12 @@
     }
 }
 
+- (IBAction)saveDatas:(id)sender {
+    //NSString *GlucoDataController = self.GlucoData.text;
+    //self.GlucoData.text = @"";
+    self.dailyEntry.glucose = [self.GlucoData.text integerValue];
+    self.dailyEntry.entryDate = self.datePicker.date;
+}
 
 
 // Override to support editing the table view.
@@ -106,6 +120,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"AddMedicine"]) {
+        AddMedicine *addMedicineViewController = segue.destinationViewController;
+        addMedicineViewController.dailyEntry = self.dailyEntry;
+    }else
+    if([segue.identifier isEqualToString:@"AddNotesTableViewController"]){
+        Notes *adddNotesTableViewController = segue.destinationViewController;
+        adddNotesTableViewController.dailyEntry = self.dailyEntry;
+    }
 }
 
 

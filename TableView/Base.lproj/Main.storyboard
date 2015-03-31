@@ -7,7 +7,7 @@
         <!--Histórico-->
         <scene sceneID="lJk-kF-wPj">
             <objects>
-                <viewController id="ATR-U5-OjU" customClass="UserHistory" sceneMemberID="viewController">
+                <viewController id="ATR-U5-OjU" customClass="UserHistoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GV9-0b-LTG"/>
                         <viewControllerLayoutGuide type="bottom" id="VtZ-ck-olt"/>
@@ -15,14 +15,35 @@
                     <view key="view" contentMode="scaleToFill" id="LWv-dM-sIK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lDz-V3-tQm">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.50755250730000001" green="0.7980704756" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="573" width="66" height="37"/>
+                                </variation>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.050980396568775177" green="0.25490197539329529" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lDz-V3-tQm"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lDz-V3-tQm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" image="Fine Print.png" id="nan-cU-p9C"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAs-Pa-ZmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593.5" y="-1153.5"/>
+            <point key="canvasLocation" x="1592.25" y="-1153.875"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="FI4-Wd-dd1">
@@ -257,7 +278,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eVi-eF-iwE" kind="push" id="WY8-5u-Wwf"/>
+                                            <segue destination="eVi-eF-iwE" kind="push" identifier="AddMedicine" id="WY8-5u-Wwf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note" textLabel="jk6-44-eU7" style="IBUITableViewCellStyleDefault" id="ayF-Bf-mYe">
@@ -277,7 +298,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BDL-jA-rCe" kind="push" id="eo1-TL-OeK"/>
+                                            <segue destination="BDL-jA-rCe" kind="push" identifier="AddNotesTableViewController" id="eo1-TL-OeK"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -285,11 +306,18 @@
                         </sections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="yO5-Mp-iit"/>
+                    <navigationItem key="navigationItem" id="yO5-Mp-iit">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="i0L-u9-23w">
+                            <connections>
+                                <action selector="saveDatas:" destination="SCL-Xl-TAI" id="tbu-Mt-pyC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="GlucoData" destination="Udi-t2-7Vz" id="Jlu-Ac-Ms0"/>
+                        <outlet property="datePicker" destination="MBy-x9-u6E" id="1pK-Pf-bh6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nZ-0T-5z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,7 +328,7 @@
         <scene sceneID="luF-27-4oo">
             <objects>
                 <tableViewController title="Lembrete" id="BDL-jA-rCe" customClass="Notes" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tnO-Ob-Bhu" userLabel="Anote">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AddNotesTableViewController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tnO-Ob-Bhu" userLabel="Anote">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,7 +338,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc3-9Q-6PP" id="SPb-iB-BV1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escreva algo que queira lembrar depois" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-7Y-bK6" userLabel="addNote">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escreva aqui" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-7Y-bK6" userLabel="addNote">
                                             <rect key="frame" x="15" y="5" width="346" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -333,6 +361,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Anotações" id="QUg-CL-PHo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="tnO-Ob-Bhu" id="HUC-7Y-nPm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRe-ub-dOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,47 +412,22 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="242" verticalHuggingPriority="251" text="teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="330" id="6Q6-sF-Piy"/>
-                                                        <constraint firstAttribute="height" constant="40" id="Q7P-du-diQ"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="6Q6-sF-Piy"/>
-                                                            <exclude reference="Q7P-du-diQ"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="6Q6-sF-Piy"/>
-                                                            <include reference="Q7P-du-diQ"/>
-                                                        </mask>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="20" y="0.0" width="330" height="40"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="N6v-6A-U79" secondAttribute="centerY" constant="4.75" id="0ZZ-TY-GmQ"/>
-                                                <constraint firstAttribute="centerX" secondItem="N6v-6A-U79" secondAttribute="centerX" constant="2.5" id="wjs-HZ-jfp"/>
-                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="N6v-6A-U79"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="0ZZ-TY-GmQ"/>
-                                                    <exclude reference="wjs-HZ-jfp"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="N6v-6A-U79"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="0ZZ-TY-GmQ"/>
-                                                    <include reference="wjs-HZ-jfp"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

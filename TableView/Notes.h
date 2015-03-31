@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DailyEntry.h"
 
 @interface Notes : UITableViewController
+
+///class DailyEntry with properties - here (in Notes) is used to guard a mutableArray notes
+@property (nonatomic, strong) DailyEntry *dailyEntry;
 
 @end

@@ -10,7 +10,7 @@
 		5505F6091AC5D7DA003D81B9 /* AddMedicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6081AC5D7DA003D81B9 /* AddMedicine.m */; };
 		5505F60F1AC5D882003D81B9 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F60E1AC5D882003D81B9 /* Notes.m */; };
 		5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */; };
-		5505F6151AC5DC64003D81B9 /* UserHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6141AC5DC64003D81B9 /* UserHistory.m */; };
+		5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */; };
 		55412D021AC59C76009D98E6 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D001AC59C76009D98E6 /* Book.png */; };
 		55412D031AC59C76009D98E6 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D011AC59C76009D98E6 /* Edit.png */; };
 		55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D041AC59D1E009D98E6 /* Fine Print.png */; };
@@ -24,6 +24,7 @@
 		C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */; };
 		C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */; };
 		C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */; };
+		C2F60DC81ACAD9A100B5CF5D /* DailyEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC71ACAD9A100B5CF5D /* DailyEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +44,8 @@
 		5505F60E1AC5D882003D81B9 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		5505F6101AC5DC11003D81B9 /* UserRegistreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistreViewController.h; sourceTree = "<group>"; };
 		5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistreViewController.m; sourceTree = "<group>"; };
-		5505F6131AC5DC64003D81B9 /* UserHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistory.h; sourceTree = "<group>"; };
-		5505F6141AC5DC64003D81B9 /* UserHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistory.m; sourceTree = "<group>"; };
+		5505F6131AC5DC64003D81B9 /* UserHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryViewController.h; sourceTree = "<group>"; };
+		5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryViewController.m; sourceTree = "<group>"; };
 		55412D001AC59C76009D98E6 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		55412D011AC59C76009D98E6 /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
 		55412D041AC59D1E009D98E6 /* Fine Print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fine Print.png"; sourceTree = "<group>"; };
@@ -67,6 +68,8 @@
 		C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellMedicine.m; sourceTree = "<group>"; };
 		C2F60DC31ACAC99700B5CF5D /* AddNotesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNotesCell.h; sourceTree = "<group>"; };
 		C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNotesCell.m; sourceTree = "<group>"; };
+		C2F60DC61ACAD9A100B5CF5D /* DailyEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyEntry.h; sourceTree = "<group>"; };
+		C2F60DC71ACAD9A100B5CF5D /* DailyEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +125,8 @@
 				C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */,
 				C2F60DC01AC9EB7A00B5CF5D /* cellMedicine.h */,
 				C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */,
-				5505F6131AC5DC64003D81B9 /* UserHistory.h */,
-				5505F6141AC5DC64003D81B9 /* UserHistory.m */,
+				5505F6131AC5DC64003D81B9 /* UserHistoryViewController.h */,
+				5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */,
 				5505F6101AC5DC11003D81B9 /* UserRegistreViewController.h */,
 				5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */,
 				5505F60D1AC5D882003D81B9 /* Notes.h */,
@@ -132,6 +135,8 @@
 				5505F6081AC5D7DA003D81B9 /* AddMedicine.m */,
 				C2F60D481AC3494200B5CF5D /* Images.xcassets */,
 				C2F60D4A1AC3494200B5CF5D /* LaunchScreen.xib */,
+				C2F60DC61ACAD9A100B5CF5D /* DailyEntry.h */,
+				C2F60DC71ACAD9A100B5CF5D /* DailyEntry.m */,
 				C2F60D3B1AC3494200B5CF5D /* Supporting Files */,
 			);
 			path = TableView;
@@ -272,10 +277,11 @@
 				C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
-				5505F6151AC5DC64003D81B9 /* UserHistory.m in Sources */,
+				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
 				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,
 				C2F60D3E1AC3494200B5CF5D /* main.m in Sources */,
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
+				C2F60DC81ACAD9A100B5CF5D /* DailyEntry.m in Sources */,
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,
 				5505F60F1AC5D882003D81B9 /* Notes.m in Sources */,
 			);

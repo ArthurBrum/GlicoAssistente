@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 ///array used ti insert a new object with the medications
-@property (strong, nonatomic) NSMutableArray *medicines;
+//@property (strong, nonatomic) NSMutableArray *medicines;
 
 @end
 
@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.medicines = [NSMutableArray array];
+    //self.medicines = [NSMutableArray array];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,16 +39,20 @@
 //insert new row - return the rows number that is the number from objects medicines
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.medicines count];
+    //dailyEntry pulled from last screen - it is a MutableArray
+    return [self.dailyEntry.medicines count];
 }
 
 //method add medication in the database and in the table if the text already written
 - (IBAction)addMed:(id)sender {
     NSString *stringMed = self.editMed.text;
+    
     if (![self.editMed.text isEqualToString: @""]) {
         
-        [self.medicines insertObject:stringMed atIndex:0];
+        [self.dailyEntry.medicines insertObject:stringMed atIndex:0];
         [self.tableView reloadData];
+        
+        //back with the text field clean
         self.editMed.text = @"";
     }
 }
@@ -59,10 +63,9 @@
     NSString *identifier = @"MedicineCell";
     
     cellMedicine *medicineCell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    medicineCell.medicine.text = self.medicines[indexPath.row];
+    medicineCell.medicine.text = self.dailyEntry.medicines[indexPath.row];
     
     return  medicineCell;
 }
-
 
 @end

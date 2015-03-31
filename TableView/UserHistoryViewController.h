@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserHistory : UIViewController
+@interface UserHistoryViewController : UIViewController
 
 @end

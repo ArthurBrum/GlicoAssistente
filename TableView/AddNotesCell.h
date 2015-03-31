@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AddNotesCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextField *writeNote;
+
+@property (strong, nonatomic) IBOutlet UITextField *writeNote;
 
 @end
