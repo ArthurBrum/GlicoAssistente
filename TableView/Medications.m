@@ -1,17 +1,17 @@
 //
-//  Notes.m
+//  Medications.m
 //  TableView
 //
 //  Created by Arthur Jacunas de Brum on 31/03/15.
 //  Copyright (c) 2015 Jessica Oliveira. All rights reserved.
 //
 
-#import "Notes.h"
+#import "Medications.h"
 
 
-@implementation Notes
+@implementation Medications
 
 @dynamic dateTime;
-@dynamic note;
+@dynamic medication;
 
 @end
