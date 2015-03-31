@@ -88,6 +88,7 @@
     self.dailyEntry.entryDate = self.datePicker.date;
     
     [self.dailyEntry saveNewEntry];
+
 }
 
 
@@ -132,6 +133,7 @@
         adddNotesTableViewController.dailyEntry = self.dailyEntry;
     }
 }
+
 
 
 @end

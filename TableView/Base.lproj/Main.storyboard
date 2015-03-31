@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XqH-D4-5Mq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Histórico-->
@@ -105,7 +106,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-8b-ObC">
-                                <rect key="frame" x="16" y="320" width="343" height="29"/>
+                                <rect key="frame" x="16" y="310" width="343" height="29"/>
                                 <segments>
                                     <segment title="Diabetes tipo um"/>
                                     <segment title="Diabetes tipo dois"/>
@@ -122,20 +123,63 @@
                                     <action selector="heightTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mdq-gn-oag"/>
                                 </connections>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3zV-fL-1R3">
-                                <rect key="frame" x="16" y="425" width="343" height="185"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3zV-fL-1R3">
+                                <rect key="frame" x="16" y="404" width="343" height="206"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="MedicineCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicineCell" rowHeight="56" id="Okf-Nr-X7j" customClass="cellMedicine">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Okf-Nr-X7j" id="Yjh-pJ-t0o">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRe-XC-jT6">
+                                                    <rect key="frame" x="8" y="16" width="327" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="leading" secondItem="Yjh-pJ-t0o" secondAttribute="leadingMargin" id="3IG-kS-bUr"/>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="top" secondItem="Yjh-pJ-t0o" secondAttribute="topMargin" constant="8" id="8DT-gh-vBJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yRe-XC-jT6" secondAttribute="bottom" constant="10.5" id="OUe-0N-cNk"/>
+                                                <constraint firstItem="yRe-XC-jT6" firstAttribute="trailing" secondItem="Yjh-pJ-t0o" secondAttribute="trailingMargin" id="anX-WL-1eH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="3IG-kS-bUr"/>
+                                                    <exclude reference="8DT-gh-vBJ"/>
+                                                    <exclude reference="OUe-0N-cNk"/>
+                                                    <exclude reference="anX-WL-1eH"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="3IG-kS-bUr"/>
+                                                    <include reference="8DT-gh-vBJ"/>
+                                                    <include reference="OUe-0N-cNk"/>
+                                                    <include reference="anX-WL-1eH"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="medicine" destination="yRe-XC-jT6" id="ELg-9G-oEe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="D3P-5v-Md4" id="8V5-c9-2pZ"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="J3v-a7-O1j"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medicamentos" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4a-9O-qyz">
-                                <rect key="frame" x="16" y="387" width="288" height="30"/>
+                                <rect key="frame" x="16" y="354" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="medicineTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="fLR-4f-dzb"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMm-8L-1hp">
-                                <rect key="frame" x="322" y="387" width="37" height="30"/>
+                                <rect key="frame" x="322" y="354" width="37" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,6 +200,7 @@
                         <outlet property="doctorTextField" destination="gRQ-6c-3kI" id="JDX-ei-vGp"/>
                         <outlet property="heightTextField" destination="iO1-lw-mG4" id="Zhj-hy-DsC"/>
                         <outlet property="hospitalTextField" destination="s9K-5d-mJw" id="Ehg-gc-4Zg"/>
+                        <outlet property="medicineTableView" destination="3zV-fL-1R3" id="ced-HX-Qgo"/>
                         <outlet property="medicineTextField" destination="V4a-9O-qyz" id="exI-GF-YhB"/>
                         <outlet property="nameTextField" destination="zp6-Kx-dcf" id="HTF-6r-uQg"/>
                     </connections>
@@ -401,22 +446,26 @@
                                     <action selector="addMed:" destination="eVi-eF-iwE" eventType="touchUpInside" id="oeh-7u-hCV"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="50" id="v3S-cV-plB" customClass="cellMedicine">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="56" id="v3S-cV-plB" customClass="cellMedicine">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3S-cV-plB" id="Rt4-HN-5bn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="242" verticalHuggingPriority="251" text="teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" none="YES" keyboardKey="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="20" y="0.0" width="330" height="40"/>
+                                                        <rect key="frame" x="8" y="16" width="327" height="31"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -432,20 +481,21 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="accessoryView" destination="N6v-6A-U79" id="l2s-Iy-vAh"/>
                                             <outlet property="medicine" destination="N6v-6A-U79" id="XNR-ej-uH5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="219" width="375" height="404"/>
+                                    <rect key="frame" x="8" y="219" width="358" height="404"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="eVi-eF-iwE" id="IJd-DO-4dY"/>
                                     <outlet property="delegate" destination="eVi-eF-iwE" id="Aux-HP-dpf"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos  medicamentos diários pode registrar  qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos  
+medicamentos diários pode registrar  
+qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="tintColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -482,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCj-r3-daJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.5" y="1846.5"/>
+        <point key="canvasLocation" x="1244.25" y="1756.875"/>
         </scene>
         <!--Diário-->
         <scene sceneID="XFW-8B-eIl">

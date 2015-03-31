@@ -43,6 +43,13 @@
     return [self.dailyEntry.medicines count];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    textField.clearsOnBeginEditing = NO;
+    return YES;
+}
+
 //method add medication in the database and in the table if the text already written
 - (IBAction)addMed:(id)sender {
     NSString *stringMed = self.editMed.text;
@@ -50,6 +57,7 @@
     if (![self.editMed.text isEqualToString: @""]) {
         
         [self.dailyEntry.medicines insertObject:stringMed atIndex:0];
+        [self textFieldShouldReturn:self.editMed];
         [self.tableView reloadData];
         
         //back with the text field clean

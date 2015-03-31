@@ -8,6 +8,7 @@
 
 #import "UserRegistreViewController.h"
 #import "ViewController.h"
+#import "cellMedicine.h"
 
 @interface UserRegistreViewController ()
 
@@ -44,39 +45,15 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *medicineTextField;
 
+@property (weak, nonatomic) IBOutlet UITableView *medicineTableView;
 @end
+
+
 
 @implementation UserRegistreViewController
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    return self.medicineList.count;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *cellIndenfier = @"Indentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
-    
-//    if (cell == nil) {
-//        
-//        cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIndenfier]];
-//        
-//    }
 
-    
-//    UILabel *nameLabel = (UILabel*) [cell viewWithTag:200];
-//    UILabel *billLabel = (UILabel*) [cell viewWithTag:200];
-//    Person *personrow = [leaves objectatindex:[indexpath row]];
-//    nameLabel.text = personatrow.personname;
-//    NSString *bill = [NSString stringWithFormat:csdc
-//                      ];
-//    billlabel.text = bill;
-//    return cell;
-    return nil;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -100,6 +77,37 @@
     
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - TableView methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return self.medicineList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIndenfier = @"MedicineCell";
+    
+    cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
+    
+    if (cell == nil) {
+        cell = [[cellMedicine alloc] init];
+    }
+    
+    cell.medicine.text = [NSString stringWithFormat:@"%@", [self.medicineList objectAtIndex:indexPath.row]];
+    
+    
+    
+    return cell;
+}
+
+#pragma mark - TextField methods
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
@@ -115,11 +123,6 @@
     self.doctorTextField.text = self.userDoctor;
     self.hospitalTextField.text = self.userHospital;
     self.heightTextField.text = self.userHeight;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)editableTextFields
@@ -186,8 +189,14 @@
 }
 
 - (IBAction)addButtonHandler:(id)sender {
-    [self.medicineList addObject:self.medicineTextField.text];
-    self.medicineTextField.text = @"";
+    
+    if (![self.medicineTextField.text isEqualToString:@""]) {
+        [self.medicineList insertObject:self.medicineTextField.text atIndex:0];
+        [self textFieldShouldReturn:self.medicineTextField];
+        [self.medicineTableView reloadData];
+        self.medicineTextField.text = @"";
+    }
+    
 }
 
 - (IBAction)segmentedControlHandler:(id)sender {
