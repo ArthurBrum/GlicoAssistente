@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XqH-D4-5Mq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XqH-D4-5Mq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -305,12 +305,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP" customClass="AddNotesCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc3-9Q-6PP" id="SPb-iB-BV1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva algo que queira lembrar depois" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-7Y-bK6" userLabel="addNote">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escreva algo que queira lembrar depois" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-7Y-bK6" userLabel="addNote">
                                             <rect key="frame" x="15" y="5" width="346" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -322,6 +322,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accessoryView" destination="EcZ-7Y-bK6" id="gx5-vi-9Bk"/>
+                                    <outlet property="writeNote" destination="EcZ-7Y-bK6" id="MMu-s5-czx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -346,7 +347,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dBs-Oz-028"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q4c-OM-zx2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="editMedicine" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remédios + hora" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-TL-h2h">
@@ -373,35 +374,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="v3S-cV-plB" customClass="cellMedicine">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="50" id="v3S-cV-plB" customClass="cellMedicine">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3S-cV-plB" id="Rt4-HN-5bn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="242" verticalHuggingPriority="251" text="teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-6A-U79">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="330" id="6Q6-sF-Piy"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Q7P-du-diQ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="29" y="11" width="0.0" height="0.0"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="6Q6-sF-Piy"/>
+                                                            <exclude reference="Q7P-du-diQ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="6Q6-sF-Piy"/>
+                                                            <include reference="Q7P-du-diQ"/>
+                                                        </mask>
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="N6v-6A-U79" secondAttribute="centerY" constant="4.75" id="0ZZ-TY-GmQ"/>
+                                                <constraint firstAttribute="centerX" secondItem="N6v-6A-U79" secondAttribute="centerX" constant="2.5" id="wjs-HZ-jfp"/>
+                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="N6v-6A-U79"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="0ZZ-TY-GmQ"/>
+                                                    <exclude reference="wjs-HZ-jfp"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="N6v-6A-U79"/>
                                                 </mask>
+                                                <mask key="constraints">
+                                                    <include reference="0ZZ-TY-GmQ"/>
+                                                    <include reference="wjs-HZ-jfp"/>
+                                                </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="accessoryView" destination="N6v-6A-U79" id="l2s-Iy-vAh"/>
-                                            <outlet property="cellMed" destination="Rt4-HN-5bn" id="URp-L4-nR7"/>
                                             <outlet property="medicine" destination="N6v-6A-U79" id="XNR-ej-uH5"/>
                                         </connections>
                                     </tableViewCell>
@@ -446,6 +471,7 @@
                     <navigationItem key="navigationItem" title="Medicamentos" id="OcX-XZ-4Li"/>
                     <connections>
                         <outlet property="editMed" destination="vQ7-TL-h2h" id="vng-Dh-6tf"/>
+                        <outlet property="tableView" destination="70k-QQ-zTL" id="HRl-jq-Srb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCj-r3-daJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

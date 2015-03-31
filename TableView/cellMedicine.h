@@ -10,4 +10,6 @@
 
 @interface cellMedicine : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *medicine;
+
 @end

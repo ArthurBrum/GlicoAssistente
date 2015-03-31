@@ -23,6 +23,7 @@
 		C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DAC1AC477DC00B5CF5D /* AppDelegate.m */; };
 		C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */; };
 		C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */; };
+		C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroDiarioViewController.m; sourceTree = "<group>"; };
 		C2F60DC01AC9EB7A00B5CF5D /* cellMedicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellMedicine.h; sourceTree = "<group>"; };
 		C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellMedicine.m; sourceTree = "<group>"; };
+		C2F60DC31ACAC99700B5CF5D /* AddNotesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNotesCell.h; sourceTree = "<group>"; };
+		C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNotesCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				C2F60DAE1AC47CD200B5CF5D /* CadastroDiarioViewController.h */,
 				C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */,
 				C2F60D451AC3494200B5CF5D /* Main.storyboard */,
+				C2F60DC31ACAC99700B5CF5D /* AddNotesCell.h */,
+				C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */,
 				C2F60DC01AC9EB7A00B5CF5D /* cellMedicine.h */,
 				C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */,
 				5505F6131AC5DC64003D81B9 /* UserHistory.h */,
@@ -268,6 +273,7 @@
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistory.m in Sources */,
+				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,
 				C2F60D3E1AC3494200B5CF5D /* main.m in Sources */,
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,

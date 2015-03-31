@@ -1,19 +1,14 @@
 //
-//  cellMedicine.m
+//  AddNotesCell.m
 //  TableView
 //
-//  Created by Jessica Oliveira on 30/03/15.
+//  Created by Jessica Oliveira on 31/03/15.
 //  Copyright (c) 2015 Jessica Oliveira. All rights reserved.
 //
 
-#import "cellMedicine.h"
-@interface cellMedicine ()
+#import "AddNotesCell.h"
 
-
-@end
-
-
-@implementation cellMedicine
+@implementation AddNotesCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -24,6 +19,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Notes.h"
 #import "ViewController.h"
+#import "AddNotesCell.h"
 
 @interface Notes()
 
@@ -47,14 +48,15 @@
 
 /*add object in the table*/
 - (void)insertNewObject:(id)sender {
-    //if(self.noteWrite.text){
+    AddNotesCell *noteWrite;
+    if(![noteWrite.textLabel isEqual: @""]){
         if (!self.objects) {
             self.objects = [[NSMutableArray alloc] init];
         }
         [self.objects insertObject:[NSDate date] atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-  //  }
+    }
 }
 
 #pragma mark - Segues
@@ -90,16 +92,6 @@
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
-
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
-
 
 @end
 
