@@ -12,8 +12,14 @@
 
 @interface UserHistoryViewController ()
 
+///SKSTableView that shows the user history
 @property (weak, nonatomic) IBOutlet SKSTableView *tableView;
+
+///Recieves the data source matrix. The first element of each array is the main element of each cell.
 @property (nonatomic, strong) NSArray *contents;
+
+///Button to colapse expanded cells
+@property (weak, nonatomic) IBOutlet UIButton *colapseButton;
 
 @end
 
@@ -42,7 +48,7 @@
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(collapseSubrows)];
-    [self setDataManipulationButton:UIBarButtonSystemItemRefresh];
+    //[self setDataManipulationButton:UIBarButtonSystemItemRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,19 +75,6 @@
                           @[@"Section0_Row0", @"Row0_Subrow1",@"Row0_Subrow2"],
                           @[@"Section0_Row1", @"Row1_Subrow1", @"Row1_Subrow2", @"Row1_Subrow3", @"Row1_Subrow4", @"Row1_Subrow5", @"Row1_Subrow6", @"Row1_Subrow7", @"Row1_Subrow8", @"Row1_Subrow9", @"Row1_Subrow10", @"Row1_Subrow11", @"Row1_Subrow12"],
                           @[@"Section0_Row2"]],
-                      @[
-                          @[@"Section1_Row0", @"Row0_Subrow1", @"Row0_Subrow2", @"Row0_Subrow3"],
-                          @[@"Section1_Row1"],
-                          @[@"Section1_Row2", @"Row2_Subrow1", @"Row2_Subrow2", @"Row2_Subrow3", @"Row2_Subrow4", @"Row2_Subrow5"],
-                          @[@"Section1_Row3"],
-                          @[@"Section1_Row4"],
-                          @[@"Section1_Row5"],
-                          @[@"Section1_Row6"],
-                          @[@"Section1_Row7"],
-                          @[@"Section1_Row8"],
-                          @[@"Section1_Row9"],
-                          @[@"Section1_Row10"],
-                          @[@"Section1_Row11"]]
                       ];
     }
     
@@ -157,12 +150,15 @@
 
 #pragma mark - Actions
 
+/**
+ Colapse all subrows expanded
+ **/
 - (void)collapseSubrows
 {
     [self.tableView collapseCurrentlyExpandedIndexPaths];
 }
 
-- (void)refreshData
+/*- (void)refreshData
 {
     NSArray *array = @[
                        @[
@@ -174,14 +170,14 @@
     [self reloadTableViewWithData:array];
     
     [self setDataManipulationButton:UIBarButtonSystemItemUndo];
-}
+}*/
 
-- (void)undoData
+/*- (void)undoData
 {
     [self reloadTableViewWithData:nil];
     
     [self setDataManipulationButton:UIBarButtonSystemItemRefresh];
-}
+}*/
 
 - (void)reloadTableViewWithData:(NSArray *)array
 {
@@ -195,21 +191,30 @@
 
 #pragma mark - Helpers
 
-- (void)setDataManipulationButton:(UIBarButtonSystemItem)item
+/*- (void)setDataManipulationButton:(UIBarButtonSystemItem)item
 {
     switch (item) {
         case UIBarButtonSystemItemUndo:
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo
-                                                                                                  target:self
-                                                                                                  action:@selector(undoData)];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undoData)];
             break;
             
         default:
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                                  target:self
-                                                                                                  action:@selector(refreshData)];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshData)];
             break;
     }
+}*/
+
+- (IBAction)collapseCells:(id)sender {
+    [self collapseSubrows];
 }
 
 @end
+
+
+
+
+
+
+
+
+
