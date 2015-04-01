@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CadastroDiarioViewController : UITableViewController
+@interface CadastroDiarioViewController : UITableViewController <UITextFieldDelegate>
+
+//
+@property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 @end

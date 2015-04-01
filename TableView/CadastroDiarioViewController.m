@@ -36,6 +36,11 @@
     
     self.dailyEntry = [[DailyEntry alloc] init];
     
+    //Keyboard stuff
+    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAnywhere:)];
+    _tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:_tapRecognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +56,12 @@
     return 2;
 }
 
-
+//
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
+//
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
