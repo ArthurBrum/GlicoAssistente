@@ -102,6 +102,10 @@
     }   
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
 
 
 // Override to support rearranging the table view.

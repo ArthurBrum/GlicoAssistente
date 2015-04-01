@@ -58,6 +58,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
     _medicineList = [[NSMutableArray alloc] init];
     
     _userName = @"Nome";
@@ -75,6 +77,8 @@
     self.hospitalTextField.clearsOnBeginEditing = YES;
     self.heightTextField.clearsOnBeginEditing = YES;
     
+    self.medicineTableView.editing = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,6 +92,12 @@
 {
     
     return self.medicineList.count;
+}
+
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.medicineTableView setEditing:editing animated:animated];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,6 +151,19 @@
     self.doctorTextField.enabled = NO;
     self.hospitalTextField.enabled = NO;
     self.heightTextField.enabled = NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.medicineList removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.medicineTableView reloadData];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
 }
 
 #pragma mark - TextField event handlers

@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="1592.25" y="-1153.875"/>
         </scene>
-        <!--Configurações-->
+        <!--Title-->
         <scene sceneID="FI4-Wd-dd1">
             <objects>
                 <viewController id="D3P-5v-Md4" customClass="UserRegistreViewController" sceneMemberID="viewController">
@@ -74,17 +74,6 @@
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="QdT-qs-f0E"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-PG-R4K">
-                                <rect key="frame" x="298" y="28" width="61" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Salvar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
-                                    <action selector="doneRecord:" destination="D3P-5v-Md4" eventType="touchUpInside" id="QdV-bC-JNc"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-8b-ObC">
                                 <rect key="frame" x="16" y="310" width="343" height="29"/>
                                 <segments>
@@ -168,10 +157,27 @@
                                     <action selector="addButtonHandler:" destination="D3P-5v-Md4" eventType="touchUpInside" id="UX9-Yt-6QL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-PG-R4K">
+                                <rect key="frame" x="298" y="28" width="61" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="298" y="39" width="61" height="39"/>
+                                </variation>
+                                <connections>
+                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
+                                    <action selector="doneRecord:" destination="D3P-5v-Md4" eventType="touchUpInside" id="QdV-bC-JNc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configurações" image="Edit.png" id="io3-Vh-m8W"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="nrT-Qq-ldt"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="DoneButton" destination="XiB-PG-R4K" id="SMd-0a-vZr"/>
@@ -226,7 +232,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfk-em-0mg" id="uYa-Nh-wfW">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MBy-x9-u6E">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MBy-x9-u6E">
                                                     <rect key="frame" x="-160" y="-81" width="320" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="449007803.23237997">
                                                         <!--2015-03-25 20:23:23 +0000-->
@@ -358,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP" customClass="AddNotesCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP" customClass="AddNotesCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc3-9Q-6PP" id="SPb-iB-BV1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -368,13 +374,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
+                                                <action selector="entrerNextNote:" destination="BDL-jA-rCe" eventType="editingDidEnd" id="o0z-dZ-4mf"/>
                                                 <outlet property="delegate" destination="BDL-jA-rCe" id="Mxg-GK-7AY"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="accessoryView" destination="EcZ-7Y-bK6" id="gx5-vi-9Bk"/>
                                     <outlet property="writeNote" destination="EcZ-7Y-bK6" id="MMu-s5-czx"/>
                                 </connections>
                             </tableViewCell>
@@ -473,9 +479,10 @@
                                     <outlet property="delegate" destination="eVi-eF-iwE" id="Aux-HP-dpf"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso tenha tomado algum remédio fora dos   medicamentos diários pode registrar   qual  o nome do remédio e o horário que tomou" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-hS-Ptb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="tintColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Caso tenha tomado algum remédio fora dos    medicamentos diários pode registrar   qual   o nome do remédio e o horário que tomou</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.34832702020202022" green="0.34832702020202022" blue="0.34832702020202022" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.50587910349999998" green="0.50587910349999998" blue="0.50587910349999998" alpha="1" colorSpace="calibratedRGB"/>
