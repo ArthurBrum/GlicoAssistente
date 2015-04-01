@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SKSTableView.h"
 
-@interface UserHistoryViewController : UIViewController
+@interface UserHistoryViewController : UIViewController <SKSTableViewDelegate>
 
 @end

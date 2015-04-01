@@ -11,6 +11,12 @@
 		5505F60F1AC5D882003D81B9 /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F60E1AC5D882003D81B9 /* NotesViewController.m */; };
 		5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */; };
 		5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */; };
+		553BB20B1ACC5D680081C244 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553BB20A1ACC5D680081C244 /* CoreGraphics.framework */; };
+		553BB23D1ACC63220081C244 /* SKSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553BB2361ACC63220081C244 /* SKSTableView.m */; };
+		553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 553BB2381ACC63220081C244 /* SKSTableViewCell.m */; };
+		553BB23F1ACC63220081C244 /* SKSTableViewCellIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 553BB23A1ACC63220081C244 /* SKSTableViewCellIndicator.m */; };
+		553BB2401ACC63220081C244 /* expandableImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 553BB23B1ACC63220081C244 /* expandableImage.png */; };
+		553BB2411ACC63220081C244 /* expandableImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 553BB23C1ACC63220081C244 /* expandableImage@2x.png */; };
 		55412D021AC59C76009D98E6 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D001AC59C76009D98E6 /* Book.png */; };
 		55412D031AC59C76009D98E6 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D011AC59C76009D98E6 /* Edit.png */; };
 		55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D041AC59D1E009D98E6 /* Fine Print.png */; };
@@ -51,6 +57,15 @@
 		5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistreViewController.m; sourceTree = "<group>"; };
 		5505F6131AC5DC64003D81B9 /* UserHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHistoryViewController.h; sourceTree = "<group>"; };
 		5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHistoryViewController.m; sourceTree = "<group>"; };
+		553BB20A1ACC5D680081C244 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		553BB2351ACC63220081C244 /* SKSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableView.h; sourceTree = "<group>"; };
+		553BB2361ACC63220081C244 /* SKSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableView.m; sourceTree = "<group>"; };
+		553BB2371ACC63220081C244 /* SKSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCell.h; sourceTree = "<group>"; };
+		553BB2381ACC63220081C244 /* SKSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCell.m; sourceTree = "<group>"; };
+		553BB2391ACC63220081C244 /* SKSTableViewCellIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCellIndicator.h; sourceTree = "<group>"; };
+		553BB23A1ACC63220081C244 /* SKSTableViewCellIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCellIndicator.m; sourceTree = "<group>"; };
+		553BB23B1ACC63220081C244 /* expandableImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandableImage.png; sourceTree = "<group>"; };
+		553BB23C1ACC63220081C244 /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
 		55412D001AC59C76009D98E6 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		55412D011AC59C76009D98E6 /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
 		55412D041AC59D1E009D98E6 /* Fine Print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fine Print.png"; sourceTree = "<group>"; };
@@ -90,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553BB20B1ACC5D680081C244 /* CoreGraphics.framework in Frameworks */,
 				8E8AB87B1ACB14FA003C5D0F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,9 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553BB2341ACC63090081C244 /* SKSTableView */ = {
+			isa = PBXGroup;
+			children = (
+				553BB2351ACC63220081C244 /* SKSTableView.h */,
+				553BB2361ACC63220081C244 /* SKSTableView.m */,
+				553BB2371ACC63220081C244 /* SKSTableViewCell.h */,
+				553BB2381ACC63220081C244 /* SKSTableViewCell.m */,
+				553BB2391ACC63220081C244 /* SKSTableViewCellIndicator.h */,
+				553BB23A1ACC63220081C244 /* SKSTableViewCellIndicator.m */,
+				553BB23B1ACC63220081C244 /* expandableImage.png */,
+				553BB23C1ACC63220081C244 /* expandableImage@2x.png */,
+			);
+			name = SKSTableView;
+			sourceTree = "<group>";
+		};
 		C2F60D2F1AC3494200B5CF5D = {
 			isa = PBXGroup;
 			children = (
+				553BB20A1ACC5D680081C244 /* CoreGraphics.framework */,
 				8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */,
 				C2F60D3A1AC3494200B5CF5D /* TableView */,
 				C2F60D541AC3494200B5CF5D /* TableViewTests */,
@@ -126,6 +158,7 @@
 		C2F60D3A1AC3494200B5CF5D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				553BB2341ACC63090081C244 /* SKSTableView */,
 				55412D001AC59C76009D98E6 /* Book.png */,
 				55412D011AC59C76009D98E6 /* Edit.png */,
 				55412D041AC59D1E009D98E6 /* Fine Print.png */,
@@ -273,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */,
+				553BB2401ACC63220081C244 /* expandableImage.png in Resources */,
+				553BB2411ACC63220081C244 /* expandableImage@2x.png in Resources */,
 				C2F60D471AC3494200B5CF5D /* Main.storyboard in Resources */,
 				C2F60D4C1AC3494200B5CF5D /* LaunchScreen.xib in Resources */,
 				55412D031AC59C76009D98E6 /* Edit.png in Resources */,
@@ -299,6 +334,7 @@
 				C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				8E8AB88A1ACB37CF003C5D0F /* Notes.m in Sources */,
+				553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
 				8E8AB8901ACB37CF003C5D0F /* Entries.m in Sources */,
@@ -308,6 +344,8 @@
 				C2F60DC81ACAD9A100B5CF5D /* DailyEntry.m in Sources */,
 				8E8AB87E1ACB1600003C5D0F /* DataModel.xcdatamodeld in Sources */,
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,
+				553BB23D1ACC63220081C244 /* SKSTableView.m in Sources */,
+				553BB23F1ACC63220081C244 /* SKSTableViewCellIndicator.m in Sources */,
 				8E8AB88D1ACB37CF003C5D0F /* Medications.m in Sources */,
 				5505F60F1AC5D882003D81B9 /* NotesViewController.m in Sources */,
 			);
