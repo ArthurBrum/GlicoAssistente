@@ -1,5 +1,5 @@
 //
-//  Notes.h
+//  Entries.h
 //  TableView
 //
 //  Created by Arthur Jacunas de Brum on 31/03/15.
@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Medications, Notes;
 
-@interface Notes : NSManagedObject
+@interface Entries : NSManagedObject
 
 @property (nonatomic, retain) NSDate * dateTime;
-@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) NSNumber * glycemicIndex;
+@property (nonatomic, retain) Medications *usedMeds;
+@property (nonatomic, retain) Notes *writedNotes;
 
 @end

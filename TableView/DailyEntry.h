@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DailyEntry : NSObject
+@interface DailyEntry : NSObject 
 
 @property (nonatomic, strong) NSDate *entryDate;
-@property (nonatomic) NSInteger glucose;
+@property (nonatomic) NSNumber *glucose;
 @property (nonatomic, strong) NSMutableArray *medicines;
 @property (nonatomic, strong) NSMutableArray *reminders;
+
+- (BOOL) saveNewEntry;
+- (void) fetchEntries;
 
 @end

@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "DailyEntry.h"
 #import "AddMedicine.h"
-#import "Notes.h"
+#import "NotesViewController.h"
 
 @interface CadastroDiarioViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *GlucoData;
@@ -83,9 +83,12 @@
 - (IBAction)saveDatas:(id)sender {
     //NSString *GlucoDataController = self.GlucoData.text;
     //self.GlucoData.text = @"";
-    self.dailyEntry.glucose = [self.GlucoData.text integerValue];
+    
+    self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
     self.dailyEntry.entryDate = self.datePicker.date;
-    NSLog(@"%@", self.dailyEntry.entryDate);
+    
+    [self.dailyEntry saveNewEntry];
+
 }
 
 
@@ -126,7 +129,7 @@
         addMedicineViewController.dailyEntry = self.dailyEntry;
     }else
     if([segue.identifier isEqualToString:@"AddNotesTableViewController"]){
-        Notes *adddNotesTableViewController = segue.destinationViewController;
+        NotesViewController *adddNotesTableViewController = segue.destinationViewController;
         adddNotesTableViewController.dailyEntry = self.dailyEntry;
     }
 }
