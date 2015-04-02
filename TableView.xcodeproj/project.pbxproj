@@ -148,20 +148,19 @@
 			name = SKSTableView;
 			sourceTree = "<group>";
 		};
-        8E32F0221ACDD911009BF82D /* EntitiesClasses */ = {
-            isa = PBXGroup;
-            children = (
-                8E32F0291ACDD958009BF82D /* Notes.h */,
-                8E32F02A1ACDD958009BF82D /* Notes.m */,
-                8E32F0261ACDD958009BF82D /* Medications.h */,
-                8E32F0271ACDD958009BF82D /* Medications.m */,
-                8E32F0231ACDD957009BF82D /* Entries.h */,
-                8E32F0241ACDD957009BF82D /* Entries.m */,
-            );
-            name = EntitiesClasses;
-            sourceTree = "<group>";
-        };
-
+		8E32F0221ACDD911009BF82D /* EntitiesClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8E32F0291ACDD958009BF82D /* Notes.h */,
+				8E32F02A1ACDD958009BF82D /* Notes.m */,
+				8E32F0261ACDD958009BF82D /* Medications.h */,
+				8E32F0271ACDD958009BF82D /* Medications.m */,
+				8E32F0231ACDD957009BF82D /* Entries.h */,
+				8E32F0241ACDD957009BF82D /* Entries.m */,
+			);
+			name = EntitiesClasses;
+			sourceTree = "<group>";
+		};
 		C20C28671ACDD0AE001C7A4E /* FSLineChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,11 +309,11 @@
 				TargetAttributes = {
 					C2F60D371AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = FBQNLH4A3W;
+						DevelopmentTeam = 97EUAUR8F9;
 					};
 					C2F60D501AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = FBQNLH4A3W;
+						DevelopmentTeam = 97EUAUR8F9;
 						TestTargetID = C2F60D371AC3494200B5CF5D;
 					};
 				};
