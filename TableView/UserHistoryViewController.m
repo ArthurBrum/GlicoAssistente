@@ -11,6 +11,7 @@
 #import "SKSTableView.h"
 #import "CoreData/CoreData.h"
 #import "DailyEntry.h"
+#import "Entries.h"
 
 @interface UserHistoryViewController ()
 
@@ -101,7 +102,7 @@
     
     NSArray* array = [[NSArray alloc] init];
     
-    NSManagedObject* obj = [dataArray lastObject];
+    Entries *obj = [dataArray lastObject];
     
     NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@ \t %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]];
     NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
