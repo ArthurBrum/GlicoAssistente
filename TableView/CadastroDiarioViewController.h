@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CadastroDiarioViewController : UITableViewController
+@interface CadastroDiarioViewController : UITableViewController <UITextFieldDelegate>
 
 @end

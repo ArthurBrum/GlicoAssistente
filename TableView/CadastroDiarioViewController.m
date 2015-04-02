@@ -24,6 +24,17 @@
 @implementation CadastroDiarioViewController
 
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //[self.GlucoData resignFirstResponder];
+    [self.GlucoData endEditing:YES];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
