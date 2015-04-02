@@ -17,9 +17,6 @@
 ///table viem in the Medicine
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-///array used ti insert a new object with the medications
-//@property (strong, nonatomic) NSMutableArray *medicines;
-
 @end
 
 @implementation AddMedicine
@@ -27,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //add edit button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -37,20 +35,33 @@
 
 #pragma mark - Table view data source
 
-//insert new row - return the rows number that is the number from objects medicines
+/**
+ insert new row - return the rows number that is the number from objects medicines
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //dailyEntry pulled from last screen - it is a MutableArray
     return [self.dailyEntry.medicines count];
 }
 
+/**
+ permission of edition
+ @return - void
+ @param - BOOL : BOOL
+ **/
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
     [super setEditing:editing animated:animated];
     [self.tableView setEditing:editing animated:animated];
 }
 
-
+/**
+ close the keyboard
+ @return - BOOL
+ @param - UITextField
+ **/
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
@@ -58,7 +69,9 @@
     return YES;
 }
 
-//method add medication in the database and in the table if the text already written
+/**
+ method add medication in the database and in the table if the text already written
+**/
 - (IBAction)addMed:(id)sender {
     NSString *stringMed = self.editMed.text;
     
@@ -73,6 +86,11 @@
     }
 }
 
+/**
+ configuration the delete cell
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle
+ **/
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -86,7 +104,11 @@
     }
 }
 
-//used to insert a new cell. This cell have a label with the medication inserted
+/**
+ used to insert a new cell. This cell have a label with the medication inserted
+ @return - UITableViewCell
+ @param - UITableView : NSIndexPath
+ **/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = @"MedicineCell";

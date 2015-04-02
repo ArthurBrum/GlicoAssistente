@@ -10,6 +10,7 @@
 
 @interface AddNotesCell : UITableViewCell
 
+///Receives reminders from user in Table Notes
 @property (strong, nonatomic) IBOutlet UITextField *writeNote;
 
 @end

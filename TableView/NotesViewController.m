@@ -12,8 +12,7 @@
 
 @interface NotesViewController()
 
-//@property NSMutableArray *objects;
-
+///Receives the notes table view controller
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -28,15 +27,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    /*item button edit used to del the cell*/
+    //item button edit used to delete the cell
      self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    //initiate the array with reminders
     if([self.dailyEntry.reminders count] == 0)
         [self.dailyEntry.reminders insertObject:@"" atIndex:0];
     
 }
-
-//recall all the cell
+#pragma mark - Cells methods
+/**
+ recall all the cell
+ @return - void
+ @param - BOLL
+ **/
 - (void)viewWillDisappear:(BOOL)animated
 {
     for (int i = 0; i < [self.dailyEntry.reminders count]; i++) {
@@ -47,7 +51,6 @@
             self.dailyEntry.reminders[i] = cell.writeNote.text;
        
     }
-    NSLog(@"-%@", self.dailyEntry.reminders);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +58,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ close the keyboard
+ @return - BOOL
+ @param - UITextField
+**/
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
@@ -62,6 +70,9 @@
     return YES;
 }
 
+/**
+ click return/enter add a new cell
+ **/
 - (IBAction)entrerNextNote:(id)sender {
     
     AddNotesCell *noteWrite;
@@ -77,9 +88,16 @@
         [self.dailyEntry.reminders insertObject:@"" atIndex:0];
         [self.tableView reloadData];
     }
+    
+    //call method that it will close the keyboard
     [self textFieldShouldReturn:noteWrite.writeNote];
 }
 
+/**
+ configuration the delete cell
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle
+ **/
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     AddNotesCell *noteWrite;
@@ -113,17 +131,23 @@
 }
 
 #pragma mark - Table View
-/*return number of sections*/
+/**
+ return number of sections
+ **/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-/*return number rows in section*/
+/**
+ return number rows in section
+ **/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.dailyEntry.reminders count];
 }
 
-/*copy the cell*/
+/**
+ copy the cell
+ **/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = @"addNotes";
     
@@ -133,7 +157,9 @@
     return  notesCell;
 }
 
-/*row can edit*/
+/**
+ row can edit
+ **/
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
