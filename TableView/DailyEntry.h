@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DailyEntry : NSObject 
+@interface DailyEntry : NSObject
 
 @property (nonatomic, strong) NSDate *entryDate;
 @property (nonatomic) NSNumber *glucose;

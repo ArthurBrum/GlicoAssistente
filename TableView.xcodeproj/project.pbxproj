@@ -350,12 +350,14 @@
 				C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */,
 				C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
+				8E32F02B1ACDD958009BF82D /* Notes.m in Sources */,
 				553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
 				C20C286D1ACDD102001C7A4E /* FSLineChart.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
 				C20C28731ACDD1E7001C7A4E /* ChartViewController.m in Sources */,
 				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,
+				8E32F0281ACDD958009BF82D /* Medications.m in Sources */,
 				C2F60D3E1AC3494200B5CF5D /* main.m in Sources */,
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
 				C2F60DC81ACAD9A100B5CF5D /* DailyEntry.m in Sources */,
@@ -363,6 +365,7 @@
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,
 				553BB23D1ACC63220081C244 /* SKSTableView.m in Sources */,
 				553BB23F1ACC63220081C244 /* SKSTableViewCellIndicator.m in Sources */,
+				8E32F0251ACDD957009BF82D /* Entries.m in Sources */,
 				5505F60F1AC5D882003D81B9 /* NotesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

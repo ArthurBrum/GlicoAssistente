@@ -17,7 +17,6 @@
 
 ///Receives user name in UserRegistreViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property NSString* userName;
 
 ///Receives user age in UserRegistreViewController
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
@@ -60,20 +59,21 @@
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    _medicineList = [[NSMutableArray alloc] init];
+    self.medicineList = [[NSMutableArray alloc] init];
     
     //Diabets type 1 was setted as default
     _dtype = YES;
     
     [self refreshTextFields];
     
+    /*
     //All text fields are cleanning up on beging editing
     self.nameTextField.clearsOnBeginEditing = YES;
     self.ageTextField.clearsOnBeginEditing = YES;
     self.doctorTextField.clearsOnBeginEditing = YES;
     self.hospitalTextField.clearsOnBeginEditing = YES;
     self.heightTextField.clearsOnBeginEditing = YES;
-    
+    */
     self.medicineTableView.editing = YES;
     
 }
@@ -81,6 +81,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self refreshTextFields];
+    
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"DisappearXablau!");
+    [self.DoneButton setTitle:@"Editar" forState:normal];
+    [self nonEditableTextFields];
+    [self persistUserSets];
 }
 
 #pragma mark - TableView methods
@@ -100,7 +114,7 @@
 {
     NSString *cellIndenfier = @"MedicineCell";
     
-    cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
+    cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier: cellIndenfier];
     
     if (cell == nil) {
         cell = [[cellMedicine alloc] init];
@@ -112,6 +126,7 @@
 }
 
 #pragma mark - TextField methods
+
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
@@ -119,15 +134,35 @@
     return YES;
 }
 
+-(void) persistUserSets
+{
+    NSUserDefaults *userSets = [NSUserDefaults standardUserDefaults];
+    
+    //Persists infos to stduserDefaults
+    [userSets setObject: self.nameTextField.text forKey:@"name"];
+    [userSets setObject: self.ageTextField.text forKey:@"age"];
+    [userSets setObject: self.heightTextField.text forKey:@"height"];
+    [userSets setObject: self.doctorTextField.text forKey:@"doctor"];
+    [userSets setObject: self.hospitalTextField.text forKey:@"hospital"];
+    [userSets setObject: [NSNumber numberWithInteger: self.diabetsTypeSegmentedControl.selectedSegmentIndex] forKey:@"dTypeIndex"];
+    [userSets setObject: self.medicineList forKey:@"medicineList"];
+    
+}
+
 -(void)refreshTextFields
 {
+    NSUserDefaults *userSets = [NSUserDefaults standardUserDefaults];
+    
     //Set text fields
-    self.nameTextField.text = self.userName;
-    self.ageTextField.text = self.userAge;
-    self.doctorTextField.text = self.userDoctor;
-    self.hospitalTextField.text = self.userHospital;
-    self.heightTextField.text = self.userHeight;
+    self.nameTextField.text = [userSets stringForKey:@"name"];
+    self.ageTextField.text = [userSets stringForKey:@"age"];
+    self.heightTextField.text = [userSets stringForKey:@"height"];
+    self.doctorTextField.text = [userSets stringForKey:@"doctor"];
+    self.hospitalTextField.text = [userSets stringForKey:@"hospital"];
+    self.diabetsTypeSegmentedControl.selectedSegmentIndex = [[userSets stringForKey:@"dTypeIndex"] integerValue];
+    self.medicineList = [NSMutableArray arrayWithArray:[userSets arrayForKey:@"medicineList"]];
 }
+
 
 /**
  Eneable edition in all text fields
@@ -173,27 +208,22 @@
  
  **/
 - (IBAction)nameTextFieldHandler:(id)sender {
-    self.userName = self.nameTextField.text;
     [self textFieldShouldReturn:self.nameTextField];
 }
 
 - (IBAction)ageTextFieldHandler:(id)sender {
-    self.userAge = self.ageTextField.text;
     [self textFieldShouldReturn:self.ageTextField];
 }
 
 - (IBAction)doctorTextFieldHandler:(id)sender {
-    self.userDoctor = self.doctorTextField.text;
     [self textFieldShouldReturn:self.doctorTextField];
 }
 
 - (IBAction)hospitalTextFieldHandler:(id)sender {
-    self.userHospital = self.hospitalTextField.text;
     [self textFieldShouldReturn:self.hospitalTextField];
 }
 
 - (IBAction)heightTextFieldHandler:(id)sender {
-    self.userHeight = self.heightTextField.text;
     [self textFieldShouldReturn:self.heightTextField];
 }
 
@@ -204,7 +234,8 @@
     if ([self.DoneButton.titleLabel.text isEqual:@"Salvar"]) {
         [self.DoneButton setTitle:@"Editar" forState:normal];
         [self nonEditableTextFields];
-        //IMPLEMENTAR aqui: salvar dados
+        [self persistUserSets];
+        
         
     } else if ([self.DoneButton.titleLabel.text isEqual:@"Editar"]) {
         [self.DoneButton setTitle:@"Salvar" forState:normal];
@@ -222,13 +253,6 @@
         self.medicineTextField.text = @"";
     }
     
-}
-
-- (IBAction)segmentedControlHandler:(id)sender {
-    if(self.diabetsTypeSegmentedControl.selectedSegmentIndex == 0)
-    {
-        self.dtype = YES;
-    } else self.dtype = NO;
 }
 
 

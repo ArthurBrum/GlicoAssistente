@@ -47,9 +47,10 @@
         
         AddNotesCell *cell = (AddNotesCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         
-        if(![cell.writeNote.text isEqualToString:@""])
+        if(![cell.writeNote.text isEqualToString:@""]){
             self.dailyEntry.reminders[i] = cell.writeNote.text;
-       
+            
+        }
     }
 }
 
