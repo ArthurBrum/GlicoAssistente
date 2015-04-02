@@ -272,11 +272,11 @@
 				TargetAttributes = {
 					C2F60D371AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 97EUAUR8F9;
+						DevelopmentTeam = FBQNLH4A3W;
 					};
 					C2F60D501AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 97EUAUR8F9;
+						DevelopmentTeam = FBQNLH4A3W;
 						TestTargetID = C2F60D371AC3494200B5CF5D;
 					};
 				};
