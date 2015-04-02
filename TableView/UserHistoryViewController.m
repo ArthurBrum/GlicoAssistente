@@ -9,6 +9,8 @@
 #import "UserHistoryViewController.h"
 #import "SKSTableViewCell.h"
 #import "SKSTableView.h"
+#import "CoreData/CoreData.h"
+#import "DailyEntry.h"
 
 @interface UserHistoryViewController ()
 
@@ -66,16 +68,70 @@
 }
 */
 
+/**
+ Load data from data core in a NSMutableArray
+ **/
+-(NSMutableArray*) loadForData
+{
+    NSMutableArray *data = [DailyEntry fetchEntries];
+    return data;
+}
+
+/**
+ Turns NSSet in a concat NSString concatenated
+ **/
+-(NSString*) stringWithNSSet: (NSSet*) set
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[set allObjects]];
+    
+    NSString* string = [[NSString alloc] initWithFormat:@""];
+    
+    for (int arrayRange = 0; arrayRange < [array count]; arrayRange++) {
+        string = [string stringByAppendingString:@"\n"];
+        string = [string stringByAppendingString:[array objectAtIndex:arrayRange]];
+    }
+    
+    return string;
+}
+
+-(NSArray*) arrayFromData: (NSMutableArray*) dataArray
+{
+    if ([dataArray count] == 0) {
+        return nil;
+    }
+    
+    NSArray* array = [[NSArray alloc] init];
+    
+    NSManagedObject* obj = [dataArray lastObject];
+    
+    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@ \t %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]];
+    NSString* notes = [self stringWithNSSet:[obj valueForKey:@"writedNotes"]];
+    NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+    
+    array = @[dateAndGlic, notes, medicines];
+    
+    [dataArray removeLastObject];
+    
+    return array;
+}
+
 - (NSArray *)contents
 {
     if (!_contents)
     {
-        _contents = @[
+        /*_contents = @[
                       @[
                           @[@"Section0_Row0", @"Row0_Subrow1",@"Row0_Subrow2"],
                           @[@"Section0_Row1", @"Row1_Subrow1", @"Row1_Subrow2", @"Row1_Subrow3", @"Row1_Subrow4", @"Row1_Subrow5", @"Row1_Subrow6", @"Row1_Subrow7", @"Row1_Subrow8", @"Row1_Subrow9", @"Row1_Subrow10", @"Row1_Subrow11", @"Row1_Subrow12"],
                           @[@"Section0_Row2"]],
-                      ];
+                      ];*/
+        NSMutableArray* dataArray = [self loadForData];
+        NSArray* array = [self arrayFromData:dataArray];
+        
+        while (array != nil) {
+            _contents = [_contents arrayByAddingObject:array];
+            array = [self arrayFromData:dataArray];
+        }
     }
     
     return _contents;

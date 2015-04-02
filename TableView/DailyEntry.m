@@ -40,7 +40,7 @@
     
     inserted = [appDelegate.managedObjectContext save: &error];
     if(inserted) NSLog(@"Success!!");
-    [self fetchEntries];
+    [DailyEntry fetchEntries];
 
     return inserted;
 }
@@ -49,7 +49,7 @@
     //To implement when editing old registers become available
 }
 
-- (NSMutableArray *) fetchEntries{
++ (NSMutableArray *) fetchEntries{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     //Create entity object for table 'Entries'
