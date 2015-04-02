@@ -29,6 +29,7 @@
     
     self.dailyEntry = [[DailyEntry alloc] init];
     
+    //Hides numeric pad when touch outside text field
     [self addTapGesture];
     
     [self.datePicker setMaximumDate: [NSDate date]];
@@ -50,16 +51,7 @@
     [self.datePicker setMinimumDate: minDate];
 }
 
-- (void) addTapGesture {
-    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    tapper.cancelsTouchesInView = FALSE;
-    [self.view addGestureRecognizer:tapper];
-}
 
-- (void)handleSingleTap:(UITapGestureRecognizer *) sender
-{
-    [self.view endEditing:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -92,6 +84,7 @@
 }
 
 
+//Set text colors according glicose levels
 - (IBAction)glucoReview:(id)sender {
     NSString *GlucoDataController = self.GlucoData.text;
     if ([GlucoDataController intValue] >= 200) {
@@ -166,6 +159,18 @@
     }
 }
 
+#pragma mark - Hide-keyboard methods
+
+- (void) addTapGesture {
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.view addGestureRecognizer:tapper];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 
 
 @end

@@ -191,19 +191,6 @@
 
 #pragma mark - Helpers
 
-/*- (void)setDataManipulationButton:(UIBarButtonSystemItem)item
-{
-    switch (item) {
-        case UIBarButtonSystemItemUndo:
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undoData)];
-            break;
-            
-        default:
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshData)];
-            break;
-    }
-}*/
-
 - (IBAction)collapseCells:(id)sender {
     [self collapseSubrows];
 }
