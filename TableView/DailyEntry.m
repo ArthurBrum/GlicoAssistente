@@ -67,7 +67,10 @@
     for(NSManagedObject *obj in array){
         NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
     }*/
-        
+//    
+//    [obj valueForKey:@"dateTime"]
+//    [obj valueForKey:@"dateTime"]
+    
 }
 
 

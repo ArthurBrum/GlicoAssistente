@@ -25,6 +25,10 @@
 		8E32F0211ACD85D2009BF82D /* Medications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F0201ACD85D2009BF82D /* Medications.m */; };
 		8E8AB87B1ACB14FA003C5D0F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */; };
 		8E8AB87E1ACB1600003C5D0F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AB87C1ACB1600003C5D0F /* DataModel.xcdatamodeld */; };
+		C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = C20C28691ACDD102001C7A4E /* UIColor+FSPalette.m */; };
+		C20C286D1ACDD102001C7A4E /* FSLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C20C286B1ACDD102001C7A4E /* FSLineChart.m */; };
+		C20C28731ACDD1E7001C7A4E /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20C28721ACDD1E7001C7A4E /* ChartViewController.m */; };
+		C20C28751ACDD37A001C7A4E /* Line Chart-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C20C28741ACDD37A001C7A4E /* Line Chart-50.png */; };
 		C2F60D3E1AC3494200B5CF5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60D3D1AC3494200B5CF5D /* main.m */; };
 		C2F60D471AC3494200B5CF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D451AC3494200B5CF5D /* Main.storyboard */; };
 		C2F60D491AC3494200B5CF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D481AC3494200B5CF5D /* Images.xcassets */; };
@@ -77,6 +81,13 @@
 		8E32F0201ACD85D2009BF82D /* Medications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medications.m; path = Entities/Medications.m; sourceTree = "<group>"; };
 		8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E8AB87D1ACB1600003C5D0F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		C20C28681ACDD102001C7A4E /* UIColor+FSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FSPalette.h"; sourceTree = "<group>"; };
+		C20C28691ACDD102001C7A4E /* UIColor+FSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FSPalette.m"; sourceTree = "<group>"; };
+		C20C286A1ACDD102001C7A4E /* FSLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLineChart.h; sourceTree = "<group>"; };
+		C20C286B1ACDD102001C7A4E /* FSLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLineChart.m; sourceTree = "<group>"; };
+		C20C28711ACDD1E7001C7A4E /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartViewController.h; path = ../ChartViewController.h; sourceTree = "<group>"; };
+		C20C28721ACDD1E7001C7A4E /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartViewController.m; path = ../ChartViewController.m; sourceTree = "<group>"; };
+		C20C28741ACDD37A001C7A4E /* Line Chart-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Line Chart-50.png"; sourceTree = "<group>"; };
 		C2F60D381AC3494200B5CF5D /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F60D3C1AC3494200B5CF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F60D3D1AC3494200B5CF5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,9 +159,21 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		C20C28671ACDD0AE001C7A4E /* FSLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				C20C28681ACDD102001C7A4E /* UIColor+FSPalette.h */,
+				C20C28691ACDD102001C7A4E /* UIColor+FSPalette.m */,
+				C20C286A1ACDD102001C7A4E /* FSLineChart.h */,
+				C20C286B1ACDD102001C7A4E /* FSLineChart.m */,
+			);
+			name = FSLineChart;
+			sourceTree = "<group>";
+		};
 		C2F60D2F1AC3494200B5CF5D = {
 			isa = PBXGroup;
 			children = (
+				C20C28741ACDD37A001C7A4E /* Line Chart-50.png */,
 				553BB20A1ACC5D680081C244 /* CoreGraphics.framework */,
 				8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */,
 				C2F60D3A1AC3494200B5CF5D /* TableView */,
@@ -171,11 +194,14 @@
 		C2F60D3A1AC3494200B5CF5D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				C20C28671ACDD0AE001C7A4E /* FSLineChart */,
 				8E32F0181ACD85AE009BF82D /* Entities */,
 				553BB2341ACC63090081C244 /* SKSTableView */,
 				55412D001AC59C76009D98E6 /* Book.png */,
 				55412D011AC59C76009D98E6 /* Edit.png */,
 				55412D041AC59D1E009D98E6 /* Fine Print.png */,
+				C20C28711ACDD1E7001C7A4E /* ChartViewController.h */,
+				C20C28721ACDD1E7001C7A4E /* ChartViewController.m */,
 				C2F60DAB1AC477DC00B5CF5D /* AppDelegate.h */,
 				C2F60DAC1AC477DC00B5CF5D /* AppDelegate.m */,
 				C2F60DA81AC477A100B5CF5D /* ViewController.h */,
@@ -313,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20C28751ACDD37A001C7A4E /* Line Chart-50.png in Resources */,
 				55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */,
 				553BB2401ACC63220081C244 /* expandableImage.png in Resources */,
 				553BB2411ACC63220081C244 /* expandableImage@2x.png in Resources */,
@@ -340,12 +367,15 @@
 			files = (
 				5505F6091AC5D7DA003D81B9 /* AddMedicine.m in Sources */,
 				C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */,
+				C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */,
 				8E32F0211ACD85D2009BF82D /* Medications.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
+				C20C286D1ACDD102001C7A4E /* FSLineChart.m in Sources */,
 				8E32F01E1ACD85D2009BF82D /* Entries.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
+				C20C28731ACDD1E7001C7A4E /* ChartViewController.m in Sources */,
 				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,
 				C2F60D3E1AC3494200B5CF5D /* main.m in Sources */,
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
