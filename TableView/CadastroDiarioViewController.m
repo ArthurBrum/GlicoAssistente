@@ -11,6 +11,7 @@
 #import "DailyEntry.h"
 #import "AddMedicine.h"
 #import "NotesViewController.h"
+#import "UserHistoryViewController.h"
 
 @interface CadastroDiarioViewController ()
 

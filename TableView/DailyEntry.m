@@ -32,15 +32,15 @@
     
     // Entity for table 'Entries'
     NSEntityDescription *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entries" inManagedObjectContext: appDelegate.managedObjectContext];
-    
-    [entity setValue: self.glucose forKey:@"glycemicIndex"];
-    [entity setValue:self.entryDate forKey:@"dateTime"];
-    
+//    
+//    [entity setValue: self.glucose forKey:@"glycemicIndex"];
+//    [entity setValue:self.entryDate forKey:@"dateTime"];
+//    
     NSError *error;
     
     inserted = [appDelegate.managedObjectContext save: &error];
     if(inserted) NSLog(@"Success!!");
-    [self fetchEntries];
+    [DailyEntry fetchEntries];
 
     return inserted;
 }
@@ -49,7 +49,7 @@
     //To implement when editing old registers become available
 }
 
-- (NSMutableArray *) fetchEntries{
++ (NSMutableArray *) fetchEntries{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     //Create entity object for table 'Entries'
@@ -61,9 +61,8 @@
     
     //Get all rows in utable array
     NSMutableArray *array = [[appDelegate.managedObjectContext executeFetchRequest:fetchRqst error:nil] mutableCopy];
-    return array;
     
-    /*Core data return each row as managed object to access through key-value
+    //Core data return each row as managed object to access through key-value
     for(NSManagedObject *obj in array){
         NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
     }*/
