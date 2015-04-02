@@ -200,7 +200,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
-                                    <action selector="doneRecord:" destination="D3P-5v-Md4" eventType="touchUpInside" id="QdV-bC-JNc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-Kx-dcf">

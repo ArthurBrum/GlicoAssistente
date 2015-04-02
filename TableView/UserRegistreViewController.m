@@ -12,7 +12,7 @@
 
 @interface UserRegistreViewController ()
 
-///DoneButton - saves info and returns to root page
+///DoneButton - saves info
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
 
 ///Receives user name in UserRegistreViewController
@@ -29,10 +29,12 @@
 
 ///Receives user hospital
 @property (weak, nonatomic) IBOutlet UITextField *hospitalTextField;
+///Stor users hospital to refresh text fiels and save data
 @property NSString* userHospital;
 
 ///Receives user height
 @property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+///Stor users height to refresh text fiels and save data
 @property NSString* userHeight;
 
 ///Select user diabets type
@@ -62,10 +64,12 @@
     
     _medicineList = [[NSMutableArray alloc] init];
     
+    //Diabets type 1 was setted as default
     _dtype = YES;
     
     [self refreshTextFields];
     
+    //All text fields are cleanning up on beging editing
     self.nameTextField.clearsOnBeginEditing = YES;
     self.ageTextField.clearsOnBeginEditing = YES;
     self.doctorTextField.clearsOnBeginEditing = YES;
@@ -85,7 +89,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return self.medicineList.count;
 }
 
@@ -106,8 +109,6 @@
     }
     
     cell.medicine.text = [NSString stringWithFormat:@"%@", [self.medicineList objectAtIndex:indexPath.row]];
-    
-    
     
     return cell;
 }
@@ -130,6 +131,9 @@
     self.heightTextField.text = self.userHeight;
 }
 
+/**
+ Eneable edition in all text fields
+ **/
 -(void)editableTextFields
 {
     self.nameTextField.enabled = YES;
@@ -137,8 +141,12 @@
     self.doctorTextField.enabled = YES;
     self.hospitalTextField.enabled = YES;
     self.heightTextField.enabled = YES;
+    self.medicineTextField.enabled = YES;
 }
 
+/**
+ Disable edition in all text fields
+ **/
 -(void)nonEditableTextFields
 {
     self.nameTextField.enabled = NO;
@@ -146,6 +154,7 @@
     self.doctorTextField.enabled = NO;
     self.hospitalTextField.enabled = NO;
     self.heightTextField.enabled = NO;
+    self.medicineTextField.enabled = NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -163,7 +172,7 @@
 
 #pragma mark - TextField event handlers
 /**
- Saves na
+ 
  **/
 - (IBAction)nameTextFieldHandler:(id)sender {
     self.userName = self.nameTextField.text;
