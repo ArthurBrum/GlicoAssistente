@@ -20,9 +20,6 @@
 		55412D021AC59C76009D98E6 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D001AC59C76009D98E6 /* Book.png */; };
 		55412D031AC59C76009D98E6 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D011AC59C76009D98E6 /* Edit.png */; };
 		55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D041AC59D1E009D98E6 /* Fine Print.png */; };
-		8E32F01B1ACD85D2009BF82D /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F01A1ACD85D2009BF82D /* Notes.m */; };
-		8E32F01E1ACD85D2009BF82D /* Entries.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F01D1ACD85D2009BF82D /* Entries.m */; };
-		8E32F0211ACD85D2009BF82D /* Medications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F0201ACD85D2009BF82D /* Medications.m */; };
 		8E8AB87B1ACB14FA003C5D0F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */; };
 		8E8AB87E1ACB1600003C5D0F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AB87C1ACB1600003C5D0F /* DataModel.xcdatamodeld */; };
 		C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = C20C28691ACDD102001C7A4E /* UIColor+FSPalette.m */; };
@@ -73,12 +70,6 @@
 		55412D001AC59C76009D98E6 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		55412D011AC59C76009D98E6 /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
 		55412D041AC59D1E009D98E6 /* Fine Print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fine Print.png"; sourceTree = "<group>"; };
-		8E32F0191ACD85D2009BF82D /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notes.h; path = Entities/Notes.h; sourceTree = "<group>"; };
-		8E32F01A1ACD85D2009BF82D /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notes.m; path = Entities/Notes.m; sourceTree = "<group>"; };
-		8E32F01C1ACD85D2009BF82D /* Entries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entries.h; path = Entities/Entries.h; sourceTree = "<group>"; };
-		8E32F01D1ACD85D2009BF82D /* Entries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entries.m; path = Entities/Entries.m; sourceTree = "<group>"; };
-		8E32F01F1ACD85D2009BF82D /* Medications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medications.h; path = Entities/Medications.h; sourceTree = "<group>"; };
-		8E32F0201ACD85D2009BF82D /* Medications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medications.m; path = Entities/Medications.m; sourceTree = "<group>"; };
 		8E8AB87A1ACB14FA003C5D0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E8AB87D1ACB1600003C5D0F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C20C28681ACDD102001C7A4E /* UIColor+FSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FSPalette.h"; sourceTree = "<group>"; };
@@ -146,19 +137,6 @@
 			name = SKSTableView;
 			sourceTree = "<group>";
 		};
-		8E32F0181ACD85AE009BF82D /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				8E32F01F1ACD85D2009BF82D /* Medications.h */,
-				8E32F0201ACD85D2009BF82D /* Medications.m */,
-				8E32F01C1ACD85D2009BF82D /* Entries.h */,
-				8E32F01D1ACD85D2009BF82D /* Entries.m */,
-				8E32F0191ACD85D2009BF82D /* Notes.h */,
-				8E32F01A1ACD85D2009BF82D /* Notes.m */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
 		C20C28671ACDD0AE001C7A4E /* FSLineChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				C20C28671ACDD0AE001C7A4E /* FSLineChart */,
-				8E32F0181ACD85AE009BF82D /* Entities */,
 				553BB2341ACC63090081C244 /* SKSTableView */,
 				55412D001AC59C76009D98E6 /* Book.png */,
 				55412D011AC59C76009D98E6 /* Edit.png */,
@@ -370,10 +347,8 @@
 				C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */,
-				8E32F0211ACD85D2009BF82D /* Medications.m in Sources */,
 				5505F6121AC5DC11003D81B9 /* UserRegistreViewController.m in Sources */,
 				C20C286D1ACDD102001C7A4E /* FSLineChart.m in Sources */,
-				8E32F01E1ACD85D2009BF82D /* Entries.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
 				C20C28731ACDD1E7001C7A4E /* ChartViewController.m in Sources */,
 				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,
@@ -381,7 +356,6 @@
 				C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */,
 				C2F60DC81ACAD9A100B5CF5D /* DailyEntry.m in Sources */,
 				8E8AB87E1ACB1600003C5D0F /* DataModel.xcdatamodeld in Sources */,
-				8E32F01B1ACD85D2009BF82D /* Notes.m in Sources */,
 				C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */,
 				553BB23D1ACC63220081C244 /* SKSTableView.m in Sources */,
 				553BB23F1ACC63220081C244 /* SKSTableViewCellIndicator.m in Sources */,
