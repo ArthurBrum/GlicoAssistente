@@ -22,23 +22,32 @@
 
 @implementation CadastroDiarioViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.cell = 1;
-//     Uncomment the following line to preserve selection between presentations.
-//     self.clearsSelectionOnViewWillAppear = NO;
-//    
-//     Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.dailyEntry = [[DailyEntry alloc] init];
     
     [self addTapGesture];
     
+    [self.datePicker setMaximumDate: [NSDate date]];
+    
+    NSCalendar *calender = [NSCalendar currentCalendar] ;
+    NSDateComponents *components = [calender components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:[[NSDate alloc] init]];
+    
+    NSDate *currentDate = [NSDate date];
+    
+//    NSDateComponents *yesterday = [[NSDateComponents alloc] init];
+    
+    [components setHour:-24];
+    [components setMinute:0];
+    [components setSecond:0];
+    
+    NSDate *minDate = [calender dateByAddingComponents:components toDate:currentDate  options:0];
+    NSLog(@"%@", minDate);
+    
+    [self.datePicker setMinimumDate: minDate];
 }
 
 - (void) addTapGesture {
@@ -77,6 +86,10 @@
     
     return self.cell;
 }
+- (IBAction)maximumUpdateDate:(id)sender {
+    [self.datePicker setMaximumDate: [NSDate date]];
+
+}
 
 
 - (IBAction)glucoReview:(id)sender {
@@ -96,13 +109,13 @@
 }
 
 - (IBAction)saveDatas:(id)sender {
-    //NSString *GlucoDataController = self.GlucoData.text;
-    //self.GlucoData.text = @"";
     
     self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
     self.dailyEntry.entryDate = self.datePicker.date;
     
     [self.dailyEntry saveNewEntry];
+    
+    self.GlucoData.text = @"";
 
 }
 
