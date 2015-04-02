@@ -65,11 +65,11 @@
     //Core data return each row as managed object to access through key-value
     for(NSManagedObject *obj in array){
         NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
-    }*/
-//    
-//    [obj valueForKey:@"dateTime"]
-//    [obj valueForKey:@"dateTime"]
+    }
     
+    
+    
+    return array;
 }
 
 
