@@ -13,7 +13,9 @@
 @property (nonatomic, strong) NSDate *entryDate;
 @property (nonatomic) NSNumber *glucose;
 @property (nonatomic, strong) NSMutableArray *medicines;
+@property (nonatomic, strong) NSMutableArray *usedMeds;
 @property (nonatomic, strong) NSMutableArray *reminders;
+@property (nonatomic, strong) NSMutableArray *writedNotes;
 
 - (BOOL) saveNewEntry;
 + (NSMutableArray *) fetchEntries;
