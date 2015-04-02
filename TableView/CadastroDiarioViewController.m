@@ -18,6 +18,7 @@
 @property NSMutableArray *objects;
 @property NSInteger cell;
 @property (nonatomic, strong) DailyEntry *dailyEntry;
+@property (weak, nonatomic) IBOutlet UITextField *keyboardToolbar;
 @end
 
 @implementation CadastroDiarioViewController
@@ -92,6 +93,7 @@
             
         }
     }
+    
 }
 
 - (IBAction)saveDatas:(id)sender {
@@ -116,6 +118,10 @@
     }   
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
 
 
 // Override to support rearranging the table view.
