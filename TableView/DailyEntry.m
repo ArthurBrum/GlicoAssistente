@@ -32,10 +32,10 @@
     
     // Entity for table 'Entries'
     NSEntityDescription *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entries" inManagedObjectContext: appDelegate.managedObjectContext];
-    
-    [entity setValue: self.glucose forKey:@"glycemicIndex"];
-    [entity setValue:self.entryDate forKey:@"dateTime"];
-    
+//    
+//    [entity setValue: self.glucose forKey:@"glycemicIndex"];
+//    [entity setValue:self.entryDate forKey:@"dateTime"];
+//    
     NSError *error;
     
     inserted = [appDelegate.managedObjectContext save: &error];
