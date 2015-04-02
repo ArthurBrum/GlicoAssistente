@@ -55,8 +55,6 @@
 @implementation UserRegistreViewController
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

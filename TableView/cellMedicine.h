@@ -10,6 +10,7 @@
 
 @interface cellMedicine : UITableViewCell
 
+///Receives medicine different from user in Table Notes
 @property (weak, nonatomic) IBOutlet UILabel *medicine;
 
 @end
