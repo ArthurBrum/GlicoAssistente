@@ -3,18 +3,20 @@
     <entity name="Entries" representedClassName="Entries" syncable="YES">
         <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="glycemicIndex" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="usedMeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medications" syncable="YES"/>
-        <relationship name="writedNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" syncable="YES"/>
+        <relationship name="usedMeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medications" inverseName="entries" inverseEntity="Medications" syncable="YES"/>
+        <relationship name="writedNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="entries" inverseEntity="Notes" syncable="YES"/>
     </entity>
     <entity name="Medications" representedClassName="Medications" syncable="YES">
         <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entries" inverseName="usedMeds" inverseEntity="Entries" syncable="YES"/>
     </entity>
     <entity name="Notes" representedClassName="Notes" syncable="YES">
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entries" inverseName="writedNotes" inverseEntity="Entries" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entries" positionX="-209" positionY="-238" width="128" height="105"/>
-        <element name="Medications" positionX="34" positionY="-145" width="128" height="60"/>
-        <element name="Notes" positionX="-72" positionY="-36" width="128" height="60"/>
+        <element name="Entries" positionX="-209" positionY="-238" width="128" height="103"/>
+        <element name="Medications" positionX="34" positionY="-145" width="128" height="73"/>
+        <element name="Notes" positionX="-72" positionY="-36" width="128" height="73"/>
     </elements>
 </model>
