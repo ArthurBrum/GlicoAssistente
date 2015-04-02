@@ -18,6 +18,7 @@
 @property NSMutableArray *objects;
 @property NSInteger cell;
 @property (nonatomic, strong) DailyEntry *dailyEntry;
+@property (weak, nonatomic) IBOutlet UITextField *keyboardToolbar;
 @end
 
 @implementation CadastroDiarioViewController
@@ -78,6 +79,7 @@
             
         }
     }
+    
 }
 
 - (IBAction)saveDatas:(id)sender {

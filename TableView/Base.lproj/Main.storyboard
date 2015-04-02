@@ -38,37 +38,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nome" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-Kx-dcf">
-                                <rect key="frame" x="16" y="86" width="343" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="nameTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="e89-EZ-GJh"/>
-                                    <outlet property="delegate" destination="D3P-5v-Md4" id="T63-a9-2bw"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Idade" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-2q-zHT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-2q-zHT">
                                 <rect key="frame" x="16" y="124" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="118" width="343" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="ageTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mC6-n7-GRv"/>
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="WFx-yW-pSA"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Medico" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-6c-3kI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-6c-3kI">
                                 <rect key="frame" x="16" y="200" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="209" width="343" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="doctorTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="yyJ-JV-obq"/>
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="HBi-WU-ZpW"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hospital de referencia" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9K-5d-mJw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hospital de Referência" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9K-5d-mJw">
                                 <rect key="frame" x="16" y="238" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="255" width="343" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="hospitalTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="W7K-W6-SzB"/>
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="QdT-qs-f0E"/>
@@ -80,14 +80,20 @@
                                     <segment title="Diabetes tipo um"/>
                                     <segment title="Diabetes tipo dois"/>
                                 </segments>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="302" width="343" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="segmentedControlHandler:" destination="D3P-5v-Md4" eventType="valueChanged" id="T1f-ke-b7V"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Altura" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iO1-lw-mG4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iO1-lw-mG4">
                                 <rect key="frame" x="16" y="162" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="164" width="343" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="heightTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mdq-gn-oag"/>
                                 </connections>
@@ -164,13 +170,25 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="298" y="39" width="61" height="39"/>
+                                    <rect key="frame" x="298" y="20" width="61" height="39"/>
                                 </variation>
                                 <connections>
                                     <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
                                     <action selector="doneRecord:" destination="D3P-5v-Md4" eventType="touchUpInside" id="QdV-bC-JNc"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-Kx-dcf">
+                                <rect key="frame" x="16" y="86" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="nameTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="e89-EZ-GJh"/>
+                                    <outlet property="delegate" destination="D3P-5v-Md4" id="T63-a9-2bw"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -227,7 +245,7 @@
                         <sections>
                             <tableViewSection headerTitle="      " id="eaM-Og-YMe">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="172" id="kfk-em-0mg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="191" id="kfk-em-0mg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfk-em-0mg" id="uYa-Nh-wfW">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -237,6 +255,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="449007803.23237997">
                                                         <!--2015-03-25 20:23:23 +0000-->
                                                     </date>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="27" y="8" width="320" height="162"/>
+                                                    </variation>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -267,23 +288,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="      " id="ymt-ze-lCp">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Glucose" textLabel="ryf-An-ofI" style="IBUITableViewCellStyleDefault" id="OCl-N8-c0D">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Glucose" textLabel="ryf-An-ofI" rowHeight="56" style="IBUITableViewCellStyleDefault" id="OCl-N8-c0D">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="OCl-N8-c0D" id="U7y-W7-1kZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Glicose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ryf-An-ofI">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     </variation>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udi-t2-7Vz" userLabel="glucoData">
                                                     <rect key="frame" x="287" y="7" width="73" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <connections>
                                                         <action selector="glucoReview:" destination="SCL-Xl-TAI" eventType="editingChanged" id="0iv-mC-8y7"/>
@@ -292,18 +313,18 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="medicament" textLabel="snP-25-P5U" style="IBUITableViewCellStyleDefault" id="yJM-vk-NWT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="medicament" textLabel="snP-25-P5U" rowHeight="56" style="IBUITableViewCellStyleDefault" id="yJM-vk-NWT">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yJM-vk-NWT" id="hxU-vB-1hm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Medicamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="snP-25-P5U">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -312,18 +333,18 @@
                                             <segue destination="eVi-eF-iwE" kind="push" identifier="AddMedicine" id="WY8-5u-Wwf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note" textLabel="jk6-44-eU7" style="IBUITableViewCellStyleDefault" id="ayF-Bf-mYe">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note" textLabel="jk6-44-eU7" rowHeight="56" style="IBUITableViewCellStyleDefault" id="ayF-Bf-mYe">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ayF-Bf-mYe" id="VeT-as-n4y">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lembrete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jk6-44-eU7">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -353,26 +374,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nZ-0T-5z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801.5" y="996.5"/>
+            <point key="canvasLocation" x="800.25" y="996.375"/>
         </scene>
         <!--Lembrete-->
         <scene sceneID="luF-27-4oo">
             <objects>
                 <tableViewController title="Lembrete" id="BDL-jA-rCe" customClass="NotesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AddNotesTableViewController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tnO-Ob-Bhu" userLabel="Anote">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AddNotesTableViewController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="tnO-Ob-Bhu" userLabel="Anote">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" id="Wc3-9Q-6PP" customClass="AddNotesCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" rowHeight="56" id="Wc3-9Q-6PP" customClass="AddNotesCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc3-9Q-6PP" id="SPb-iB-BV1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escreva aqui" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-7Y-bK6" userLabel="addNote">
                                             <rect key="frame" x="15" y="5" width="346" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="15" y="5" width="346" height="44"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="entrerNextNote:" destination="BDL-jA-rCe" eventType="editingDidEnd" id="o0z-dZ-4mf"/>
                                                 <outlet property="delegate" destination="BDL-jA-rCe" id="Mxg-GK-7AY"/>
@@ -412,14 +436,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="editMedicine" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remédios + hora" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-TL-h2h">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="159" width="289" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxW-zI-CpX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="OK">
@@ -446,12 +462,12 @@
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" keyboardKey="YES" staticText="YES"/>
                                                     </accessibility>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="16" width="327" height="31"/>
+                                                        <rect key="frame" x="8" y="16" width="327" height="44"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -490,22 +506,30 @@
                                     <rect key="frame" x="-130" y="58" width="634" height="115"/>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="editMedicine" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remédios + hora" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-TL-h2h">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="158" width="289" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="vQ7-TL-h2h"/>
                                 <exclude reference="GxW-zI-CpX"/>
                                 <exclude reference="70k-QQ-zTL"/>
                                 <exclude reference="zrc-hS-Ptb"/>
+                                <exclude reference="vQ7-TL-h2h"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="vQ7-TL-h2h"/>
                                 <include reference="GxW-zI-CpX"/>
                                 <include reference="70k-QQ-zTL"/>
                                 <include reference="zrc-hS-Ptb"/>
+                                <include reference="vQ7-TL-h2h"/>
                             </mask>
                         </variation>
                     </view>

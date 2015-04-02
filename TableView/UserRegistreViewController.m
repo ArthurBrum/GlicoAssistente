@@ -62,11 +62,6 @@
     
     _medicineList = [[NSMutableArray alloc] init];
     
-    _userName = @"Nome";
-    _userAge = @"Idade";
-    _userDoctor = @"Medico";
-    _userHospital = @"Hospital de Referencia";
-    _userHeight = @"Altura";
     _dtype = YES;
     
     [self refreshTextFields];
