@@ -16,6 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *reminders;
 
 - (BOOL) saveNewEntry;
-- (void) fetchEntries;
+- (NSMutableArray *) fetchEntries;
 
 @end
