@@ -23,17 +23,7 @@
 @implementation CadastroDiarioViewController
 
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    //[self.GlucoData resignFirstResponder];
-    [self.GlucoData endEditing:YES];
-}
 
--(BOOL)textFieldShouldReturn:(UITextField*)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +37,19 @@
     
     self.dailyEntry = [[DailyEntry alloc] init];
     
+    [self addTapGesture];
+    
+}
+
+- (void) addTapGesture {
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.view addGestureRecognizer:tapper];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
