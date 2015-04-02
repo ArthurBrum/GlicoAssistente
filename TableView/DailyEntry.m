@@ -82,6 +82,13 @@
     //Get all rows in utable array
     NSMutableArray *array = [[appDelegate.managedObjectContext executeFetchRequest:fetchRqst error:nil] mutableCopy];
     
+    //Core data return each row as managed object to access through key-value
+    for(NSManagedObject *obj in array){
+        NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
+    }
+    
+    
+    
     return array;
         
 }
