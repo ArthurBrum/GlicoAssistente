@@ -12,6 +12,8 @@
 #import "CoreData/CoreData.h"
 #import "DailyEntry.h"
 #import "Entries.h"
+#import "Notes.h"
+#import "Medications.h"
 
 @interface UserHistoryViewController ()
 
@@ -87,8 +89,16 @@
     NSString* string = [[NSString alloc] initWithFormat:@""];
     
     for (int arrayRange = 0; arrayRange < [array count]; arrayRange++) {
-        string = [string stringByAppendingString:@"\n"];
-        string = [string stringByAppendingString:[array objectAtIndex:arrayRange]];
+        
+        // Returns a Boolean value that indicates whether the receiver is an instance of a
+        // given class.
+        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]]) string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
+        else
+        {
+            Medications *medications = [array objectAtIndex:arrayRange];
+            string = [string stringByAppendingString: [medications medication]];
+        }
+        string = [string stringByAppendingString:@"--"];
     }
     
     return string;

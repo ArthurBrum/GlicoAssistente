@@ -205,7 +205,7 @@
                                 <items>
                                     <navigationItem title="Usuário" id="SnD-z1-GrL">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="AiM-re-NRz">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XiB-PG-R4K">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XiB-PG-R4K">
                                                 <rect key="frame" x="298" y="28" width="61" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
