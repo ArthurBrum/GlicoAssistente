@@ -121,12 +121,7 @@
     if (!_contents)
     {
         _contents = [[NSArray alloc] init];
-        /*_contents = @[
-                      @[
-                          @[@"Section0_Row0", @"Row0_Subrow1",@"Row0_Subrow2"],
-                          @[@"Section0_Row1", @"Row1_Subrow1", @"Row1_Subrow2", @"Row1_Subrow3", @"Row1_Subrow4", @"Row1_Subrow5", @"Row1_Subrow6", @"Row1_Subrow7", @"Row1_Subrow8", @"Row1_Subrow9", @"Row1_Subrow10", @"Row1_Subrow11", @"Row1_Subrow12"],
-                          @[@"Section0_Row2"]],
-                      ];*/
+        
         NSMutableArray* dataArray = [DailyEntry fetchEntries];
         NSArray* array = [self arrayFromData:dataArray];
         
@@ -136,9 +131,6 @@
         }
         _contents = [NSArray arrayWithObject:_contents];
     }
-    
-
-    
     
     return _contents;
 }
@@ -223,33 +215,10 @@
     [self.tableView collapseCurrentlyExpandedIndexPaths];
 }
 
-/*- (void)refreshData
-{
-    NSArray *array = @[
-                       @[
-                           @[@"Section0_Row0", @"Row0_Subrow1",@"Row0_Subrow2"],
-                           @[@"Section0_Row1", @"Row1_Subrow1", @"Row1_Subrow2", @"Row1_Subrow3", @"Row1_Subrow4", @"Row1_Subrow5", @"Row1_Subrow6", @"Row1_Subrow7", @"Row1_Subrow8", @"Row1_Subrow9", @"Row1_Subrow10", @"Row1_Subrow11", @"Row1_Subrow12"],
-                           @[@"Section0_Row2"]
-                           ]
-                       ];
-    [self reloadTableViewWithData:array];
-    
-    [self setDataManipulationButton:UIBarButtonSystemItemUndo];
-}*/
-
-/*- (void)undoData
-{
-    [self reloadTableViewWithData:nil];
-    
-    [self setDataManipulationButton:UIBarButtonSystemItemRefresh];
-}*/
 
 - (void)reloadTableViewWithData:(NSArray *)array
 {
     self.contents = array;
-    
-    // Refresh data not scrolling
-    //    [self.tableView refreshData];
     
     [self.tableView refreshDataWithScrollingToIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }

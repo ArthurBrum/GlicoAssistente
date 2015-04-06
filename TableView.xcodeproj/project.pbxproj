@@ -21,6 +21,8 @@
 		55412D031AC59C76009D98E6 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D011AC59C76009D98E6 /* Edit.png */; };
 		55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */ = {isa = PBXBuildFile; fileRef = 55412D041AC59D1E009D98E6 /* Fine Print.png */; };
 		5573F7201AD2F9E900FA9B5C /* logo20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5573F71F1AD2F9E900FA9B5C /* logo20.png */; };
+		55F51D9D1AD3061800CFF07D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D481AC3494200B5CF5D /* Images.xcassets */; };
+		55F51D9E1AD3061B00CFF07D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D481AC3494200B5CF5D /* Images.xcassets */; };
 		8E32F0251ACDD957009BF82D /* Entries.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F0241ACDD957009BF82D /* Entries.m */; };
 		8E32F0281ACDD958009BF82D /* Medications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F0271ACDD958009BF82D /* Medications.m */; };
 		8E32F02B1ACDD958009BF82D /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E32F02A1ACDD958009BF82D /* Notes.m */; };
@@ -32,7 +34,6 @@
 		C20C28791ACDD985001C7A4E /* Line Chart-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C20C28781ACDD985001C7A4E /* Line Chart-50.png */; };
 		C2F60D3E1AC3494200B5CF5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60D3D1AC3494200B5CF5D /* main.m */; };
 		C2F60D471AC3494200B5CF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D451AC3494200B5CF5D /* Main.storyboard */; };
-		C2F60D491AC3494200B5CF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D481AC3494200B5CF5D /* Images.xcassets */; };
 		C2F60D4C1AC3494200B5CF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D4A1AC3494200B5CF5D /* LaunchScreen.xib */; };
 		C2F60D581AC3494300B5CF5D /* TableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60D571AC3494300B5CF5D /* TableViewTests.m */; };
 		C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DA91AC477A100B5CF5D /* ViewController.m */; };
@@ -309,11 +310,11 @@
 				TargetAttributes = {
 					C2F60D371AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 97EUAUR8F9;
+						DevelopmentTeam = FBQNLH4A3W;
 					};
 					C2F60D501AC3494200B5CF5D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 97EUAUR8F9;
+						DevelopmentTeam = FBQNLH4A3W;
 						TestTargetID = C2F60D371AC3494200B5CF5D;
 					};
 				};
@@ -343,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5573F7201AD2F9E900FA9B5C /* logo20.png in Resources */,
+				55F51D9D1AD3061800CFF07D /* Images.xcassets in Resources */,
 				55412D051AC59D1E009D98E6 /* Fine Print.png in Resources */,
 				553BB2401ACC63220081C244 /* expandableImage.png in Resources */,
 				C20C28791ACDD985001C7A4E /* Line Chart-50.png in Resources */,
@@ -351,7 +353,6 @@
 				C2F60D4C1AC3494200B5CF5D /* LaunchScreen.xib in Resources */,
 				55412D031AC59C76009D98E6 /* Edit.png in Resources */,
 				55412D021AC59C76009D98E6 /* Book.png in Resources */,
-				C2F60D491AC3494200B5CF5D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F51D9E1AD3061B00CFF07D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
