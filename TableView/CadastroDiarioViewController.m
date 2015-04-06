@@ -57,7 +57,6 @@
     [components setSecond:0];
     
     NSDate *minDate = [calender dateByAddingComponents:components toDate:currentDate  options:0];
-    NSLog(@"%@", minDate);
     
     [self.datePicker setMinimumDate: minDate];
 }
