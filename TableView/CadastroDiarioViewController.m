@@ -129,14 +129,14 @@
  Save datas
  **/
 - (IBAction)saveDatas:(id)sender {
-    
+    if(![self.GlucoData.text isEqualToString:@""]){
     self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
     self.dailyEntry.entryDate = self.datePicker.date;
     
     [self.dailyEntry saveNewEntry];
     
     self.GlucoData.text = @"";
-
+    }
 }
 
 /** 
