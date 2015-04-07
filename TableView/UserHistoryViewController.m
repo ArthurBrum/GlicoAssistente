@@ -55,6 +55,8 @@
                                                                              action:@selector(collapseSubrows)];
     
     //[self setDataManipulationButton:UIBarButtonSystemItemRefresh];
+    
+    [self.colapseButton setTitle:@"Recolher" forState:normal];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -98,7 +100,7 @@
             Medications *medications = [array objectAtIndex:arrayRange];
             string = [string stringByAppendingString: [medications medication]];
         }
-        string = [string stringByAppendingString:@"--"];
+        string = [string stringByAppendingString:@"-"];
     }
     
     return string;
@@ -157,19 +159,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"Contents count: %lu", (unsigned long)[_contents count]);
+    //NSLog(@"Contents count: %lu", (unsigned long)[_contents count]);
     return [self.contents count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Contents[section] count: %lu", (unsigned long)[_contents[section] count]);
+    //NSLog(@"Contents[section] count: %lu", (unsigned long)[_contents[section] count]);
     return [self.contents[section] count];
 }
 
 - (NSInteger)tableView:(SKSTableView *)tableView numberOfSubRowsAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Contents[indexPath.section] count: %lu", (unsigned long)[_contents[indexPath.section] count]);
+    //NSLog(@"Contents[indexPath.section] count: %lu", (unsigned long)[_contents[indexPath.section] count]);
     return [self.contents[indexPath.section][indexPath.row] count] - 1;
 }
 

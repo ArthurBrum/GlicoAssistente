@@ -91,7 +91,6 @@
 
 
 - (void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"DisappearXablau!");
     [self.DoneButton setTitle:@"Editar" forState:normal];
     [self nonEditableTextFields];
     [self persistUserSets];

@@ -91,7 +91,7 @@
 		C20C28711ACDD1E7001C7A4E /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartViewController.h; path = ../ChartViewController.h; sourceTree = "<group>"; };
 		C20C28721ACDD1E7001C7A4E /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartViewController.m; path = ../ChartViewController.m; sourceTree = "<group>"; };
 		C20C28781ACDD985001C7A4E /* Line Chart-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Line Chart-50.png"; sourceTree = "<group>"; };
-		C2F60D381AC3494200B5CF5D /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F60D381AC3494200B5CF5D /* GlicoAssistente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlicoAssistente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F60D3C1AC3494200B5CF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F60D3D1AC3494200B5CF5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2F60D461AC3494200B5CF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		C2F60D391AC3494200B5CF5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2F60D381AC3494200B5CF5D /* TableView.app */,
+				C2F60D381AC3494200B5CF5D /* GlicoAssistente.app */,
 				C2F60D511AC3494200B5CF5D /* TableViewTests.xctest */,
 			);
 			name = Products;
@@ -278,7 +278,7 @@
 			);
 			name = TableView;
 			productName = TableView;
-			productReference = C2F60D381AC3494200B5CF5D /* TableView.app */;
+			productReference = C2F60D381AC3494200B5CF5D /* GlicoAssistente.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C2F60D501AC3494200B5CF5D /* TableViewTests */ = {
@@ -319,7 +319,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C2F60D331AC3494200B5CF5D /* Build configuration list for PBXProject "TableView" */;
+			buildConfigurationList = C2F60D331AC3494200B5CF5D /* Build configuration list for PBXProject "GlicoAssistente" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -518,7 +518,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GlicoAssistente;
 			};
 			name = Debug;
 		};
@@ -529,7 +529,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GlicoAssistente;
 			};
 			name = Release;
 		};
@@ -547,7 +547,7 @@
 				);
 				INFOPLIST_FILE = TableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TableViewTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableView.app/TableView";
 			};
 			name = Debug;
@@ -562,7 +562,7 @@
 				);
 				INFOPLIST_FILE = TableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TableViewTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableView.app/TableView";
 			};
 			name = Release;
@@ -570,7 +570,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C2F60D331AC3494200B5CF5D /* Build configuration list for PBXProject "TableView" */ = {
+		C2F60D331AC3494200B5CF5D /* Build configuration list for PBXProject "GlicoAssistente" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2F60D591AC3494300B5CF5D /* Debug */,

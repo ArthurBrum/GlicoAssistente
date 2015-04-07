@@ -81,7 +81,7 @@
     if(inserted) NSLog(@"Success!!");
     
     
-    NSMutableArray *array = [DailyEntry fetchEntries];
+    //NSMutableArray *array = [DailyEntry fetchEntries];
     
 //    //Core data return each row as managed object to access through key-value
 //    for(NSManagedObject *obj in array){
