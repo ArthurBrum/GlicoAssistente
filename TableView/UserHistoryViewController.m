@@ -114,7 +114,12 @@
     
     Entries *obj = [dataArray lastObject];
     
-    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@ \t %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
+    [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];// here set format which you want...
+    
+    NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]]; //here convert date in NSString
+    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@  Glic: %@ mg/dL", convertedString, [obj valueForKey:@"glycemicIndex"]];
+    
     NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
     NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
     

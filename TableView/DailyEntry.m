@@ -83,10 +83,10 @@
     
     NSMutableArray *array = [DailyEntry fetchEntries];
     
-    //Core data return each row as managed object to access through key-value
-    for(NSManagedObject *obj in array){
-        NSLog(@"\n\nData: %@ \t Glic: %@ \t \n***NOTES***: %@ \t \n***MEDICATIONS***: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"], [obj valueForKey:@"writedNotes"], [obj valueForKey:@"usedMeds"]);
-    }
+//    //Core data return each row as managed object to access through key-value
+//    for(NSManagedObject *obj in array){
+//        NSLog(@"\n\nData: %@ \t Glic: %@ \t \n***NOTES***: %@ \t \n***MEDICATIONS***: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"], [obj valueForKey:@"writedNotes"], [obj valueForKey:@"usedMeds"]);
+//    }
 
     
     return inserted;
@@ -113,10 +113,10 @@
     //Get all rows in utable array
     NSMutableArray *array = [[appDelegate.managedObjectContext executeFetchRequest:fetchRqst error:nil] mutableCopy];
     
-    //Core data return each row as managed object to access through key-value
-    for(NSManagedObject *obj in array){
-        NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
-    }
+//    //Core data return each row as managed object to access through key-value
+//    for(NSManagedObject *obj in array){
+//        NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
+//    }
     
     
     
