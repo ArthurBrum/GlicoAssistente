@@ -20,6 +20,7 @@ CGFloat const kDefaultCellHeight = 44.0f;
 @interface SKSTableView () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSMutableDictionary *expandableCells;
+@property BOOL flag;
 
 
 - (NSInteger)numberOfExpandedSubrowsInSection:(NSInteger)section;
@@ -43,6 +44,8 @@ CGFloat const kDefaultCellHeight = 44.0f;
     if (self) {
         _shouldExpandOnlyOneCell = NO;
     }
+    
+    _flag = NO;
     
     return self;
 }
@@ -150,7 +153,16 @@ CGFloat const kDefaultCellHeight = 44.0f;
             expandableCell.separatorInset = UIEdgeInsetsZero;
         }
         
-        BOOL isExpanded = [self.expandableCells[@(correspondingIndexPath.section)][correspondingIndexPath.row][kIsExpandedKey] boolValue];
+        //
+        BOOL isExpanded;
+        if (!self.flag) {
+            isExpanded = NO;
+            _flag = YES;
+        } else {
+        //
+        
+            isExpanded = [self.expandableCells[@(correspondingIndexPath.section)][correspondingIndexPath.row][kIsExpandedKey] boolValue];
+        }
         
         if (expandableCell.isExpandable)
         {
