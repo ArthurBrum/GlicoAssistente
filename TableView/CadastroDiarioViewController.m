@@ -140,6 +140,8 @@
         //alloc class
         self.dailyEntry = [[DailyEntry alloc] init];
     }
+    
+    //[UserHistoryViewController tableViewReload];
 }
 
 /** 
