@@ -57,6 +57,8 @@
     //[self setDataManipulationButton:UIBarButtonSystemItemRefresh];
     
     [self.colapseButton setTitle:@"Recolher" forState:normal];
+    [self.tableView reloadData];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated

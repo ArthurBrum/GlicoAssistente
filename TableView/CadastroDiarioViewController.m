@@ -12,6 +12,7 @@
 #import "AddMedicine.h"
 #import "NotesViewController.h"
 #import "UserHistoryViewController.h"
+#import "UIColor+FSPalette.h"
 
 @interface CadastroDiarioViewController ()
 
@@ -112,13 +113,13 @@
 - (IBAction)glucoReview:(id)sender {
     NSString *GlucoDataController = self.GlucoData.text;
     if ([GlucoDataController intValue] >= 200) {
-        self.GlucoData.textColor =[UIColor redColor];
+        self.GlucoData.textColor =[UIColor fsRed];
     }else{
-        if ([GlucoDataController intValue] <=75) {
-            self.GlucoData.textColor =[UIColor orangeColor];
+        if ([GlucoDataController intValue] <=100) {
+            self.GlucoData.textColor =[UIColor fsYellow];
         }else{
            
-                self.GlucoData.textColor =[UIColor greenColor];
+                self.GlucoData.textColor =[UIColor fsGreen];
             
         }
     }
@@ -136,6 +137,8 @@
     [self.dailyEntry saveNewEntry];
     
     self.GlucoData.text = @"";
+        //alloc class
+        self.dailyEntry = [[DailyEntry alloc] init];
     }
 }
 
