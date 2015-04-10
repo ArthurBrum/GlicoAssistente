@@ -66,6 +66,9 @@
     
     [self refreshTextFields];
     
+    //[self editableTextFields];
+    //[self.DoneButton setTitle:@"Salvar" forState:normal];
+    
     /*
     //All text fields are cleanning up on beging editing
     self.nameTextField.clearsOnBeginEditing = YES;

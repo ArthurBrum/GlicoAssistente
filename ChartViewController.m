@@ -9,6 +9,9 @@
 #import "ChartViewController.h"
 #import "FSLineChart.h"
 #import "UIColor+FSPalette.h"
+#import "CoreData/CoreData.h"
+#import "DailyEntry.h"
+#import "Entries.h"
 
 @interface ChartViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *today;
@@ -75,6 +78,8 @@
 #pragma mark - Creating the charts
 
 -(FSLineChart*)chart1 {
+    
+    //NSArray* dataArray = [DailyEntry fetchEntries];
     
     NSMutableArray *chartData = [[NSMutableArray alloc] initWithArray:@[@190, @170, @170, @196, @208, @204, @200, @190, @170,@180, @190, @175, @163, @178, @194, @182, @179, @200,@210, @210, @205, @200]];
     

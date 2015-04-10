@@ -136,7 +136,11 @@
     [self.dailyEntry saveNewEntry];
     
     self.GlucoData.text = @"";
+        
+    self.dailyEntry = [[DailyEntry alloc] init];
     }
+    
+    //[UserHistoryViewController tableViewReload];
 }
 
 /** 
