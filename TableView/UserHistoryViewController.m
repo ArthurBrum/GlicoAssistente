@@ -34,6 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         // Custom initialization
     }
     return self;
@@ -41,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.tableView.SKSTableViewDelegate = self;
     
     // Do any additional setup after loading the view.
@@ -151,7 +152,7 @@
         }
         _contents = [NSArray arrayWithObject:_contents];
     }
-    
+
     return _contents;
 }
 
