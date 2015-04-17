@@ -93,7 +93,7 @@
         self.cell = 1;
     else
         //section two
-        self.cell+=2;
+        self.cell+=5;
     
     return self.cell;
 }
