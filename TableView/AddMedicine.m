@@ -133,6 +133,7 @@
     NSString *identifier = @"MedicineCell";
     
     cellMedicine *medicineCell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     medicineCell.medicine.text = self.dailyEntry.medicines[indexPath.row];
     
     return  medicineCell;

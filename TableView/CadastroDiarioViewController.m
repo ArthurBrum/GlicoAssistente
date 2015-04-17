@@ -71,7 +71,7 @@
 
 #pragma mark - Table view data source
 /**
- configuration the delete cell
+ configuration the return numbers cells
  @return - NSInteger
  @param - UITableView
  **/
@@ -82,7 +82,7 @@
 }
 
 /**
- configuration the delete cell
+ configuration the add cell
  @return - NSInteger
  @param - UITableView : NSInteger
  **/
