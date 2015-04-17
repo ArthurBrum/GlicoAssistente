@@ -5,6 +5,23 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="dfy-iH-2bQ">
+            <objects>
+                <navigationController id="yjd-07-Jw4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Gye-nf-rVA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6b7-Sy-2xB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ATR-U5-OjU" kind="relationship" relationship="rootViewController" id="Apy-AO-cbM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRQ-I1-Pdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389" y="-1293"/>
+        </scene>
         <!--Histórico-->
         <scene sceneID="lJk-kF-wPj">
             <objects>
@@ -23,10 +40,23 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIQ-cl-70A">
                                 <rect key="frame" x="287" y="28" width="72" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="rrS-az-JLX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Colapse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rrS-az-JLX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rrS-az-JLX"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="collapseCells:" destination="ATR-U5-OjU" eventType="touchUpInside" id="z2M-6o-RkV"/>
                                 </connections>
@@ -34,8 +64,40 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.050980396568775177" green="0.25490197539329529" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="GvG-iu-4E9" firstAttribute="leading" secondItem="LWv-dM-sIK" secondAttribute="leadingMargin" constant="-11" id="45y-U7-d5N"/>
+                            <constraint firstItem="GvG-iu-4E9" firstAttribute="centerX" secondItem="LWv-dM-sIK" secondAttribute="centerX" id="Daf-DV-7eW"/>
+                            <constraint firstItem="eIQ-cl-70A" firstAttribute="top" secondItem="LWv-dM-sIK" secondAttribute="topMargin" constant="28" id="EHw-Za-efs"/>
+                            <constraint firstItem="VtZ-ck-olt" firstAttribute="top" secondItem="eIQ-cl-70A" secondAttribute="bottom" constant="551" id="Iom-KH-bRB"/>
+                            <constraint firstItem="GvG-iu-4E9" firstAttribute="top" secondItem="GV9-0b-LTG" secondAttribute="bottom" id="OQB-uA-6oO"/>
+                            <constraint firstItem="GvG-iu-4E9" firstAttribute="bottom" secondItem="VtZ-ck-olt" secondAttribute="top" id="beD-iv-uTk"/>
+                            <constraint firstItem="eIQ-cl-70A" firstAttribute="trailing" secondItem="LWv-dM-sIK" secondAttribute="trailingMargin" id="hly-Nb-zRO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="45y-U7-d5N"/>
+                                <exclude reference="Daf-DV-7eW"/>
+                                <exclude reference="OQB-uA-6oO"/>
+                                <exclude reference="beD-iv-uTk"/>
+                                <exclude reference="EHw-Za-efs"/>
+                                <exclude reference="hly-Nb-zRO"/>
+                                <exclude reference="Iom-KH-bRB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="45y-U7-d5N"/>
+                                <include reference="Daf-DV-7eW"/>
+                                <include reference="OQB-uA-6oO"/>
+                                <include reference="beD-iv-uTk"/>
+                                <include reference="EHw-Za-efs"/>
+                                <include reference="hly-Nb-zRO"/>
+                                <include reference="Iom-KH-bRB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" image="Fine Print.png" id="nan-cU-p9C"/>
+                    <navigationItem key="navigationItem" id="z5U-W7-wgi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="colapseButton" destination="eIQ-cl-70A" id="vch-tI-1Yg"/>
@@ -44,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAs-Pa-ZmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591.5" y="-1154.5"/>
+            <point key="canvasLocation" x="2039.25" y="-1232.625"/>
         </scene>
         <!--Title-->
         <scene sceneID="FI4-Wd-dd1">
@@ -419,9 +481,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="D3P-5v-Md4" kind="relationship" relationship="viewControllers" id="XlS-fa-EWm"/>
-                        <segue destination="ATR-U5-OjU" kind="relationship" relationship="viewControllers" id="Qfv-Yb-LEC"/>
                         <segue destination="Btl-3L-RKM" kind="relationship" relationship="viewControllers" id="LoT-da-p8j"/>
                         <segue destination="R6J-FZ-eiP" kind="relationship" relationship="viewControllers" id="7hw-XA-pxr"/>
+                        <segue destination="yjd-07-Jw4" kind="relationship" relationship="viewControllers" id="w9j-LV-5xg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4Z-Wo-N81" userLabel="First Responder" sceneMemberID="firstResponder"/>
