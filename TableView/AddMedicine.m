@@ -23,9 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //add edit button
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {

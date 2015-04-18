@@ -26,9 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    //item button edit used to delete the cell
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     //initiate the array with reminders
     if([self.dailyEntry.reminders count] == 0)

@@ -77,7 +77,7 @@
     self.hospitalTextField.clearsOnBeginEditing = YES;
     self.heightTextField.clearsOnBeginEditing = YES;
     */
-    self.medicineTableView.editing = YES;
+    self.medicineTableView.editing = NO;
     
 }
 
