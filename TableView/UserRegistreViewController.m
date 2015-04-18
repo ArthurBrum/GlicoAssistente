@@ -15,6 +15,8 @@
 ///DoneButton - saves info
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *moreMedicineButton;
+
 ///Receives user name in UserRegistreViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
@@ -38,6 +40,7 @@
 
 ///Select user diabets type
 @property (weak, nonatomic) IBOutlet UISegmentedControl *diabetsTypeSegmentedControl;
+
 ///Diabets type register - YES for 1, NO for 2
 @property BOOL dtype;
 
@@ -47,6 +50,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *medicineTextField;
 
 @property (weak, nonatomic) IBOutlet UITableView *medicineTableView;
+
+
+
 @end
 
 
@@ -57,26 +63,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
     self.medicineList = [[NSMutableArray alloc] init];
     
     //Diabets type 1 was setted as default
     _dtype = YES;
     
     [self refreshTextFields];
-    
-    //[self editableTextFields];
-    //[self.DoneButton setTitle:@"Salvar" forState:normal];
-    
-    /*
-    //All text fields are cleanning up on beging editing
-    self.nameTextField.clearsOnBeginEditing = YES;
-    self.ageTextField.clearsOnBeginEditing = YES;
-    self.doctorTextField.clearsOnBeginEditing = YES;
-    self.hospitalTextField.clearsOnBeginEditing = YES;
-    self.heightTextField.clearsOnBeginEditing = YES;
-    */
+
     self.medicineTableView.editing = NO;
     
 }
@@ -177,6 +170,8 @@
     self.hospitalTextField.enabled = YES;
     self.heightTextField.enabled = YES;
     self.medicineTextField.enabled = YES;
+    self.diabetsTypeSegmentedControl.enabled = YES;
+    self.moreMedicineButton.enabled = YES;
 }
 
 /**
@@ -190,6 +185,8 @@
     self.hospitalTextField.enabled = NO;
     self.heightTextField.enabled = NO;
     self.medicineTextField.enabled = NO;
+    self.diabetsTypeSegmentedControl.enabled = NO;
+    self.moreMedicineButton.enabled = NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

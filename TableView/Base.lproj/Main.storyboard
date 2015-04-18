@@ -10,9 +10,11 @@
             <objects>
                 <navigationController id="yjd-07-Jw4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Gye-nf-rVA"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6b7-Sy-2xB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ATR-U5-OjU" kind="relationship" relationship="rootViewController" id="Apy-AO-cbM"/>
@@ -97,7 +99,7 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" image="Fine Print.png" id="nan-cU-p9C"/>
-                    <navigationItem key="navigationItem" id="z5U-W7-wgi"/>
+                    <navigationItem key="navigationItem" title="Histórico" id="z5U-W7-wgi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="colapseButton" destination="eIQ-cl-70A" id="vch-tI-1Yg"/>
@@ -108,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="2039.25" y="-1232.625"/>
         </scene>
-        <!--Title-->
+        <!--User-->
         <scene sceneID="FI4-Wd-dd1">
             <objects>
                 <viewController id="D3P-5v-Md4" customClass="UserRegistreViewController" sceneMemberID="viewController">
@@ -125,7 +127,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="118" width="343" height="30"/>
+                                    <rect key="frame" x="16" y="135" width="343" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="ageTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mC6-n7-GRv"/>
@@ -137,7 +139,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="209" width="343" height="30"/>
+                                    <rect key="frame" x="16" y="225" width="343" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="doctorTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="yyJ-JV-obq"/>
@@ -149,7 +151,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="255" width="343" height="30"/>
+                                    <rect key="frame" x="16" y="276" width="343" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="hospitalTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="W7K-W6-SzB"/>
@@ -163,7 +165,7 @@
                                     <segment title="Diabetes tipo dois"/>
                                 </segments>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="302" width="343" height="29"/>
+                                    <rect key="frame" x="16" y="325" width="343" height="29"/>
                                 </variation>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iO1-lw-mG4">
@@ -171,7 +173,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="164" width="343" height="30"/>
+                                    <rect key="frame" x="16" y="179" width="343" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="heightTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="mdq-gn-oag"/>
@@ -180,7 +182,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3zV-fL-1R3">
                                 <rect key="frame" x="16" y="404" width="343" height="206"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="separatorColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="MedicineCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicineCell" rowHeight="56" id="Okf-Nr-X7j" customClass="cellMedicine">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -229,6 +231,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="420" width="343" height="190"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="D3P-5v-Md4" id="8V5-c9-2pZ"/>
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="J3v-a7-O1j"/>
@@ -238,6 +243,9 @@
                                 <rect key="frame" x="16" y="354" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="377" width="288" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMm-8L-1hp">
                                 <rect key="frame" x="322" y="354" width="37" height="30"/>
@@ -245,66 +253,63 @@
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="322" y="377" width="37" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="addButtonHandler:" destination="D3P-5v-Md4" eventType="touchUpInside" id="UX9-Yt-6QL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-Kx-dcf">
                                 <rect key="frame" x="16" y="86" width="343" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                    <rect key="frame" x="16" y="87" width="343" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="nameTextFieldHandler:" destination="D3P-5v-Md4" eventType="editingDidEnd" id="e89-EZ-GJh"/>
                                     <outlet property="delegate" destination="D3P-5v-Md4" id="T63-a9-2bw"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doH-AM-1Sl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Usuário" id="SnD-z1-GrL">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="AiM-re-NRz">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XiB-PG-R4K">
-                                                <rect key="frame" x="298" y="28" width="61" height="39"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Salvar">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                </variation>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="doH-AM-1Sl"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="doH-AM-1Sl"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configurações" image="Edit.png" id="io3-Vh-m8W"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="nrT-Qq-ldt"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="AiM-re-NRz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XiB-PG-R4K">
+                                <rect key="frame" x="298" y="28" width="61" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="jVg-d9-jCH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="User" id="nrT-Qq-ldt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="EFn-s4-5YT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kQp-mJ-unI">
+                                <rect key="frame" x="298" y="28" width="61" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonHanlder:" destination="D3P-5v-Md4" eventType="touchUpInside" id="Bll-bk-P29"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="DoneButton" destination="XiB-PG-R4K" id="SMd-0a-vZr"/>
+                        <outlet property="DoneButton" destination="kQp-mJ-unI" id="XHM-Nc-gNN"/>
                         <outlet property="ageTextField" destination="6oS-2q-zHT" id="Hp5-U7-pmU"/>
                         <outlet property="diabetsTypeSegmentedControl" destination="oe0-8b-ObC" id="Unw-oo-aTm"/>
                         <outlet property="doctorTextField" destination="gRQ-6c-3kI" id="JDX-ei-vGp"/>
@@ -312,12 +317,13 @@
                         <outlet property="hospitalTextField" destination="s9K-5d-mJw" id="Ehg-gc-4Zg"/>
                         <outlet property="medicineTableView" destination="3zV-fL-1R3" id="ced-HX-Qgo"/>
                         <outlet property="medicineTextField" destination="V4a-9O-qyz" id="exI-GF-YhB"/>
+                        <outlet property="moreMedicineButton" destination="WMm-8L-1hp" id="4lw-kQ-tNm"/>
                         <outlet property="nameTextField" destination="zp6-Kx-dcf" id="HTF-6r-uQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDZ-K5-RSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593.5" y="-353.5"/>
+            <point key="canvasLocation" x="2091.75" y="-595.125"/>
         </scene>
         <!--Gráfico-->
         <scene sceneID="OSC-yr-QPi">
@@ -472,23 +478,45 @@
         <scene sceneID="SmF-WZ-H01">
             <objects>
                 <tabBarController id="XqH-D4-5Mq" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="jOe-nw-EMJ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="jOe-nw-EMJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.95688981529999995" blue="0.9149609809" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="D3P-5v-Md4" kind="relationship" relationship="viewControllers" id="XlS-fa-EWm"/>
                         <segue destination="Btl-3L-RKM" kind="relationship" relationship="viewControllers" id="LoT-da-p8j"/>
-                        <segue destination="R6J-FZ-eiP" kind="relationship" relationship="viewControllers" id="7hw-XA-pxr"/>
                         <segue destination="yjd-07-Jw4" kind="relationship" relationship="viewControllers" id="w9j-LV-5xg"/>
+                        <segue destination="rJT-g5-00w" kind="relationship" relationship="viewControllers" id="G7D-jP-Lad"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4Z-Wo-N81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="703.5" y="-775.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="0Ad-gW-xXF">
+            <objects>
+                <navigationController id="rJT-g5-00w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vbA-Qp-cPy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c1V-4y-Itb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.18359375" green="0.18359375" blue="0.18359375" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="D3P-5v-Md4" kind="relationship" relationship="rootViewController" id="k2B-Wi-IId"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI3-jd-30B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="-624.75"/>
         </scene>
         <!--Diario Glicose-->
         <scene sceneID="UeU-Pa-p6k">
@@ -497,10 +525,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TMg-Xc-7gy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.74567820640000004" green="0.84622584710000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="sectionIndexTrackingBackgroundColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="      " id="eaM-Og-YMe">
                                 <cells>
@@ -699,8 +728,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addNotes" rowHeight="56" id="Wc3-9Q-6PP" customClass="AddNotesCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -768,7 +797,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addMedicine" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70k-QQ-zTL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.050980396570000003" green="0.25490197539999998" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="separatorColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="56" id="v3S-cV-plB" customClass="cellMedicine">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -877,6 +906,7 @@ o nome do remédio e o horário que tomou</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="spL-PE-JMb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -894,4 +924,5 @@ o nome do remédio e o horário que tomou</string>
         <image name="Fine Print.png" width="32" height="32"/>
         <image name="Line Chart-50.png" width="32" height="32"/>
     </resources>
+    <color key="tintColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -50,8 +50,7 @@
     // In order to expand just one cell at a time. If you set this value YES, when you expand an cell, the already-expanded cell is collapsed automatically.
     //    self.tableView.shouldExpandOnlyOneCell = YES;
     
-    self.navigationItem.title = @"SKSTableView";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Collapse"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Recolher"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(collapseSubrows)];
