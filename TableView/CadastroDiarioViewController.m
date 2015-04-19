@@ -14,6 +14,10 @@
 #import "UserHistoryViewController.h"
 #import "UIColor+FSPalette.h"
 #import "Entries.h"
+#import "Notes.h"
+#import "Medications.h"
+
+
 
 
 @interface CadastroDiarioViewController ()
@@ -178,9 +182,19 @@
         
         NSLog(@"%@", convertedString);
         
-//        NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
-//        NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+        NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
         
+        NSArray *noteArray = [ notes componentsSeparatedByString:@"|"];
+        
+        self.dailyEntry.reminders = [NSMutableArray arrayWithArray:noteArray];
+        
+        NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+
+       NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
+        
+        self.dailyEntry.medicines = [NSMutableArray arrayWithArray:medicinesArray];
+        
+        NSLog(@"%@//%@", medicinesArray, noteArray);
         
     }else{
         self.Edit.title = @"Editar Anterior";
@@ -191,6 +205,31 @@
         //alloc class
         self.dailyEntry = [[DailyEntry alloc] init];
     }
+}
+
+-(NSString*) stringWithNSSet: (NSSet*) set
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[set allObjects]];
+    
+    NSString* string = [[NSString alloc] initWithFormat:@""];
+    
+    for (int arrayRange = 0; arrayRange < [array count]; arrayRange++) {
+        
+        // Returns a Boolean value that indicates whether the receiver is an instance of a
+        // given class.
+        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]]) string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
+        else
+        {
+            Medications *medications = [array objectAtIndex:arrayRange];
+            string = [string stringByAppendingString: [medications medication]];
+        }
+        if (arrayRange != [array count] - 1) {
+            string = [string stringByAppendingString:@"|"];
+        }
+        
+    }
+    
+    return string;
 }
 
 

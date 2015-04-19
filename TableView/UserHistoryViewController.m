@@ -103,7 +103,9 @@
             Medications *medications = [array objectAtIndex:arrayRange];
             string = [string stringByAppendingString: [medications medication]];
         }
-        string = [string stringByAppendingString:@"-"];
+        if (arrayRange != [array count] - 1) {
+            string = [string stringByAppendingString:@" - "];
+        }
     }
     
     return string;
