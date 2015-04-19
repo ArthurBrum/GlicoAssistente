@@ -18,6 +18,9 @@
 @property (nonatomic, strong) NSMutableArray *writedNotes;
 
 - (BOOL) saveNewEntry;
+
+- (void) updateEntry;
+
 + (NSMutableArray *) fetchEntries;
 
 @end

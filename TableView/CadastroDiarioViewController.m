@@ -148,12 +148,20 @@
     
             [self.dailyEntry saveNewEntry];
     
+            self.Edit.title = @"Editar Anterior";
             self.GlucoData.text = @"";
         
             //alloc class
             self.dailyEntry = [[DailyEntry alloc] init];
         }else{
+            self.Edit.title = @"Editar Anterior";
+            self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
+            self.dailyEntry.entryDate = self.datePicker.date;
             
+            [self.dailyEntry  updateEntry];
+            
+            self.Edit.title = @"Editar Anterior";
+            self.GlucoData.text = @"";
         }
     }
     
