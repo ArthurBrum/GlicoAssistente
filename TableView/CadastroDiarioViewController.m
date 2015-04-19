@@ -186,6 +186,7 @@
         self.Edit.title = @"Editar Anterior";
         self.GlucoData.text = @"";
         [self ConfigDatePicker];
+        [self.datePicker setDate: [NSDate date]];
         
         //alloc class
         self.dailyEntry = [[DailyEntry alloc] init];
