@@ -13,11 +13,15 @@
 #import "NotesViewController.h"
 #import "UserHistoryViewController.h"
 #import "UIColor+FSPalette.h"
+#import "Entries.h"
+
 
 @interface CadastroDiarioViewController ()
 
 ///Receives cadastre date glucose
 @property (weak, nonatomic) IBOutlet UITextField *GlucoData;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *Edit;
 
 ///Receives day, hours and minutes in DatePicker
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -44,6 +48,16 @@
     //Hides numeric pad when touch outside text field
     [self addTapGesture];
     
+    [self ConfigDatePicker];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) ConfigDatePicker {
     //maximum date in date picker is the current time
     [self.datePicker setMaximumDate: [NSDate date]];
     
@@ -60,13 +74,6 @@
     NSDate *minDate = [calender dateByAddingComponents:components toDate:currentDate  options:0];
     
     [self.datePicker setMinimumDate: minDate];
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -131,18 +138,60 @@
  **/
 - (IBAction)saveDatas:(id)sender {
     if(![self.GlucoData.text isEqualToString:@""]){
-    self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
-    self.dailyEntry.entryDate = self.datePicker.date;
+        self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
+        self.dailyEntry.entryDate = self.datePicker.date;
     
-    [self.dailyEntry saveNewEntry];
+        [self.dailyEntry saveNewEntry];
     
-    self.GlucoData.text = @"";
+        self.GlucoData.text = @"";
         
         //alloc class
         self.dailyEntry = [[DailyEntry alloc] init];
     }
     
 }
+
+- (IBAction)editLast:(id)sender {
+    if ([self.Edit.title isEqualToString:@"Editar Anterior"]) {
+        self.Edit.title = @"Cancelar";
+        
+        NSMutableArray* dataArray = [DailyEntry fetchEntries];
+        
+        Entries *obj = [dataArray lastObject];
+        
+        // here we create NSDateFormatter object for change the Format of date..
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        // here set format which you want...
+        [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+        
+        //here convert date in NSString
+        NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
+        
+        
+        
+        NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
+        
+        
+        self.GlucoData.text = dateAndGlic;
+        self.datePicker.date = [dateFormatter dateFromString:convertedString];
+        
+        NSLog(@"%@", convertedString);
+        
+//        NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
+//        NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+        
+        
+    }else{
+        self.Edit.title = @"Editar Anterior";
+        self.GlucoData.text = @"";
+        [self ConfigDatePicker];
+        
+        //alloc class
+        self.dailyEntry = [[DailyEntry alloc] init];
+    }
+}
+
 
 /** 
  Override to support editing the table view.

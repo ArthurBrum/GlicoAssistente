@@ -701,8 +701,19 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Editar Anterior" id="7OV-Sx-lVN">
+                            <connections>
+                                <action selector="editLast:" destination="SCL-Xl-TAI" id="cMV-4c-dwk"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Diario Glicose" id="yO5-Mp-iit">
+                        <barButtonItem key="leftBarButtonItem" title="Editar Anterior" id="ijC-sM-FYz">
+                            <connections>
+                                <action selector="editLast:" destination="SCL-Xl-TAI" id="g2W-Mf-pbq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="i0L-u9-23w">
                             <connections>
                                 <action selector="saveDatas:" destination="SCL-Xl-TAI" id="tbu-Mt-pyC"/>
@@ -712,6 +723,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="Edit" destination="ijC-sM-FYz" id="oNM-4M-mNQ"/>
                         <outlet property="GlucoData" destination="Udi-t2-7Vz" id="CVk-sB-qMa"/>
                         <outlet property="datePicker" destination="MBy-x9-u6E" id="1pK-Pf-bh6"/>
                     </connections>
