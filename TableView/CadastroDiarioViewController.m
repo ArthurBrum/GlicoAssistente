@@ -142,20 +142,26 @@
  **/
 - (IBAction)saveDatas:(id)sender {
     if(![self.GlucoData.text isEqualToString:@""]){
-        self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
-        self.dailyEntry.entryDate = self.datePicker.date;
+        if ([self.Edit.title isEqualToString:@"Editar Anterior"]) {
+            self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
+            self.dailyEntry.entryDate = self.datePicker.date;
     
-        [self.dailyEntry saveNewEntry];
+            [self.dailyEntry saveNewEntry];
     
-        self.GlucoData.text = @"";
+            self.GlucoData.text = @"";
         
-        //alloc class
-        self.dailyEntry = [[DailyEntry alloc] init];
+            //alloc class
+            self.dailyEntry = [[DailyEntry alloc] init];
+        }else{
+            
+        }
     }
     
 }
 
 - (IBAction)editLast:(id)sender {
+    
+    //stat edit - pull all last data
     if ([self.Edit.title isEqualToString:@"Editar Anterior"]) {
         self.Edit.title = @"Cancelar";
         
@@ -172,31 +178,31 @@
         //here convert date in NSString
         NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
         
-        
-        
+        //to pull data from core data
         NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
         
-        
+        //to wrtie in text field
         self.GlucoData.text = dateAndGlic;
+        
+        //to write in date picker
         self.datePicker.date = [dateFormatter dateFromString:convertedString];
         
-        NSLog(@"%@", convertedString);
-        
+        //config for to pull notes
         NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
         
         NSArray *noteArray = [ notes componentsSeparatedByString:@"|"];
         
         self.dailyEntry.reminders = [NSMutableArray arrayWithArray:noteArray];
         
+        //config for to pull medicines
         NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
 
        NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
         
         self.dailyEntry.medicines = [NSMutableArray arrayWithArray:medicinesArray];
         
-        NSLog(@"%@//%@", medicinesArray, noteArray);
-        
     }else{
+        //stat cancel
         self.Edit.title = @"Editar Anterior";
         self.GlucoData.text = @"";
         [self ConfigDatePicker];
