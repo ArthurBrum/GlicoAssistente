@@ -21,7 +21,6 @@
 
 
 @interface CadastroDiarioViewController ()
-
 ///Receives cadastre date glucose
 @property (weak, nonatomic) IBOutlet UITextField *GlucoData;
 
