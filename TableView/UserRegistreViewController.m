@@ -72,6 +72,9 @@
 
     self.medicineTableView.editing = NO;
     
+    //Hides numeric pad when touch outside text field
+    [self addTapGesture];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -253,7 +256,16 @@
     }
     
 }
+- (void) addTapGesture {
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.view addGestureRecognizer:tapper];
+}
 
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation

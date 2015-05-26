@@ -254,6 +254,7 @@
 
 - (IBAction)collapseCells:(id)sender {
     [self collapseSubrows];
+    
 }
 
 @end
