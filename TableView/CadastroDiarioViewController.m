@@ -162,6 +162,7 @@
             self.Edit.title = @"Editar Anterior";
             self.GlucoData.text = @"";
         }
+        [self ConfigDatePicker];
     }
     
 }
@@ -171,6 +172,7 @@
     //stat edit - pull all last data
     if ([self.Edit.title isEqualToString:@"Editar Anterior"]) {
         self.Edit.title = @"Cancelar";
+        [self.datePicker setMinimumDate: nil];
         
         NSMutableArray* dataArray = [DailyEntry fetchEntries];
         
@@ -217,6 +219,8 @@
         
         //alloc class
         self.dailyEntry = [[DailyEntry alloc] init];
+        [self ConfigDatePicker];
+
     }
 }
 
