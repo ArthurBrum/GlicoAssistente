@@ -71,6 +71,40 @@
     NSLog(@"%@", date);
 }
 
+- (IBAction)changeMode:(id)sender {
+    self.calendar.calendarAppearance.isWeekMode = !self.calendar.calendarAppearance.isWeekMode;
+    
+    [self transitionExample];
+}
+
+- (void)transitionExample
+{
+    CGFloat newHeight = 200;
+    if(self.calendar.calendarAppearance.isWeekMode){
+        newHeight = 50.;
+    }
+    
+    [UIView animateWithDuration:.5
+                     animations:^{
+                         self.calendarContentViewHeight.constant = newHeight;
+                         [self.view layoutIfNeeded];
+                     }];
+    
+    [UIView animateWithDuration:.25
+                     animations:^{
+                         self.calendarContentView.layer.opacity = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         [self.calendar reloadAppearance];
+                         
+                         [UIView animateWithDuration:.25
+                                          animations:^{
+                                              self.calendarContentView.layer.opacity = 1;
+                                          }];
+                     }];
+}
+
+
 
 
 @end

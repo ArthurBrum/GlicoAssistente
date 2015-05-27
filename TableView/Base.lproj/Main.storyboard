@@ -40,11 +40,50 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZY-eM-xVC" customClass="JTCalendarMenuView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.047919099520000001" green="0.70998202079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="VQe-ev-fso">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VQe-ev-fso"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VQe-ev-fso"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D79-qI-Ug4" customClass="JTCalendarContentView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="309" id="VbY-b5-nCz">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VbY-b5-nCz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VbY-b5-nCz"/>
+                                    </mask>
+                                </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-fJ-Oga">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="minize">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeMode:" destination="85y-ha-ZmL" eventType="touchUpInside" id="YfS-gV-pfN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -56,12 +95,19 @@
                             <constraint firstItem="D79-qI-Ug4" firstAttribute="leading" secondItem="VZY-eM-xVC" secondAttribute="leading" id="dFN-wi-g2Y"/>
                             <constraint firstItem="D79-qI-Ug4" firstAttribute="trailing" secondItem="VZY-eM-xVC" secondAttribute="trailing" id="gbt-MI-6Bi"/>
                             <constraint firstItem="D79-qI-Ug4" firstAttribute="leading" secondItem="Nt0-1c-TIx" secondAttribute="leading" id="i5T-gP-lg4"/>
+                            <constraint firstItem="Z92-fJ-Oga" firstAttribute="top" secondItem="D79-qI-Ug4" secondAttribute="bottom" constant="8" id="keJ-IF-Hms">
+                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z92-fJ-Oga" secondAttribute="trailing" constant="-5" id="qek-2N-g9H">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="VZY-eM-xVC" firstAttribute="top" secondItem="qH4-EL-0ji" secondAttribute="bottom" id="vWG-90-rC4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="VZY-eM-xVC"/>
                                 <exclude reference="D79-qI-Ug4"/>
+                                <exclude reference="Z92-fJ-Oga"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="vWG-90-rC4"/>
@@ -72,6 +118,8 @@
                                 <exclude reference="dFN-wi-g2Y"/>
                                 <exclude reference="gbt-MI-6Bi"/>
                                 <exclude reference="i5T-gP-lg4"/>
+                                <exclude reference="keJ-IF-Hms"/>
+                                <exclude reference="qek-2N-g9H"/>
                                 <exclude reference="Urd-CL-7Qu"/>
                             </mask>
                         </variation>
@@ -79,16 +127,19 @@
                             <mask key="subviews">
                                 <include reference="VZY-eM-xVC"/>
                                 <include reference="D79-qI-Ug4"/>
+                                <include reference="Z92-fJ-Oga"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="vWG-90-rC4"/>
-                                <include reference="EHi-4i-L8C"/>
-                                <include reference="Uep-qt-x0c"/>
+                                <exclude reference="EHi-4i-L8C"/>
+                                <exclude reference="Uep-qt-x0c"/>
                                 <include reference="W8p-Hs-RBP"/>
                                 <include reference="c9E-gy-jJN"/>
                                 <include reference="dFN-wi-g2Y"/>
                                 <include reference="gbt-MI-6Bi"/>
                                 <include reference="i5T-gP-lg4"/>
+                                <include reference="keJ-IF-Hms"/>
+                                <include reference="qek-2N-g9H"/>
                                 <exclude reference="Urd-CL-7Qu"/>
                             </mask>
                         </variation>
@@ -96,6 +147,7 @@
                     <navigationItem key="navigationItem" title="Historico" id="2Hg-L2-pEj"/>
                     <connections>
                         <outlet property="calendarContentView" destination="D79-qI-Ug4" id="NO3-BP-qBe"/>
+                        <outlet property="calendarContentViewHeight" destination="VbY-b5-nCz" id="UGf-7D-iyz"/>
                         <outlet property="calendarMenuView" destination="VZY-eM-xVC" id="M7b-3U-a5Q"/>
                     </connections>
                 </viewController>
