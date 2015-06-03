@@ -12,6 +12,8 @@
 #import "Entries.h"
 #import "Notes.h"
 #import "Medications.h"
+#import "UIColor+FSPalette.h"
+
 
 @interface HistoricViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -133,15 +135,18 @@
     // here set format which you want...
     [dateFormatter setDateFormat:@"HH:mm"];
     //here convert date in NSString
+    NSString *string = @"Hora:   ";
     NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
-    //to write in date picker
-    [self.contents addObject:convertedString];
+    string = [string stringByAppendingString:convertedString];
+    [self.contents addObject:string];
     
     
     //to pull data from core data
+    string = @"Glucose:   ";
     NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
-    //to wrtie in text field
-    [self.contents addObject: dateAndGlic];
+    string = [string stringByAppendingString:dateAndGlic];
+    string = [string stringByAppendingString:@"  mg/dL"];
+    [self.contents addObject: string];
     
     
     //config for to pull notes
@@ -193,7 +198,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //dailyEntry pulled from last screen - it is a MutableArray
-    NSLog(@"%lu", (unsigned long)[self.contents count]);
     return [self.contents count];
 }
 
@@ -231,6 +235,9 @@
      DataCell *dataCell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     dataCell.dataLabel.text = self.contents[indexPath.row];
+    
+    if(indexPath.row == 0)
+        dataCell.backgroundColor = [UIColor fsLightBlue];
     
     return  dataCell;
 }
