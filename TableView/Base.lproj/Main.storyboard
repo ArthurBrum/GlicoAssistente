@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oAf-eH-JBE" style="IBUITableViewCellStyleDefault" id="mHf-Gj-CNX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oAf-eH-JBE" style="IBUITableViewCellStyleDefault" id="mHf-Gj-CNX" customClass="HistoricTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mHf-Gj-CNX" id="24i-0t-4Ae">
@@ -105,12 +105,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datas" destination="oAf-eH-JBE" id="ANW-PN-SER"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="85y-ha-ZmL" id="O9p-Jf-xu2"/>
-                                    <outlet property="delegate" destination="85y-ha-ZmL" id="c0V-0G-uph"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -711,10 +710,10 @@
             </objects>
             <point key="canvasLocation" x="703.5" y="-775.5"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="0Ad-gW-xXF">
             <objects>
-                <navigationController id="rJT-g5-00w" sceneMemberID="viewController">
+                <navigationController id="rJT-g5-00w" userLabel="User" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vbA-Qp-cPy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c1V-4y-Itb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
