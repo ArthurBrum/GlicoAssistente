@@ -255,22 +255,9 @@
 		C24857061AE16C35007CC2BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5505F6131AC5DC64003D81B9 /* UserHistoryViewController.h */,
-				C2F60DAE1AC47CD200B5CF5D /* CadastroDiarioViewController.h */,
-				C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */,
-				C2F60DA91AC477A100B5CF5D /* ViewController.m */,
-				C2F60DA81AC477A100B5CF5D /* ViewController.h */,
-				C20C28721ACDD1E7001C7A4E /* ChartViewController.m */,
-				5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */,
-				5505F6101AC5DC11003D81B9 /* UserRegistreViewController.h */,
-				5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */,
-				C20C28711ACDD1E7001C7A4E /* ChartViewController.h */,
-				5505F60D1AC5D882003D81B9 /* NotesViewController.h */,
-				5505F6081AC5D7DA003D81B9 /* AddMedicine.m */,
-				5505F6071AC5D7DA003D81B9 /* AddMedicine.h */,
-				5505F60E1AC5D882003D81B9 /* NotesViewController.m */,
-				C221DD0B1B1501BA00F513EF /* HistoricViewController.h */,
-				C221DD0C1B1501BA00F513EF /* HistoricViewController.m */,
+				C2B78F611B1F2F85006CF6F6 /* controllers.m */,
+				C2B78F601B1F2F58006CF6F6 /* controllers.h */,
+				C24857051AE16BCC007CC2BE /* Cells */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +273,47 @@
 				553BB23C1ACC63220081C244 /* expandableImage@2x.png */,
 			);
 			name = png;
+			sourceTree = "<group>";
+		};
+		C2B78F5F1B1F2F31006CF6F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				553BB2341ACC63090081C244 /* SKSTableView */,
+				C20C28671ACDD0AE001C7A4E /* FSLineChart */,
+				8E32F0221ACDD911009BF82D /* EntitiesClasses */,
+				C221DCE51B15012F00F513EF /* JTCalendar */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C2B78F601B1F2F58006CF6F6 /* controllers.h */ = {
+			isa = PBXGroup;
+			children = (
+				5505F6131AC5DC64003D81B9 /* UserHistoryViewController.h */,
+				C20C28711ACDD1E7001C7A4E /* ChartViewController.h */,
+				5505F60D1AC5D882003D81B9 /* NotesViewController.h */,
+				5505F6101AC5DC11003D81B9 /* UserRegistreViewController.h */,
+				5505F6071AC5D7DA003D81B9 /* AddMedicine.h */,
+				C221DD0B1B1501BA00F513EF /* HistoricViewController.h */,
+				C2F60DAE1AC47CD200B5CF5D /* CadastroDiarioViewController.h */,
+				C2F60DA81AC477A100B5CF5D /* ViewController.h */,
+			);
+			name = controllers.h;
+			sourceTree = "<group>";
+		};
+		C2B78F611B1F2F85006CF6F6 /* controllers.m */ = {
+			isa = PBXGroup;
+			children = (
+				C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */,
+				C2F60DA91AC477A100B5CF5D /* ViewController.m */,
+				C20C28721ACDD1E7001C7A4E /* ChartViewController.m */,
+				5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */,
+				5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */,
+				5505F6081AC5D7DA003D81B9 /* AddMedicine.m */,
+				5505F60E1AC5D882003D81B9 /* NotesViewController.m */,
+				C221DD0C1B1501BA00F513EF /* HistoricViewController.m */,
+			);
+			name = controllers.m;
 			sourceTree = "<group>";
 		};
 		C2F60D2F1AC3494200B5CF5D = {
@@ -312,12 +340,8 @@
 		C2F60D3A1AC3494200B5CF5D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				C221DCE51B15012F00F513EF /* JTCalendar */,
+				C2B78F5F1B1F2F31006CF6F6 /* Model */,
 				C24857061AE16C35007CC2BE /* Controllers */,
-				C24857051AE16BCC007CC2BE /* Cells */,
-				8E32F0221ACDD911009BF82D /* EntitiesClasses */,
-				C20C28671ACDD0AE001C7A4E /* FSLineChart */,
-				553BB2341ACC63090081C244 /* SKSTableView */,
 				C2F60DAB1AC477DC00B5CF5D /* AppDelegate.h */,
 				C2F60DAC1AC477DC00B5CF5D /* AppDelegate.m */,
 				C24BAC1A1AE2DC6200E7C4E9 /* Main.storyboard */,

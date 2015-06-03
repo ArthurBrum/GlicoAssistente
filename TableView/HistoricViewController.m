@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.calendar = [JTCalendar new];
-    
+    //Config the calendar
     {
         
         // Customize the text for each month
@@ -71,6 +71,7 @@
     NSLog(@"%@", date);
 }
 
+//minimize calendar
 - (IBAction)changeMode:(id)sender {
     self.calendar.calendarAppearance.isWeekMode = !self.calendar.calendarAppearance.isWeekMode;
     

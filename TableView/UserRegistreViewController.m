@@ -51,11 +51,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *medicineTableView;
 
-
-
 @end
-
-
 
 @implementation UserRegistreViewController
 
@@ -85,9 +81,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self refreshTextFields];
-    
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated{
     [self.DoneButton setTitle:@"Editar" forState:normal];
@@ -96,18 +90,32 @@
 }
 
 #pragma mark - TableView methods
-
+/**
+ configuration the return numbers cells
+ @return - NSInteger
+ @param - UITableView
+ **/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.medicineList.count;
 }
 
+/**
+ Override to support editing the table view.
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle : NSIndexPath
+ **/
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
     [super setEditing:editing animated:animated];
     [self.medicineTableView setEditing:editing animated:animated];
 }
 
+/**
+ configuration the add cell
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIndenfier = @"MedicineCell";
@@ -123,14 +131,25 @@
     return cell;
 }
 
-#pragma mark - TextField methods
-
--(BOOL)textFieldShouldReturn:(UITextField*)textField
-{
-    [textField resignFirstResponder];
-    textField.clearsOnBeginEditing = NO;
-    return YES;
+/**
+ configuration the delete cell
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle
+ **/
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.medicineList removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.medicineTableView reloadData];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
 }
+
+#pragma mark - TextField methods
 
 -(void) persistUserSets
 {
@@ -192,47 +211,32 @@
     self.moreMedicineButton.enabled = NO;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.medicineList removeObjectAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-        [self.medicineTableView reloadData];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
 #pragma mark - TextField event handlers
+
 /**
- 
+ When click in ruturn the keyboard close
  **/
 - (IBAction)nameTextFieldHandler:(id)sender {
     [self textFieldShouldReturn:self.nameTextField];
 }
-
 - (IBAction)ageTextFieldHandler:(id)sender {
     [self textFieldShouldReturn:self.ageTextField];
 }
-
 - (IBAction)doctorTextFieldHandler:(id)sender {
     [self textFieldShouldReturn:self.doctorTextField];
 }
-
 - (IBAction)hospitalTextFieldHandler:(id)sender {
     [self textFieldShouldReturn:self.hospitalTextField];
 }
-
 - (IBAction)heightTextFieldHandler:(id)sender {
     [self textFieldShouldReturn:self.heightTextField];
 }
 
 #pragma mark  - Button handler
-
+/**
+ Save and fixe datas
+ **/
 - (IBAction)doneButtonHanlder:(id)sender {
-    
     if ([self.DoneButton.titleLabel.text isEqual:@"Salvar"]) {
         [self.DoneButton setTitle:@"Editar" forState:normal];
         [self nonEditableTextFields];
@@ -243,9 +247,11 @@
         [self.DoneButton setTitle:@"Salvar" forState:normal];
         [self editableTextFields];
     }
-    
 }
 
+/**
+ Add in the table the usuals medicines
+ **/
 - (IBAction)addButtonHandler:(id)sender {
     
     if (![self.medicineTextField.text isEqualToString:@""]) {
@@ -256,6 +262,18 @@
     }
     
 }
+
+#pragma mark  - close keyboard
+/**
+ Save and fixe datas
+ **/
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    textField.clearsOnBeginEditing = NO;
+    return YES;
+}
+
 - (void) addTapGesture {
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = FALSE;
@@ -266,16 +284,6 @@
 {
     [self.view endEditing:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 @end

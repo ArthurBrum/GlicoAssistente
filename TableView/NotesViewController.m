@@ -32,7 +32,13 @@
         [self.dailyEntry.reminders insertObject:@"" atIndex:0];
     
 }
-#pragma mark - Cells methods
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Recover data
 /**
  recall all the cell
  @return - void
@@ -51,11 +57,7 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - close keyboard
 /**
  close the keyboard
  @return - BOOL
@@ -68,6 +70,7 @@
     return YES;
 }
 
+#pragma mark - add note and add cell
 /**
  click return/enter add a new cell
  **/

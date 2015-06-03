@@ -60,25 +60,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) ConfigDatePicker {
-    //maximum date in date picker is the current time
-    [self.datePicker setMaximumDate: [NSDate date]];
-    
-    //configuration of the minimum time - this minimum time is 24 hours ago
-    NSCalendar *calender = [NSCalendar currentCalendar] ;
-    NSDateComponents *components = [calender components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:[[NSDate alloc] init]];
-    
-    NSDate *currentDate = [NSDate date];
-    
-    [components setHour:-24];
-    [components setMinute:0];
-    [components setSecond:0];
-    
-    NSDate *minDate = [calender dateByAddingComponents:components toDate:currentDate  options:0];
-    
-    [self.datePicker setMinimumDate: minDate];
-}
-
 #pragma mark - Table view data source
 /**
  configuration the return numbers cells
@@ -108,13 +89,50 @@
     return self.cell;
 }
 
+
+/**
+ Override to support editing the table view.
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle : NSIndexPath
+ **/
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
+/**
+ disable the delete/edit row
+ **/
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+/**
+ Override to support rearranging the table view.
+ **/
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+
+/**
+ Override to support conditional rearranging of the table view.
+ **/
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+
+
 #pragma mark - config dates
 /**
  update the maximum time with the current time in datepicker
  **/
 - (IBAction)maximumUpdateDate:(id)sender {
     [self.datePicker setMaximumDate: [NSDate date]];
-
 }
 
 /** 
@@ -128,14 +146,36 @@
         if ([GlucoDataController intValue] <=100) {
             self.GlucoData.textColor =[UIColor fsYellow];
         }else{
-           
                 self.GlucoData.textColor =[UIColor fsGreen];
-            
         }
     }
 }
 
-#pragma mark - cells
+/**
+ configuration date picker state normal
+ @return - NSInteger
+ @param - UITableView
+ **/
+- (void) ConfigDatePicker {
+    //maximum date in date picker is the current time
+    [self.datePicker setMaximumDate: [NSDate date]];
+    
+    //configuration of the minimum time - this minimum time is 24 hours ago
+    NSCalendar *calender = [NSCalendar currentCalendar] ;
+    NSDateComponents *components = [calender components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:[[NSDate alloc] init]];
+    
+    NSDate *currentDate = [NSDate date];
+    
+    [components setHour:-24];
+    [components setMinute:0];
+    [components setSecond:0];
+    
+    NSDate *minDate = [calender dateByAddingComponents:components toDate:currentDate  options:0];
+    
+    [self.datePicker setMinimumDate: minDate];
+}
+
+#pragma mark - buttons
 /**
  Save datas
  **/
@@ -157,7 +197,7 @@
             self.dailyEntry.glucose = [NSNumber numberWithInteger: [self.GlucoData.text integerValue]];
             self.dailyEntry.entryDate = self.datePicker.date;
             
-            [self.dailyEntry  updateEntry];
+            [self.dailyEntry  updateEntry];//NAO FUNCIONA AINDA!!!
             
             self.Edit.title = @"Editar Anterior";
             self.GlucoData.text = @"";
@@ -166,7 +206,9 @@
     }
     
 }
-
+/**
+ Edit last
+ **/
 - (IBAction)editLast:(id)sender {
     
     //stat edit - pull all last data
@@ -180,38 +222,34 @@
         
         // here we create NSDateFormatter object for change the Format of date..
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        
         // here set format which you want...
         [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
-        
         //here convert date in NSString
         NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
-        
-        //to pull data from core data
-        NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
-        
-        //to wrtie in text field
-        self.GlucoData.text = dateAndGlic;
-        
         //to write in date picker
         self.datePicker.date = [dateFormatter dateFromString:convertedString];
         
+        
+        //to pull data from core data
+        NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
+        //to wrtie in text field
+        self.GlucoData.text = dateAndGlic;
+        
+        
         //config for to pull notes
         NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
-        
-        NSArray *noteArray = [ notes componentsSeparatedByString:@"|"];
-        
+        NSArray *noteArray = [notes componentsSeparatedByString:@"|"];
         self.dailyEntry.reminders = [NSMutableArray arrayWithArray:noteArray];
         
         //config for to pull medicines
         NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
-
-       NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
+        NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
         
         self.dailyEntry.medicines = [NSMutableArray arrayWithArray:medicinesArray];
+        NSLog(@"%@", self.dailyEntry.medicines);
         
     }else{
-        //stat cancel
+        //state cancel
         self.Edit.title = @"Editar Anterior";
         self.GlucoData.text = @"";
         [self ConfigDatePicker];
@@ -243,48 +281,10 @@
         if (arrayRange != [array count] - 1) {
             string = [string stringByAppendingString:@"|"];
         }
-        
     }
-    
     return string;
 }
 
-
-/** 
- Override to support editing the table view.
- @return - void
- @param - UITableView : UITableViewCellEditingStyle : NSIndexPath
- **/
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-
-/**
- disable the delete/edit row
- **/
--(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return NO;
-}
-
-/**
- Override to support rearranging the table view.
- **/
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-
-/**
- Override to support conditional rearranging of the table view.
- **/
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
 
 #pragma mark - Navigation
 

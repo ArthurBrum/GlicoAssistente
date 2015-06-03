@@ -30,29 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-/**
- insert new row - return the rows number that is the number from objects medicines
- @return - NSInteger
- @param - UITableView : NSInteger
- **/
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    //dailyEntry pulled from last screen - it is a MutableArray
-    return [self.dailyEntry.medicines count];
-}
-
-/**
- permission of edition
- @return - void
- @param - BOOL : BOOL
- **/
--(void)setEditing:(BOOL)editing animated:(BOOL)animated
-{
-    [super setEditing:editing animated:animated];
-    [self.tableView setEditing:editing animated:animated];
-}
+#pragma mark -  close keyboard
 
 /**
  close the keyboard
@@ -65,6 +43,9 @@
     textField.clearsOnBeginEditing = NO;
     return YES;
 }
+
+#pragma mark -  buttons
+
 
 - (IBAction)enter:(id)sender {
     NSString *stringMed = self.editMed.text;
@@ -102,6 +83,20 @@
     }
 }
 
+#pragma mark - Table view data source
+
+/**
+ insert new row - return the rows number that is the number from objects medicines
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //dailyEntry pulled from last screen - it is a MutableArray
+    return [self.dailyEntry.medicines count];
+}
+
+
 /**
  configuration the delete cell
  @return - void
@@ -134,6 +129,17 @@
     medicineCell.medicine.text = self.dailyEntry.medicines[indexPath.row];
     
     return  medicineCell;
+}
+
+/**
+ permission of edition
+ @return - void
+ @param - BOOL : BOOL
+ **/
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
 }
 
 @end
