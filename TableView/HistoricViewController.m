@@ -7,8 +7,14 @@
 //
 
 #import "HistoricViewController.h"
+#import "DataCell.h"
+#import "DailyEntry.h"
 
 @interface HistoricViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *contents;
+
+@property (nonatomic, strong) DailyEntry *dailyEntry;
 
 @end
 
@@ -104,6 +110,56 @@
                      }];
 }
 
+#pragma mark - Table view data source
+
+/**
+ insert new row - return the rows number that is the number from objects medicines
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //dailyEntry pulled from last screen - it is a MutableArray
+    return [self.contents count];
+}
+
+/**
+ disable the delete/edit row
+ **/
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+/**
+ Override to support editing the table view.
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle : NSIndexPath
+ **/
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
+/**
+ used to insert a new cell. This cell have a label with the medication inserted
+ @return - UITableViewCell
+ @param - UITableView : NSIndexPath
+ **/
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *identifier = @"DataCell";
+    
+     DataCell *dataCell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    dataCell.dataLabel.text = self.dailyEntry.medicines[indexPath.row];
+    
+    return  dataCell;
+}
 
 
 

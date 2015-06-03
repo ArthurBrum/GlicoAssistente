@@ -45,11 +45,10 @@
 		C221DD071B15012F00F513EF /* JTCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C221DCFC1B15012F00F513EF /* JTCircleView.m */; };
 		C221DD0D1B1501BA00F513EF /* HistoricViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C221DD0C1B1501BA00F513EF /* HistoricViewController.m */; };
 		C24BAC1C1AE2DC6200E7C4E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24BAC1A1AE2DC6200E7C4E9 /* Main.storyboard */; };
-		C2B78F641B1F3D73006CF6F6 /* HistoricTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B78F631B1F3D73006CF6F6 /* HistoricTableViewCell.m */; };
+		C2B78F671B1F41AE006CF6F6 /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B78F661B1F41AE006CF6F6 /* DataCell.m */; };
 		C2F60D3E1AC3494200B5CF5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60D3D1AC3494200B5CF5D /* main.m */; };
 		C2F60D4C1AC3494200B5CF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F60D4A1AC3494200B5CF5D /* LaunchScreen.xib */; };
 		C2F60D581AC3494300B5CF5D /* TableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60D571AC3494300B5CF5D /* TableViewTests.m */; };
-		C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DA91AC477A100B5CF5D /* ViewController.m */; };
 		C2F60DAD1AC477DC00B5CF5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DAC1AC477DC00B5CF5D /* AppDelegate.m */; };
 		C2F60DB01AC47CD200B5CF5D /* CadastroDiarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */; };
 		C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */; };
@@ -131,8 +130,8 @@
 		C221DD0C1B1501BA00F513EF /* HistoricViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoricViewController.m; sourceTree = "<group>"; };
 		C24BAC1B1AE2DC6200E7C4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2862F9E1AE7EBAC00A7B727 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		C2B78F621B1F3D73006CF6F6 /* HistoricTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoricTableViewCell.h; sourceTree = "<group>"; };
-		C2B78F631B1F3D73006CF6F6 /* HistoricTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoricTableViewCell.m; sourceTree = "<group>"; };
+		C2B78F651B1F41AE006CF6F6 /* DataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCell.h; sourceTree = "<group>"; };
+		C2B78F661B1F41AE006CF6F6 /* DataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
 		C2F60D381AC3494200B5CF5D /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F60D3C1AC3494200B5CF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F60D3D1AC3494200B5CF5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,8 +140,6 @@
 		C2F60D511AC3494200B5CF5D /* TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F60D561AC3494300B5CF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F60D571AC3494300B5CF5D /* TableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewTests.m; sourceTree = "<group>"; };
-		C2F60DA81AC477A100B5CF5D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C2F60DA91AC477A100B5CF5D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C2F60DAB1AC477DC00B5CF5D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C2F60DAC1AC477DC00B5CF5D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C2F60DAE1AC47CD200B5CF5D /* CadastroDiarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroDiarioViewController.h; sourceTree = "<group>"; };
@@ -251,8 +248,8 @@
 				C2F60DC11AC9EB7A00B5CF5D /* cellMedicine.m */,
 				C2F60DC41ACAC99700B5CF5D /* AddNotesCell.m */,
 				C2F60DC01AC9EB7A00B5CF5D /* cellMedicine.h */,
-				C2B78F621B1F3D73006CF6F6 /* HistoricTableViewCell.h */,
-				C2B78F631B1F3D73006CF6F6 /* HistoricTableViewCell.m */,
+				C2B78F651B1F41AE006CF6F6 /* DataCell.h */,
+				C2B78F661B1F41AE006CF6F6 /* DataCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 				5505F6071AC5D7DA003D81B9 /* AddMedicine.h */,
 				C221DD0B1B1501BA00F513EF /* HistoricViewController.h */,
 				C2F60DAE1AC47CD200B5CF5D /* CadastroDiarioViewController.h */,
-				C2F60DA81AC477A100B5CF5D /* ViewController.h */,
 			);
 			name = controllers.h;
 			sourceTree = "<group>";
@@ -310,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				C2F60DAF1AC47CD200B5CF5D /* CadastroDiarioViewController.m */,
-				C2F60DA91AC477A100B5CF5D /* ViewController.m */,
 				C20C28721ACDD1E7001C7A4E /* ChartViewController.m */,
 				5505F6111AC5DC11003D81B9 /* UserRegistreViewController.m */,
 				5505F6141AC5DC64003D81B9 /* UserHistoryViewController.m */,
@@ -496,8 +491,8 @@
 			files = (
 				C221DCFF1B15012F00F513EF /* JTCalendarContentView.m in Sources */,
 				5505F6091AC5D7DA003D81B9 /* AddMedicine.m in Sources */,
-				C2F60DAA1AC477A100B5CF5D /* ViewController.m in Sources */,
 				C20C286C1ACDD102001C7A4E /* UIColor+FSPalette.m in Sources */,
+				C2B78F671B1F41AE006CF6F6 /* DataCell.m in Sources */,
 				C2F60DC21AC9EB7A00B5CF5D /* cellMedicine.m in Sources */,
 				8E32F02B1ACDD958009BF82D /* Notes.m in Sources */,
 				553BB23E1ACC63220081C244 /* SKSTableViewCell.m in Sources */,
@@ -506,7 +501,6 @@
 				C221DD0D1B1501BA00F513EF /* HistoricViewController.m in Sources */,
 				C20C286D1ACDD102001C7A4E /* FSLineChart.m in Sources */,
 				C221DD001B15012F00F513EF /* JTCalendarDataCache.m in Sources */,
-				C2B78F641B1F3D73006CF6F6 /* HistoricTableViewCell.m in Sources */,
 				5505F6151AC5DC64003D81B9 /* UserHistoryViewController.m in Sources */,
 				C20C28731ACDD1E7001C7A4E /* ChartViewController.m in Sources */,
 				C2F60DC51ACAC99700B5CF5D /* AddNotesCell.m in Sources */,

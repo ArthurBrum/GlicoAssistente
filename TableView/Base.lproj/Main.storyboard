@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oAf-eH-JBE" style="IBUITableViewCellStyleDefault" id="mHf-Gj-CNX" customClass="HistoricTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oAf-eH-JBE" style="IBUITableViewCellStyleDefault" id="mHf-Gj-CNX" customClass="DataCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mHf-Gj-CNX" id="24i-0t-4Ae">
@@ -106,7 +106,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="datas" destination="oAf-eH-JBE" id="ANW-PN-SER"/>
+                                            <outlet property="dataLabel" destination="oAf-eH-JBE" id="ppM-79-m15"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,6 +198,7 @@
                         <outlet property="calendarContentView" destination="D79-qI-Ug4" id="NO3-BP-qBe"/>
                         <outlet property="calendarContentViewHeight" destination="VbY-b5-nCz" id="UGf-7D-iyz"/>
                         <outlet property="calendarMenuView" destination="VZY-eM-xVC" id="M7b-3U-a5Q"/>
+                        <outlet property="tableView" destination="Jpn-Rr-wr2" id="jHK-mY-AqB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mH5-aL-XXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
