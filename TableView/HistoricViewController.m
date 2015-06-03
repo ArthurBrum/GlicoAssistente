@@ -35,10 +35,11 @@
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
     
+    [self.calendar reloadData];
     
     [self setContet];
-
-    [self.calendar reloadData];
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +71,11 @@
  **/
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
+    [self setContet];
+    [self.tableView reloadData];
+
     NSLog(@"%@", date);
+    
 }
 
 #pragma mark - button for minimize
@@ -112,7 +117,12 @@
                                           }];
                      }];
 }
+
 #pragma mark - Config contents
+
+/**
+ Add all datas in the historic of day
+ **/
 -(void) setContet{
     NSMutableArray* dataArray = [DailyEntry fetchEntries];
     
@@ -121,7 +131,7 @@
     // here we create NSDateFormatter object for change the Format of date..
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // here set format which you want...
-    [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+    [dateFormatter setDateFormat:@"HH:mm"];
     //here convert date in NSString
     NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
     //to write in date picker
@@ -135,19 +145,19 @@
     
     
     //config for to pull notes
-    NSString* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
-    NSArray *noteArray = [notes componentsSeparatedByString:@"|"];
-    for(int i = 0; i < [noteArray count]; i++)
-        [self.contents addObject:noteArray[i]];
+    NSArray* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
+    for(int i = 0; i < [notes count]; i++)
+        [self.contents addObject:notes[i]];
     
     //config for to pull medicines
-    NSString* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
-    NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
-    for(int i = 0; i < [medicinesArray count]; i++)
-        [self.contents addObject:medicinesArray[i]];
+    NSArray* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+    for(int i = 0; i < [medicines count]; i++)
+        [self.contents addObject:medicines[i]];
 }
-
--(NSString*) stringWithNSSet: (NSSet*) set
+/**
+ Set the string for separete before
+ **/
+-(NSArray*) stringWithNSSet: (NSSet*) set
 {
     NSMutableArray *array = [NSMutableArray arrayWithArray:[set allObjects]];
     
@@ -157,7 +167,8 @@
         
         // Returns a Boolean value that indicates whether the receiver is an instance of a
         // given class.
-        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]]) string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
+        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]])
+            string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
         else
         {
             Medications *medications = [array objectAtIndex:arrayRange];
@@ -167,7 +178,9 @@
             string = [string stringByAppendingString:@"|"];
         }
     }
-    return string;
+    NSArray *arrayFinal = [ string componentsSeparatedByString:@"|"];
+
+    return arrayFinal;
 }
 
 #pragma mark - Table view data source
@@ -221,8 +234,5 @@
     
     return  dataCell;
 }
-
-
-
 
 @end
