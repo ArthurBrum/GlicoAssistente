@@ -35,7 +35,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7NQ-O3-meq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nt0-1c-TIx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZY-eM-xVC" customClass="JTCalendarMenuView">
@@ -110,7 +110,9 @@
                                 <exclude reference="Z92-fJ-Oga"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="vWG-90-rC4"/>
+                                <exclude reference="Urd-CL-7Qu"/>
+                                <exclude reference="keJ-IF-Hms"/>
+                                <exclude reference="qek-2N-g9H"/>
                                 <exclude reference="EHi-4i-L8C"/>
                                 <exclude reference="Uep-qt-x0c"/>
                                 <exclude reference="W8p-Hs-RBP"/>
@@ -118,9 +120,7 @@
                                 <exclude reference="dFN-wi-g2Y"/>
                                 <exclude reference="gbt-MI-6Bi"/>
                                 <exclude reference="i5T-gP-lg4"/>
-                                <exclude reference="keJ-IF-Hms"/>
-                                <exclude reference="qek-2N-g9H"/>
-                                <exclude reference="Urd-CL-7Qu"/>
+                                <exclude reference="vWG-90-rC4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -130,7 +130,9 @@
                                 <include reference="Z92-fJ-Oga"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="vWG-90-rC4"/>
+                                <exclude reference="Urd-CL-7Qu"/>
+                                <include reference="keJ-IF-Hms"/>
+                                <include reference="qek-2N-g9H"/>
                                 <exclude reference="EHi-4i-L8C"/>
                                 <exclude reference="Uep-qt-x0c"/>
                                 <include reference="W8p-Hs-RBP"/>
@@ -138,9 +140,7 @@
                                 <include reference="dFN-wi-g2Y"/>
                                 <include reference="gbt-MI-6Bi"/>
                                 <include reference="i5T-gP-lg4"/>
-                                <include reference="keJ-IF-Hms"/>
-                                <include reference="qek-2N-g9H"/>
-                                <exclude reference="Urd-CL-7Qu"/>
+                                <include reference="vWG-90-rC4"/>
                             </mask>
                         </variation>
                     </view>

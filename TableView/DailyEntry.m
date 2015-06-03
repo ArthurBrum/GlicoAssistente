@@ -68,29 +68,15 @@
     [entity setValue:self.entryDate forKey:@"dateTime"];
     [entity setValue:[NSSet setWithArray:self.usedMeds] forKey:@"usedMeds"];
     [entity setValue:[NSSet setWithArray:self.writedNotes] forKey:@"writedNotes"];
-    
-//    entries.glycemicIndex = self.glucose;
-//    entries.dateTime = self.entryDate;
-//    [entries addUsedMeds:[NSSet setWithArray:self.usedMeds]];
-//    [entries addWritedNotes:[NSSet setWithArray:self.writedNotes]];
 
     
     NSError *error;
 //    [appDelegate.managedObjectContext insertObject:entries];
     inserted = [appDelegate.managedObjectContext save: &error];
     if(inserted) NSLog(@"Success!!");
-    
-    
-    //NSMutableArray *array = [DailyEntry fetchEntries];
-    
-//    //Core data return each row as managed object to access through key-value
-//    for(NSManagedObject *obj in array){
-//        NSLog(@"\n\nData: %@ \t Glic: %@ \t \n***NOTES***: %@ \t \n***MEDICATIONS***: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"], [obj valueForKey:@"writedNotes"], [obj valueForKey:@"usedMeds"]);
-//    }
-
-    
     return inserted;
 }
+
 
 - (void) updateEntry{
     //To implement when editing old registers become available
@@ -112,13 +98,6 @@
     
     //Get all rows in utable array
     NSMutableArray *array = [[appDelegate.managedObjectContext executeFetchRequest:fetchRqst error:nil] mutableCopy];
-    
-//    //Core data return each row as managed object to access through key-value
-//    for(NSManagedObject *obj in array){
-//        NSLog(@"Data: %@ ---- Glic: %@", [obj valueForKey:@"dateTime"], [obj valueForKey:@"glycemicIndex"]);
-//    }
-    
-    
     
     return array;
         
