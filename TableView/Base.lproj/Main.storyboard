@@ -110,6 +110,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="85y-ha-ZmL" id="qfV-gp-MGE"/>
+                                    <outlet property="delegate" destination="85y-ha-ZmL" id="c03-d6-ATc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

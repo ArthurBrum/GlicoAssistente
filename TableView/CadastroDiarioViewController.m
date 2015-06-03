@@ -243,8 +243,6 @@
         NSArray *medicinesArray = [ medicines componentsSeparatedByString:@"|"];
         
         self.dailyEntry.medicines = [NSMutableArray arrayWithArray:medicinesArray];
-        NSLog(@"%@", self.dailyEntry.medicines);
-        
     }else{
         //state cancel
         self.Edit.title = @"Editar Anterior";
