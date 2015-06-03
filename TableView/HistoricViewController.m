@@ -39,6 +39,9 @@
     
     [self.calendar reloadData];
     
+    [self setContet:[NSDate date]];
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,37 +87,42 @@
  **/
 -(void) setContet: (NSDate*) date{
     NSMutableArray *dataArray = [DailyEntry fetchEntriesForDay:date];
+    int i = 0;
     
-    Entries *obj = [dataArray lastObject];
+    while(i < [dataArray count]){
+        Entries *obj = dataArray[i];
     
-    // here we create NSDateFormatter object for change the Format of date..
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // here set format which you want...
-    [dateFormatter setDateFormat:@"HH:mm"];
-    //here convert date in NSString
-    NSString *string = @"Hora:   ";
-    NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
-    string = [string stringByAppendingString:convertedString];
-    [self.contents addObject:string];
-    
-    
-    //to pull data from core data
-    string = @"Glucose:   ";
-    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
-    string = [string stringByAppendingString:dateAndGlic];
-    string = [string stringByAppendingString:@"  mg/dL"];
-    [self.contents addObject: string];
+        // here we create NSDateFormatter object for change the Format of date..
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        // here set format which you want...
+        [dateFormatter setDateFormat:@"HH:mm"];
+        //here convert date in NSString
+        NSString *string = @"Hora:   ";
+        NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
+        string = [string stringByAppendingString:convertedString];
+        [self.contents addObject:string];
     
     
-    //config for to pull notes
-    NSArray* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
-    for(int i = 0; i < [notes count]; i++)
-        [self.contents addObject:notes[i]];
+        //to pull data from core data
+        string = @"Glucose:   ";
+        NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
+        string = [string stringByAppendingString:dateAndGlic];
+        string = [string stringByAppendingString:@"  mg/dL"];
+        [self.contents addObject: string];
     
-    //config for to pull medicines
-    NSArray* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
-    for(int i = 0; i < [medicines count]; i++)
-        [self.contents addObject:medicines[i]];
+    
+        //config for to pull notes
+        NSArray* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
+        for(int i = 0; i < [notes count]; i++)
+            [self.contents addObject:notes[i]];
+    
+        //config for to pull medicines
+        NSArray* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+        for(int i = 0; i < [medicines count]; i++)
+            [self.contents addObject:medicines[i]];
+    
+        i++;
+    }
 }
 
 /**
