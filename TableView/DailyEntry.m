@@ -103,5 +103,37 @@
         
 }
 
++ (NSMutableArray *) fetchEntriesForDay: (NSDate *) date {
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    //Create fetch request
+    NSFetchRequest *fetchRqst = [[NSFetchRequest alloc] initWithEntityName:@"Entries"];
+
+    NSDateComponents* startDateComps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
+    [startDateComps setHour:0];
+    [startDateComps setMinute:0];
+    [startDateComps setSecond:0];
+    
+    NSDate *startDate = [[NSCalendar currentCalendar] dateFromComponents:startDateComps];
+    
+    NSDateComponents* endDateComps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
+    [endDateComps setHour:23];
+    [endDateComps setMinute:59];
+    [endDateComps setSecond:59];
+    
+    NSDate *endDate = [[NSCalendar currentCalendar] dateFromComponents:endDateComps];
+    
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(dateTime >= %@) AND (dateTime < %@)",startDate, endDate];
+    
+    [fetchRqst setPredicate:predicate];
+    
+    //Get all rows in utable array
+    NSMutableArray *array = [[appDelegate.managedObjectContext executeFetchRequest:fetchRqst error:nil] mutableCopy];
+    
+    return array;
+    
+}
 
 @end

@@ -39,9 +39,6 @@
     
     [self.calendar reloadData];
     
-    [self setContet];
-    [self.tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +56,7 @@
     [self.calendar repositionViews];
 }
 
-#pragma mark - calendar
+#pragma mark - calendar and add all objects in table
 /**
  event in calendar - the marking
  **/
@@ -73,11 +70,80 @@
  **/
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
-    [self setContet];
-    [self.tableView reloadData];
-
-    NSLog(@"%@", date);
+    [self.contents removeAllObjects];
+    self.contents = [NSMutableArray array];
     
+    [self setContet:date];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Config contents
+
+/**
+ Add all datas in the historic of day
+ **/
+-(void) setContet: (NSDate*) date{
+    NSMutableArray *dataArray = [DailyEntry fetchEntriesForDay:date];
+    
+    Entries *obj = [dataArray lastObject];
+    
+    // here we create NSDateFormatter object for change the Format of date..
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // here set format which you want...
+    [dateFormatter setDateFormat:@"HH:mm"];
+    //here convert date in NSString
+    NSString *string = @"Hora:   ";
+    NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
+    string = [string stringByAppendingString:convertedString];
+    [self.contents addObject:string];
+    
+    
+    //to pull data from core data
+    string = @"Glucose:   ";
+    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
+    string = [string stringByAppendingString:dateAndGlic];
+    string = [string stringByAppendingString:@"  mg/dL"];
+    [self.contents addObject: string];
+    
+    
+    //config for to pull notes
+    NSArray* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
+    for(int i = 0; i < [notes count]; i++)
+        [self.contents addObject:notes[i]];
+    
+    //config for to pull medicines
+    NSArray* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
+    for(int i = 0; i < [medicines count]; i++)
+        [self.contents addObject:medicines[i]];
+}
+
+/**
+ Set the string for separete before
+ **/
+-(NSArray*) stringWithNSSet: (NSSet*) set
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[set allObjects]];
+    
+    NSString* string = [[NSString alloc] initWithFormat:@""];
+    
+    for (int arrayRange = 0; arrayRange < [array count]; arrayRange++) {
+        
+        // Returns a Boolean value that indicates whether the receiver is an instance of a
+        // given class.
+        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]])
+            string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
+        else
+        {
+            Medications *medications = [array objectAtIndex:arrayRange];
+            string = [string stringByAppendingString: [medications medication]];
+        }
+        if (arrayRange != [array count] - 1) {
+            string = [string stringByAppendingString:@"|"];
+        }
+    }
+    NSArray *arrayFinal = [ string componentsSeparatedByString:@"|"];
+    
+    return arrayFinal;
 }
 
 #pragma mark - button for minimize
@@ -120,73 +186,7 @@
                      }];
 }
 
-#pragma mark - Config contents
 
-/**
- Add all datas in the historic of day
- **/
--(void) setContet{
-    NSMutableArray* dataArray = [DailyEntry fetchEntries];
-    
-    Entries *obj = [dataArray lastObject];
-    
-    // here we create NSDateFormatter object for change the Format of date..
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // here set format which you want...
-    [dateFormatter setDateFormat:@"HH:mm"];
-    //here convert date in NSString
-    NSString *string = @"Hora:   ";
-    NSString *convertedString = [dateFormatter stringFromDate:[obj valueForKey:@"dateTime"]];
-    string = [string stringByAppendingString:convertedString];
-    [self.contents addObject:string];
-    
-    
-    //to pull data from core data
-    string = @"Glucose:   ";
-    NSString* dateAndGlic = [[NSString alloc] initWithFormat:@"%@", [obj valueForKey:@"glycemicIndex"]];
-    string = [string stringByAppendingString:dateAndGlic];
-    string = [string stringByAppendingString:@"  mg/dL"];
-    [self.contents addObject: string];
-    
-    
-    //config for to pull notes
-    NSArray* notes = [self stringWithNSSet: [obj valueForKey:@"writedNotes"]];
-    for(int i = 0; i < [notes count]; i++)
-        [self.contents addObject:notes[i]];
-    
-    //config for to pull medicines
-    NSArray* medicines = [self stringWithNSSet:[obj valueForKey:@"usedMeds"]];
-    for(int i = 0; i < [medicines count]; i++)
-        [self.contents addObject:medicines[i]];
-}
-/**
- Set the string for separete before
- **/
--(NSArray*) stringWithNSSet: (NSSet*) set
-{
-    NSMutableArray *array = [NSMutableArray arrayWithArray:[set allObjects]];
-    
-    NSString* string = [[NSString alloc] initWithFormat:@""];
-    
-    for (int arrayRange = 0; arrayRange < [array count]; arrayRange++) {
-        
-        // Returns a Boolean value that indicates whether the receiver is an instance of a
-        // given class.
-        if([[array objectAtIndex:arrayRange] isMemberOfClass:[Notes class]])
-            string = [string stringByAppendingString:[[array objectAtIndex:arrayRange] note]];
-        else
-        {
-            Medications *medications = [array objectAtIndex:arrayRange];
-            string = [string stringByAppendingString: [medications medication]];
-        }
-        if (arrayRange != [array count] - 1) {
-            string = [string stringByAppendingString:@"|"];
-        }
-    }
-    NSArray *arrayFinal = [ string componentsSeparatedByString:@"|"];
-
-    return arrayFinal;
-}
 
 #pragma mark - Table view data source
 

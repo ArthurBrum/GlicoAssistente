@@ -22,5 +22,6 @@
 - (void) updateEntry;
 
 + (NSMutableArray *) fetchEntries;
++ (NSMutableArray *) fetchEntriesForDay: (NSDate *) date;
 
 @end
