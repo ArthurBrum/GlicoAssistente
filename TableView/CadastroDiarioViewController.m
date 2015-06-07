@@ -69,7 +69,11 @@
     return 2;
 }
 
-
+/**
+ configuration the add cell
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if(section == 0)
