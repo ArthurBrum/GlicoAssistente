@@ -2,16 +2,18 @@
 //  Notes.h
 //  TableView
 //
-//  Created by Davi Rodrigues on 27/03/15.
+//  Created by Arthur Jacunas de Brum on 02/04/15.
 //  Copyright (c) 2015 Jessica Oliveira. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "DailyEntry.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Notes : UITableViewController
+@class Entries;
 
-///class DailyEntry with properties - here (in Notes) is used to guard a mutableArray notes
-@property (nonatomic, strong) DailyEntry *dailyEntry;
+@interface Notes : NSManagedObject
+
+@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) Entries *entries;
 
 @end

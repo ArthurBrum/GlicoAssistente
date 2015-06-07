@@ -11,8 +11,17 @@
 @interface DailyEntry : NSObject
 
 @property (nonatomic, strong) NSDate *entryDate;
-@property (nonatomic) NSInteger glucose;
+@property (nonatomic) NSNumber *glucose;
 @property (nonatomic, strong) NSMutableArray *medicines;
+@property (nonatomic, strong) NSMutableArray *usedMeds;
 @property (nonatomic, strong) NSMutableArray *reminders;
+@property (nonatomic, strong) NSMutableArray *writedNotes;
+
+- (BOOL) saveNewEntry;
+
+- (void) updateEntry;
+
++ (NSMutableArray *) fetchEntries;
++ (NSMutableArray *) fetchEntriesForDay: (NSDate *) date;
 
 @end

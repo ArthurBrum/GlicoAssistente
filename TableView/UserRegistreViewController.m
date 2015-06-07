@@ -12,12 +12,13 @@
 
 @interface UserRegistreViewController ()
 
-///DoneButton - saves info and returns to root page
+///DoneButton - saves info
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *moreMedicineButton;
 
 ///Receives user name in UserRegistreViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property NSString* userName;
 
 ///Receives user age in UserRegistreViewController
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
@@ -29,14 +30,17 @@
 
 ///Receives user hospital
 @property (weak, nonatomic) IBOutlet UITextField *hospitalTextField;
+///Stor users hospital to refresh text fiels and save data
 @property NSString* userHospital;
 
 ///Receives user height
 @property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+///Stor users height to refresh text fiels and save data
 @property NSString* userHeight;
 
 ///Select user diabets type
 @property (weak, nonatomic) IBOutlet UISegmentedControl *diabetsTypeSegmentedControl;
+
 ///Diabets type register - YES for 1, NO for 2
 @property BOOL dtype;
 
@@ -46,34 +50,26 @@
 @property (weak, nonatomic) IBOutlet UITextField *medicineTextField;
 
 @property (weak, nonatomic) IBOutlet UITableView *medicineTableView;
+
 @end
 
-
-
 @implementation UserRegistreViewController
-
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _medicineList = [[NSMutableArray alloc] init];
+    self.medicineList = [[NSMutableArray alloc] init];
     
-    _userName = @"Nome";
-    _userAge = @"Idade";
-    _userDoctor = @"Medico";
-    _userHospital = @"Hospital de Referencia";
-    _userHeight = @"Altura";
+    //Diabets type 1 was setted as default
     _dtype = YES;
     
     [self refreshTextFields];
+
+    self.medicineTableView.editing = NO;
     
-    self.nameTextField.clearsOnBeginEditing = YES;
-    self.ageTextField.clearsOnBeginEditing = YES;
-    self.doctorTextField.clearsOnBeginEditing = YES;
-    self.hospitalTextField.clearsOnBeginEditing = YES;
-    self.heightTextField.clearsOnBeginEditing = YES;
+    //Hides numeric pad when touch outside text field
+    [self addTapGesture];
     
 }
 
@@ -82,19 +78,49 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - TableView methods
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self refreshTextFields];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.DoneButton setTitle:@"Editar" forState:normal];
+    [self nonEditableTextFields];
+    [self persistUserSets];
+}
+
+#pragma mark - TableView methods
+/**
+ configuration the return numbers cells
+ @return - NSInteger
+ @param - UITableView
+ **/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return self.medicineList.count;
 }
 
+/**
+ Override to support editing the table view.
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle : NSIndexPath
+ **/
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.medicineTableView setEditing:editing animated:animated];
+}
+
+/**
+ configuration the add cell
+ @return - NSInteger
+ @param - UITableView : NSInteger
+ **/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIndenfier = @"MedicineCell";
     
-    cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier:cellIndenfier];
+    cellMedicine *cell = [tableView dequeueReusableCellWithIdentifier: cellIndenfier];
     
     if (cell == nil) {
         cell = [[cellMedicine alloc] init];
@@ -102,29 +128,62 @@
     
     cell.medicine.text = [NSString stringWithFormat:@"%@", [self.medicineList objectAtIndex:indexPath.row]];
     
-    
-    
     return cell;
 }
 
+/**
+ configuration the delete cell
+ @return - void
+ @param - UITableView : UITableViewCellEditingStyle
+ **/
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.medicineList removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.medicineTableView reloadData];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
+
 #pragma mark - TextField methods
--(BOOL)textFieldShouldReturn:(UITextField*)textField
+
+-(void) persistUserSets
 {
-    [textField resignFirstResponder];
-    textField.clearsOnBeginEditing = NO;
-    return YES;
+    NSUserDefaults *userSets = [NSUserDefaults standardUserDefaults];
+    
+    //Persists infos to stduserDefaults
+    [userSets setObject: self.nameTextField.text forKey:@"name"];
+    [userSets setObject: self.ageTextField.text forKey:@"age"];
+    [userSets setObject: self.heightTextField.text forKey:@"height"];
+    [userSets setObject: self.doctorTextField.text forKey:@"doctor"];
+    [userSets setObject: self.hospitalTextField.text forKey:@"hospital"];
+    [userSets setObject: [NSNumber numberWithInteger: self.diabetsTypeSegmentedControl.selectedSegmentIndex] forKey:@"dTypeIndex"];
+    [userSets setObject: self.medicineList forKey:@"medicineList"];
+    
 }
 
 -(void)refreshTextFields
 {
+    NSUserDefaults *userSets = [NSUserDefaults standardUserDefaults];
+    
     //Set text fields
-    self.nameTextField.text = self.userName;
-    self.ageTextField.text = self.userAge;
-    self.doctorTextField.text = self.userDoctor;
-    self.hospitalTextField.text = self.userHospital;
-    self.heightTextField.text = self.userHeight;
+    self.nameTextField.text = [userSets stringForKey:@"name"];
+    self.ageTextField.text = [userSets stringForKey:@"age"];
+    self.heightTextField.text = [userSets stringForKey:@"height"];
+    self.doctorTextField.text = [userSets stringForKey:@"doctor"];
+    self.hospitalTextField.text = [userSets stringForKey:@"hospital"];
+    self.diabetsTypeSegmentedControl.selectedSegmentIndex = [[userSets stringForKey:@"dTypeIndex"] integerValue];
+    self.medicineList = [NSMutableArray arrayWithArray:[userSets arrayForKey:@"medicineList"]];
 }
 
+
+/**
+ Eneable edition in all text fields
+ **/
 -(void)editableTextFields
 {
     self.nameTextField.enabled = YES;
@@ -132,8 +191,14 @@
     self.doctorTextField.enabled = YES;
     self.hospitalTextField.enabled = YES;
     self.heightTextField.enabled = YES;
+    self.medicineTextField.enabled = YES;
+    self.diabetsTypeSegmentedControl.enabled = YES;
+    self.moreMedicineButton.enabled = YES;
 }
 
+/**
+ Disable edition in all text fields
+ **/
 -(void)nonEditableTextFields
 {
     self.nameTextField.enabled = NO;
@@ -141,53 +206,52 @@
     self.doctorTextField.enabled = NO;
     self.hospitalTextField.enabled = NO;
     self.heightTextField.enabled = NO;
+    self.medicineTextField.enabled = NO;
+    self.diabetsTypeSegmentedControl.enabled = NO;
+    self.moreMedicineButton.enabled = NO;
 }
 
 #pragma mark - TextField event handlers
+
 /**
- Saves na
+ When click in ruturn the keyboard close
  **/
 - (IBAction)nameTextFieldHandler:(id)sender {
-    self.userName = self.nameTextField.text;
     [self textFieldShouldReturn:self.nameTextField];
 }
-
 - (IBAction)ageTextFieldHandler:(id)sender {
-    self.userAge = self.ageTextField.text;
     [self textFieldShouldReturn:self.ageTextField];
 }
-
 - (IBAction)doctorTextFieldHandler:(id)sender {
-    self.userDoctor = self.doctorTextField.text;
     [self textFieldShouldReturn:self.doctorTextField];
 }
-
 - (IBAction)hospitalTextFieldHandler:(id)sender {
-    self.userHospital = self.hospitalTextField.text;
     [self textFieldShouldReturn:self.hospitalTextField];
 }
-
 - (IBAction)heightTextFieldHandler:(id)sender {
-    self.userHeight = self.heightTextField.text;
     [self textFieldShouldReturn:self.heightTextField];
 }
 
 #pragma mark  - Button handler
-
+/**
+ Save and fixe datas
+ **/
 - (IBAction)doneButtonHanlder:(id)sender {
-    
     if ([self.DoneButton.titleLabel.text isEqual:@"Salvar"]) {
         [self.DoneButton setTitle:@"Editar" forState:normal];
         [self nonEditableTextFields];
-        //IMPLEMENTAR aqui: salvar dados
+        [self persistUserSets];
+        
         
     } else if ([self.DoneButton.titleLabel.text isEqual:@"Editar"]) {
         [self.DoneButton setTitle:@"Salvar" forState:normal];
         [self editableTextFields];
     }
-    
 }
 
+/**
+ Add in the table the usuals medicines
+ **/
 - (IBAction)addButtonHandler:(id)sender {
     
     if (![self.medicineTextField.text isEqualToString:@""]) {
@@ -199,23 +263,27 @@
     
 }
 
-- (IBAction)segmentedControlHandler:(id)sender {
-    if(self.diabetsTypeSegmentedControl.selectedSegmentIndex == 0)
-    {
-        self.dtype = YES;
-    } else self.dtype = NO;
+#pragma mark  - close keyboard
+/**
+ Save and fixe datas
+ **/
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    textField.clearsOnBeginEditing = NO;
+    return YES;
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) addTapGesture {
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.view addGestureRecognizer:tapper];
 }
-*/
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 
 
 @end

@@ -1,0 +1,147 @@
+
+/* Class = "UILabel"; text = "S"; ObjectID = "1VJ-TH-GnF"; */
+"1VJ-TH-GnF.text" = "S";
+
+/* Class = "UINavigationItem"; title = "Gráfico da semana"; ObjectID = "4Qj-g9-HfX"; */
+"4Qj-g9-HfX.title" = "Gráfico da semana";
+
+/* Class = "UITextField"; placeholder = "Idade"; ObjectID = "6oS-2q-zHT"; */
+"6oS-2q-zHT.placeholder" = "Idade";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "7A0-jb-Ukh"; */
+"7A0-jb-Ukh.text" = "T";
+
+/* Class = "UIBarButtonItem"; title = "Editar Anterior"; ObjectID = "7OV-Sx-lVN"; */
+"7OV-Sx-lVN.title" = "Editar Anterior";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "97f-xE-5jp"; */
+"97f-xE-5jp.text" = "S";
+
+/* Class = "UITableViewController"; title = "Lembrete"; ObjectID = "BDL-jA-rCe"; */
+"BDL-jA-rCe.title" = "Lembrete";
+
+/* Class = "UITextField"; placeholder = "Escreva aqui"; ObjectID = "EcZ-7Y-bK6"; */
+"EcZ-7Y-bK6.placeholder" = "Escreva aqui";
+
+/* Class = "UITabBarItem"; title = "Gráfico"; ObjectID = "FnR-uu-mLW"; */
+"FnR-uu-mLW.title" = "Gráfico";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "GxW-zI-CpX"; */
+"GxW-zI-CpX.normalTitle" = "OK";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Gye-nf-rVA"; */
+"Gye-nf-rVA.title" = "Item";
+
+/* Class = "UILabel"; text = "teste"; ObjectID = "N6v-6A-U79"; */
+"N6v-6A-U79.text" = "teste";
+
+/* Class = "UINavigationItem"; title = "Medicamentos"; ObjectID = "OcX-XZ-4Li"; */
+"OcX-XZ-4Li.title" = "Medicamentos";
+
+/* Class = "UINavigationItem"; title = "Anotações"; ObjectID = "QUg-CL-PHo"; */
+"QUg-CL-PHo.title" = "Anotações";
+
+/* Class = "UITabBarItem"; title = "Diário"; ObjectID = "TWA-jj-lHj"; */
+"TWA-jj-lHj.title" = "Diário";
+
+/* Class = "UITextField"; placeholder = "mg/dL"; ObjectID = "Udi-t2-7Vz"; */
+"Udi-t2-7Vz.placeholder" = "mg/dL";
+
+/* Class = "UITextField"; placeholder = "Medicamentos"; ObjectID = "V4a-9O-qyz"; */
+"V4a-9O-qyz.placeholder" = "Medicamentos";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "WDN-He-bjT"; */
+"WDN-He-bjT.text" = "S";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "WMm-8L-1hp"; */
+"WMm-8L-1hp.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Salvar"; ObjectID = "XiB-PG-R4K"; */
+"XiB-PG-R4K.normalTitle" = "Salvar";
+
+/* Class = "UILabel"; text = "Q"; ObjectID = "Zhf-eP-81Y"; */
+"Zhf-eP-81Y.text" = "Q";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bVn-3K-suo"; */
+"bVn-3K-suo.text" = "Label";
+
+/* Class = "UILabel"; text = "D"; ObjectID = "bfa-Dx-Ujh"; */
+"bfa-Dx-Ujh.text" = "D";
+
+/* Class = "UILabel"; text = "Hoje: "; ObjectID = "c3c-im-6Cn"; */
+"c3c-im-6Cn.text" = "Hoje: ";
+
+/* Class = "UIButton"; normalTitle = "Colapse"; ObjectID = "eIQ-cl-70A"; */
+"eIQ-cl-70A.normalTitle" = "Colapse";
+
+/* Class = "UITableViewSection"; headerTitle = "      "; ObjectID = "eaM-Og-YMe"; */
+"eaM-Og-YMe.headerTitle" = "      ";
+
+/* Class = "UITextField"; placeholder = "Medico"; ObjectID = "gRQ-6c-3kI"; */
+"gRQ-6c-3kI.placeholder" = "Medico";
+
+/* Class = "UIBarButtonItem"; title = "Salvar"; ObjectID = "i0L-u9-23w"; */
+"i0L-u9-23w.title" = "Salvar";
+
+/* Class = "UITextField"; placeholder = "Altura"; ObjectID = "iO1-lw-mG4"; */
+"iO1-lw-mG4.placeholder" = "Altura";
+
+/* Class = "UIBarButtonItem"; title = "Editar Anterior"; ObjectID = "ijC-sM-FYz"; */
+"ijC-sM-FYz.title" = "Editar Anterior";
+
+/* Class = "UITabBarItem"; title = "Configurações"; ObjectID = "io3-Vh-m8W"; */
+"io3-Vh-m8W.title" = "Configurações";
+
+/* Class = "UILabel"; text = "Lembrete"; ObjectID = "jk6-44-eU7"; */
+"jk6-44-eU7.text" = "Lembrete";
+
+/* Class = "UIButton"; normalTitle = "Salvar"; ObjectID = "kQp-mJ-unI"; */
+"kQp-mJ-unI.normalTitle" = "Salvar";
+
+/* Class = "UILabel"; text = "Q"; ObjectID = "lh5-qb-9mL"; */
+"lh5-qb-9mL.text" = "Q";
+
+/* Class = "UITabBarItem"; title = "Histórico"; ObjectID = "nan-cU-p9C"; */
+"nan-cU-p9C.title" = "Histórico";
+
+/* Class = "UINavigationItem"; title = "User"; ObjectID = "nrT-Qq-ldt"; */
+"nrT-Qq-ldt.title" = "User";
+
+/* Class = "UISegmentedControl"; oe0-8b-ObC.segmentTitles[0] = "Diabetes tipo um"; ObjectID = "oe0-8b-ObC"; */
+"oe0-8b-ObC.segmentTitles[0]" = "Diabetes tipo um";
+
+/* Class = "UISegmentedControl"; oe0-8b-ObC.segmentTitles[1] = "Diabetes tipo dois"; ObjectID = "oe0-8b-ObC"; */
+"oe0-8b-ObC.segmentTitles[1]" = "Diabetes tipo dois";
+
+/* Class = "UILabel"; text = "Glicose"; ObjectID = "ryf-An-ofI"; */
+"ryf-An-ofI.text" = "Glicose";
+
+/* Class = "UITextField"; placeholder = "Hospital de Referência"; ObjectID = "s9K-5d-mJw"; */
+"s9K-5d-mJw.placeholder" = "Hospital de Referência";
+
+/* Class = "UILabel"; text = "Medicamento"; ObjectID = "snP-25-P5U"; */
+"snP-25-P5U.text" = "Medicamento";
+
+/* Class = "UITextField"; placeholder = "Remédios + hora"; ObjectID = "vQ7-TL-h2h"; */
+"vQ7-TL-h2h.placeholder" = "Remédios + hora";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "vbA-Qp-cPy"; */
+"vbA-Qp-cPy.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Diario Glicose"; ObjectID = "yO5-Mp-iit"; */
+"yO5-Mp-iit.title" = "Diario Glicose";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yRe-XC-jT6"; */
+"yRe-XC-jT6.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "      "; ObjectID = "ymt-ze-lCp"; */
+"ymt-ze-lCp.headerTitle" = "      ";
+
+/* Class = "UINavigationItem"; title = "Histórico"; ObjectID = "z5U-W7-wgi"; */
+"z5U-W7-wgi.title" = "Histórico";
+
+/* Class = "UITextField"; placeholder = "Nome"; ObjectID = "zp6-Kx-dcf"; */
+"zp6-Kx-dcf.placeholder" = "Nome";
+
+/* Class = "UILabel"; text = "Caso tenha tomado algum remédio fora dos  \n medicamentos diários pode registrar   qual  \no nome do remédio e o horário que tomou"; ObjectID = "zrc-hS-Ptb"; */
+"zrc-hS-Ptb.text" = "Caso tenha tomado algum remédio fora dos  \n medicamentos diários pode registrar   qual  \no nome do remédio e o horário que tomou";
